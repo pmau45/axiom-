@@ -113,7 +113,13 @@ export default function RootLayout({
       { '@type': 'City', name: 'Ponte Vedra Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
       { '@type': 'City', name: 'Nocatee', containedInPlace: { '@type': 'State', name: 'Florida' } },
       { '@type': 'City', name: 'St. Augustine', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Palm Coast', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Brunswick', containedInPlace: { '@type': 'State', name: 'Georgia' } },
+      { '@type': 'City', name: 'St. Simons Island', containedInPlace: { '@type': 'State', name: 'Georgia' } },
+      { '@type': 'City', name: 'Jekyll Island', containedInPlace: { '@type': 'State', name: 'Georgia' } },
       { '@type': 'County', name: 'Nassau County', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'County', name: 'Flagler County', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'County', name: 'Glynn County', containedInPlace: { '@type': 'State', name: 'Georgia' } },
     ],
     priceRange: '$$',
     hasOfferCatalog: {

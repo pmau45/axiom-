@@ -22,6 +22,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: `${BASE_URL}/jacksonville`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
       url: `${BASE_URL}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -114,6 +120,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/st-augustine`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/palm-coast`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/brunswick-ga`,
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,

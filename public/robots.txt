@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://axiom-canine.netlify.app/sitemap.xml

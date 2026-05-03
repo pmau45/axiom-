@@ -4,9 +4,9 @@ import { getAllArticles } from './blog/utils/mdx-loader';
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://axiom-canine.netlify.app';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const articles = getAllArticles();
-  
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getAllArticles();
+
   const articleEntries = articles.map((article) => ({
     url: `${BASE_URL}/blog/${article.slug}`,
     lastModified: new Date(article.date),
@@ -93,6 +93,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/philosophy`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/ponte-vedra`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/nocatee`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/st-augustine`,
+      lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
     },
   ];
 }

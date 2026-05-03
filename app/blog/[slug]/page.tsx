@@ -13,7 +13,7 @@ interface ArticlePageProps {
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     return {
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 export async function generateStaticParams() {
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
   return articles.map((article) => ({
     slug: article.slug,
   }));
@@ -47,17 +47,17 @@ export async function generateStaticParams() {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     notFound();
   }
 
-  const allArticles = getAllArticles();
+  const allArticles = await getAllArticles();
   const currentIndex = allArticles.findIndex((a) => a.slug === slug);
   const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : undefined;
   const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : undefined;
-  const relatedArticles = getRelatedArticles(slug, 3);
+  const relatedArticles = await getRelatedArticles(slug, 3);
 
   return (
     <div className="page-enter">

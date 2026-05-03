@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
 
 export interface ArticleMetadata {
   title: string;
@@ -19,14 +21,21 @@ export interface Article extends ArticleMetadata {
 
 const ARTICLES_DIR = path.join(process.cwd(), 'app/blog/content');
 
-export function getAllArticles(): Article[] {
+async function markdownToHtml(markdown: string): Promise<string> {
+  const result = await remark().use(remarkHtml).process(markdown);
+  return result.toString();
+}
+
+export async function getAllArticles(): Promise<Article[]> {
   const files = fs.readdirSync(ARTICLES_DIR).filter((file) => file.endsWith('.mdx'));
 
-  return files
-    .map((file) => {
+  const articles = await Promise.all(
+    files.map(async (file) => {
       const filePath = path.join(ARTICLES_DIR, file);
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       const { data, content } = matter(fileContent);
+
+      const htmlContent = await markdownToHtml(content);
 
       return {
         slug: file.replace('.mdx', ''),
@@ -37,26 +46,30 @@ export function getAllArticles(): Article[] {
         category: data.category || 'Training Tips',
         readTime: data.readTime || calculateReadTime(content),
         heroImage: data.heroImage || '/images/blog-default.jpg',
-        content,
+        content: htmlContent,
       };
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  );
+
+  return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export function getArticleBySlug(slug: string): Article | null {
-  const articles = getAllArticles();
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  const articles = await getAllArticles();
   return articles.find((article) => article.slug === slug) || null;
 }
 
-export function getArticlesByCategory(category: ArticleMetadata['category']): Article[] {
-  return getAllArticles().filter((article) => article.category === category);
+export async function getArticlesByCategory(category: ArticleMetadata['category']): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter((article) => article.category === category);
 }
 
-export function getRelatedArticles(slug: string, limit = 3): Article[] {
-  const article = getArticleBySlug(slug);
+export async function getRelatedArticles(slug: string, limit = 3): Promise<Article[]> {
+  const article = await getArticleBySlug(slug);
   if (!article) return [];
 
-  return getAllArticles()
+  const articles = await getAllArticles();
+  return articles
     .filter((a) => a.slug !== slug && a.category === article.category)
     .slice(0, limit);
 }

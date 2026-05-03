@@ -8,8 +8,11 @@ import SiteLayout from './components/layout/SiteLayout';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import './globals.css';
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://axiom-canine.netlify.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://axiom-canine.netlify.app'),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
     template: '%s | Axiom Canine',
@@ -37,6 +40,7 @@ export const metadata: Metadata = {
     title: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
     description:
       'Structure. Consistency. Results. Professional dog training for behavior modification, advanced obedience, and rescue adjustment in Jacksonville, FL.',
+    url: BASE_URL,
     images: [
       {
         url: '/og-image.png',
@@ -50,6 +54,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Axiom Canine | Professional Dog Training',
     description: 'Structure. Consistency. Results. Jacksonville, FL dog training specialists.',
+    site: '@axiomcanine',
+    creator: '@axiomcanine',
   },
   robots: {
     index: true,
@@ -66,90 +72,91 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 };
 
-// JSON-LD structured data for local business
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://axiom-canine.netlify.app',
-  name: 'Axiom Canine',
-  description:
-    'Professional dog training in Jacksonville, FL specializing in behavior modification, advanced obedience, and free rescue adjustment support.',
-  telephone: '+19044587561',
-  url: 'https://axiom-canine.netlify.app',
-  image: 'https://axiom-canine.netlify.app/og-image.png',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Jacksonville',
-    addressRegion: 'FL',
-    postalCode: '32244',
-    addressCountry: 'US',
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '17:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Saturday'],
-      opens: '09:00',
-      closes: '14:00',
-    },
-  ],
-  areaServed: [
-    { '@type': 'City', name: 'Jacksonville', containedInPlace: { '@type': 'State', name: 'Florida' } },
-    { '@type': 'City', name: 'Ponte Vedra Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
-    { '@type': 'City', name: 'Nocatee', containedInPlace: { '@type': 'State', name: 'Florida' } },
-    { '@type': 'City', name: 'St. Augustine', containedInPlace: { '@type': 'State', name: 'Florida' } },
-    { '@type': 'County', name: 'Nassau County', containedInPlace: { '@type': 'State', name: 'Florida' } },
-  ],
-  priceRange: '$$',
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Dog Training Services',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Behavior Modification',
-          description:
-            'Rehabilitation for reactivity, aggression, and resource guarding. We address the root cause of dangerous behaviors in Jacksonville, FL dogs.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Advanced Obedience Training',
-          description:
-            'Build bulletproof recall, off-leash reliability, and public neutrality for dogs in Jacksonville, FL and surrounding areas.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Axiom Cares — Free Rescue & Adoption Support',
-          description:
-            'Free in-home visits for rescue and adoption adjustment in Jacksonville, FL. No judgment, no pressure, no bill.',
-        },
-      },
-    ],
-  },
-  sameAs: [
-    'https://www.facebook.com/axiomcanine',
-    'https://www.instagram.com/axiomcanine',
-  ],
-};
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': BASE_URL,
+    name: 'Axiom Canine',
+    description:
+      'Professional dog training in Jacksonville, FL specializing in behavior modification, advanced obedience, and free rescue adjustment support.',
+    telephone: '+19044587561',
+    url: BASE_URL,
+    image: `${BASE_URL}/og-image.png`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Jacksonville',
+      addressRegion: 'FL',
+      postalCode: '32244',
+      addressCountry: 'US',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '17:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '09:00',
+        closes: '14:00',
+      },
+    ],
+    areaServed: [
+      { '@type': 'City', name: 'Jacksonville', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Ponte Vedra Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'Nocatee', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'City', name: 'St. Augustine', containedInPlace: { '@type': 'State', name: 'Florida' } },
+      { '@type': 'County', name: 'Nassau County', containedInPlace: { '@type': 'State', name: 'Florida' } },
+    ],
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Dog Training Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Behavior Modification',
+            description:
+              'Rehabilitation for reactivity, aggression, and resource guarding. We address the root cause of dangerous behaviors in Jacksonville, FL dogs.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Advanced Obedience Training',
+            description:
+              'Build bulletproof recall, off-leash reliability, and public neutrality for dogs in Jacksonville, FL and surrounding areas.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Axiom Cares — Free Rescue & Adoption Support',
+            description:
+              'Free in-home visits for rescue and adoption adjustment in Jacksonville, FL. No judgment, no pressure, no bill.',
+          },
+        },
+      ],
+    },
+    sameAs: [
+      'https://www.facebook.com/axiomcanine',
+      'https://www.instagram.com/axiomcanine',
+    ],
+  };
+
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
       <head>
@@ -157,6 +164,21 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {gaId && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="font-chivo antialiased overflow-x-hidden min-h-screen bg-[#0B0C10] text-[#C5C6C7]">
         {/* Skip to main content for keyboard users */}

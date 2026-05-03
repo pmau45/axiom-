@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const articles = getAllArticles();
+export default async function BlogPage() {
+  const articles = await getAllArticles();
 
   return (
     <div className="page-enter">

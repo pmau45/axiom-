@@ -16,6 +16,10 @@ interface FAQSectionProps {
 export function FAQSection({ items, title = 'Frequently Asked Questions' }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const handleToggle = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section className="space-y-6" aria-labelledby="faq-heading">
       {title && <h2 id="faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8 text-center">{title}</h2>}
@@ -26,7 +30,10 @@ export function FAQSection({ items, title = 'Frequently Asked Questions' }: FAQS
             key={item.question}
             className="group border border-[#1A2030] rounded-lg bg-[#1A2030] hover:border-[#FF5E00]/50 transition-colors"
             open={openIndex === index}
-            onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleToggle(index);
+            }}
           >
             <summary className="cursor-pointer px-6 py-5 font-semibold text-white flex items-center justify-between hover:text-[#FF5E00] list-none">
               <span>{item.question}</span>

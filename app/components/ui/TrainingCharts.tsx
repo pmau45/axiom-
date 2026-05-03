@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
   RadialLinearScale,
+  type TooltipItem,
 } from 'chart.js';
 
 ChartJS.register(
@@ -52,7 +53,7 @@ export function ProgressChart() {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (context: any) => {
+          label: (context: TooltipItem<'line'>) => {
             return 'Reliability/Focus: ' + context.parsed.y + '%';
           },
         },
@@ -109,7 +110,7 @@ export function QuadrantChart() {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (context: any) => {
+          label: (context: TooltipItem<'radar'>) => {
             return 'Application Rate: ~' + context.parsed.r + '%';
           },
         },

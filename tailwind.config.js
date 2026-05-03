@@ -31,11 +31,6 @@ module.exports = {
         'stagger-2': 'slideUp 0.5s ease-out 0.2s both',
         'stagger-3': 'slideUp 0.5s ease-out 0.3s both',
         'stagger-4': 'slideUp 0.5s ease-out 0.4s both',
-        'slide-in-left': 'slideInLeft 0.6s ease-out both',
-        'slide-in-right': 'slideInRight 0.6s ease-out both',
-        'float': 'float 3s ease-in-out infinite',
-        'bounce-soft': 'bounceSoft 2s ease-in-out infinite',
-        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -53,26 +48,6 @@ module.exports = {
         slideLeft: {
           from: { opacity: '0', transform: 'translateX(-1rem)' },
           to: { opacity: '1', transform: 'translateX(0)' },
-        },
-        slideInLeft: {
-          from: { opacity: '0', transform: 'translateX(-2rem)' },
-          to: { opacity: '1', transform: 'translateX(0)' },
-        },
-        slideInRight: {
-          from: { opacity: '0', transform: 'translateX(2rem)' },
-          to: { opacity: '1', transform: 'translateX(0)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-0.5rem)' },
-        },
-        bounceSoft: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-0.25rem)' },
-        },
-        pulseGlow: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.6' },
         },
       },
     },

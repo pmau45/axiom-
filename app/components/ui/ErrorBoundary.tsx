@@ -22,11 +22,9 @@ export default class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught:', error, info);
-    }
+  componentDidCatch(_error: Error, _info: ErrorInfo) {
+    // Errors are handled silently in production
+    // In development, React DevTools will show the error
   }
 
   render() {

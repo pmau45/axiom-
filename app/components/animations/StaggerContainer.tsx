@@ -6,7 +6,6 @@ import { type ReactNode } from 'react';
 interface StaggerContainerProps {
   children: ReactNode;
   className?: string;
-  staggerDelay?: number;
   threshold?: number;
 }
 

@@ -29,8 +29,8 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
       label: 'Training',
       submenu: [
         { href: '/services', label: 'All Services' },
-        { href: '/behavior', label: 'Behavior Modification' },
-        { href: '/obedience', label: 'Advanced Obedience' },
+        { href: '/services/behavior-modification', label: 'Behavior Modification' },
+        { href: '/services/advanced-obedience', label: 'Advanced Obedience' },
         { href: '/philosophy', label: 'Our Philosophy' },
       ],
     },

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { FAQSection, FAQSchema } from '@/app/components/ui/FAQSection';
+import Link from 'next/link';
 import OpenModalButton from '@/app/components/forms/OpenModalButton';
 import { StaggerContainer } from '@/app/components/animations/StaggerContainer';
 import AnimatedSection from '@/app/components/animations/AnimatedSection';
@@ -145,21 +146,21 @@ export default function BrunswickGaTrainingPage() {
             Training Services in Coastal Georgia
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <a href="/services/behavior-modification" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#FF5E00] transition-colors group">
+            <Link href="/services/behavior-modification" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#FF5E00] transition-colors group">
               <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3 group-hover:text-[#FF5E00] transition-colors">Behavior Modification</h3>
               <p className="text-[#C5C6C7] leading-relaxed mb-4">Address reactivity, aggression, anxiety, and resource guarding through science-based training.</p>
               <span className="text-[#FF5E00] font-semibold">Learn more →</span>
-            </a>
-            <a href="/services/advanced-obedience" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#7A8B66] transition-colors group">
+            </Link>
+            <Link href="/services/advanced-obedience" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#7A8B66] transition-colors group">
               <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3 group-hover:text-[#7A8B66] transition-colors">Advanced Obedience</h3>
               <p className="text-[#C5C6C7] leading-relaxed mb-4">Off-leash reliability for beach adventures, marina visits, and coastal walks.</p>
               <span className="text-[#7A8B66] font-semibold">Learn more →</span>
-            </a>
-            <a href="/community" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#FF5E00] transition-colors group">
+            </Link>
+            <Link href="/community" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#FF5E00] transition-colors group">
               <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3 group-hover:text-[#FF5E00] transition-colors">Axiom Cares</h3>
               <p className="text-[#C5C6C7] leading-relaxed mb-4">Free in-home visits for newly adopted dogs in Brunswick and the Golden Isles. No judgment, no pressure, no bill.</p>
               <span className="text-[#FF5E00] font-semibold">Learn more →</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

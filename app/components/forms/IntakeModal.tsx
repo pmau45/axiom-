@@ -78,11 +78,33 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
+  // Use ref to avoid dependency issues with effects
+  const handleCloseRef = useRef(() => {
+    setIsSuccess(false);
+    setErrors({});
+    setTouched({});
+    setSubmitError('');
+    setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
+    onClose();
+  });
+
+  // Keep ref synced
+  useEffect(() => {
+    handleCloseRef.current = () => {
+      setIsSuccess(false);
+      setErrors({});
+      setTouched({});
+      setSubmitError('');
+      setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
+      onClose();
+    };
+  }, [onClose]);
+
+  const handleClose = () => handleCloseRef.current();
+
   useEffect(() => {
     if (isOpen) {
-      // Focus close button when modal opens
       closeButtonRef.current?.focus();
-      // Prevent body scroll
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -95,23 +117,13 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) handleClose();
+      if (e.key === 'Escape' && isOpen) handleCloseRef.current();
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const handleClose = () => {
-    setIsSuccess(false);
-    setErrors({});
-    setTouched({});
-    setSubmitError('');
-    setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
-    onClose();
-  };
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

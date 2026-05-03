@@ -1,4 +1,4 @@
-import type { Metadata, MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://axiom-canine.netlify.app';

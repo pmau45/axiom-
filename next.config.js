@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable telemetry
-  // NEXT_TELEMETRY_DISABLED is set via env
-  experimental: {},
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],

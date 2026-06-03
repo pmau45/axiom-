@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Netlify Form Declaration</title>
+  </head>
+  <body>
+    <!--
+      This file exists solely so that Netlify's build bot can detect and register
+      the "intake" form during deployment. It is not linked from the site.
+      The actual form is rendered by React (app/components/forms/IntakeModal.tsx) and submits via fetch.
+      See: https://docs.netlify.com/forms/setup/#javascript-forms
+    -->
+    <form
+      name="intake"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="intake" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="text" name="dog_name" />
+      <select name="service">
+        <option value="behavior">Behavior Modification</option>
+        <option value="obedience">Advanced Obedience</option>
+        <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

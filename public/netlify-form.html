@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Netlify Form Declaration</title>
+  </head>
+  <body>
+    <!--
+      Form is now declared in app/layout.tsx without data-netlify attributes
+      for @netlify/plugin-nextjs v5 compatibility.
+    -->
+    <form
+      name="intake"
+      method="POST"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="intake" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="text" name="dog_name" />
+      <select name="service">
+        <option value="behavior">Behavior Modification</option>
+        <option value="obedience">Advanced Obedience</option>
+        <option value="board-train">Board &amp; Train</option>
+        <option value="in-home">In-Home Training</option>
+        <option value="group">Group Classes</option>
+        <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

@@ -207,6 +207,32 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+
+        {/* Netlify Forms declaration - hidden form for build-time detection */}
+        <form
+          name="intake"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          style={{ display: 'none' }}
+          aria-hidden="true"
+        >
+          <input type="hidden" name="form-name" value="intake" />
+          <input type="text" name="bot-field" />
+          <input type="text" name="name" />
+          <input type="tel" name="phone" />
+          <input type="text" name="dog_name" />
+          <select name="service">
+            <option value="behavior">Behavior Modification</option>
+            <option value="obedience">Advanced Obedience</option>
+            <option value="board-train">Board &amp; Train</option>
+            <option value="in-home">In-Home Training</option>
+            <option value="group">Group Classes</option>
+            <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
+          </select>
+          <textarea name="message"></textarea>
+        </form>
+
         <ErrorBoundary>
           <SiteLayout>{children}</SiteLayout>
         </ErrorBoundary>

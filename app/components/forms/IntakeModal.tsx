@@ -167,6 +167,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setSubmitError('');
 
     try {
+      // Submit to Netlify Forms endpoint
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -177,7 +178,6 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
           dog_name: values.dog_name,
           service: values.service,
           message: values.message,
-          'bot-field': values['bot-field'],
         }),
       });
 
@@ -186,7 +186,8 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
       }
 
       setIsSuccess(true);
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitError(
         'Something went wrong. Please try again or call us directly at (904) 458-7561.'
       );
@@ -260,13 +261,11 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                 onSubmit={handleSubmit}
                 name="intake"
                 method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 className="space-y-6"
                 noValidate
                 aria-label="Dog training intake form"
               >
-                {/* Netlify hidden field */}
+                {/* Netlify hidden field - required for Netlify to recognize form */}
                 <input type="hidden" name="form-name" value="intake" />
 
                 {/* Honeypot field (hidden from humans) */}
@@ -448,7 +447,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors disabled:opacity-70"
                   aria-busy={isSubmitting}
                 >
                   {isSubmitting ? (

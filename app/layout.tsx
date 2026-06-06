@@ -208,12 +208,12 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        {/* Netlify Forms declaration - form name for submission routing */}
-        {/* Note: data-netlify attributes removed for @netlify/plugin-nextjs v5 compatibility */}
-        {/* Form submissions are handled via fetch() to POST / with form-name: intake */}
+        {/* Netlify Forms declaration - required for Netlify to register the form at build time */}
         <form
           name="intake"
           method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           style={{ display: 'none' }}
           aria-hidden="true"
         >

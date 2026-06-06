@@ -6,12 +6,15 @@
   </head>
   <body>
     <!--
-      Form is now declared in app/layout.tsx without data-netlify attributes
-      for @netlify/plugin-nextjs v5 compatibility.
+      Static form declaration required for Netlify Forms build-time detection.
+      This file is crawled by Netlify at build time to register the "intake" form.
+      The actual submission is handled by IntakeModal.tsx via fetch() to POST /.
     -->
     <form
       name="intake"
       method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       hidden
     >
       <input type="hidden" name="form-name" value="intake" />

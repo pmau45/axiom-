@@ -174,6 +174,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'intake',
+          'bot-field': values['bot-field'],
           name: values.name,
           phone: values.phone,
           dog_name: values.dog_name,

@@ -342,7 +342,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                     <option value="board-train">Board &amp; Train</option>
                     <option value="in-home">In-Home Training</option>
                     <option value="group">Group Classes</option>
-                    <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
+                    <option value="rescue">Rescue &#47; Adoption Adjustment (Free)</option>
                   </select>
                   {errors.service && touched.service && (
                     <p id="service-error" role="alert" className="text-red-400 text-xs mt-1">
@@ -389,8 +389,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                   Send Information
                   <Send className="w-5 h-5" aria-hidden="true" />
                 </button>
-              </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>

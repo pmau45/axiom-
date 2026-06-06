@@ -167,8 +167,8 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setSubmitError('');
 
     try {
-      // Submit to the current page path so Netlify can capture the form reliably
-      const response = await fetch(window.location.pathname || '/', {
+      // Submit to the Netlify form endpoint declared at the site root
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({

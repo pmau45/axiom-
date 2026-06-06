@@ -24,13 +24,6 @@ interface FormErrors {
   message?: string;
 }
 
-// Encode form data for Netlify Forms (application/x-www-form-urlencoded)
-function encode(data: Record<string, string>) {
-  return Object.entries(data)
-    .map(([key, val]) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`)
-    .join('&');
-}
-
 function validate(values: Omit<FormValues, 'bot-field'>): FormErrors {
   const errors: FormErrors = {};
 
@@ -70,37 +63,17 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FormErrors, boolean>>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState('');
 
   // Focus management: trap focus inside modal
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Use ref to avoid dependency issues with effects
-  const handleCloseRef = useRef(() => {
-    setIsSuccess(false);
+  const handleClose = () => {
     setErrors({});
     setTouched({});
-    setSubmitError('');
     setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
     onClose();
-  });
-
-  // Keep ref synced
-  useEffect(() => {
-    handleCloseRef.current = () => {
-      setIsSuccess(false);
-      setErrors({});
-      setTouched({});
-      setSubmitError('');
-      setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
-      onClose();
-    };
-  }, [onClose]);
-
-  const handleClose = () => handleCloseRef.current();
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -117,7 +90,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) handleCloseRef.current();
+      if (e.key === 'Escape' && isOpen) handleClose();
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
@@ -146,12 +119,10 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setErrors((prev) => ({ ...prev, [name]: newErrors[name as keyof FormErrors] }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     // If honeypot is filled, silently succeed (spam bot)
     if (values['bot-field']) {
-      setIsSuccess(true);
+      e.preventDefault();
       return;
     }
 
@@ -159,41 +130,9 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setTouched({ name: true, phone: true, service: true, message: true });
     const validationErrors = validate(values);
     if (Object.keys(validationErrors).length > 0) {
+      e.preventDefault();
       setErrors(validationErrors);
       return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitError('');
-
-    try {
-      // Submit to the Netlify form endpoint declared at the site root
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
-          'form-name': 'intake',
-          'bot-field': values['bot-field'],
-          name: values.name,
-          phone: values.phone,
-          dog_name: values.dog_name,
-          service: values.service,
-          message: values.message,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Submission failed with status ${response.status}`);
-      }
-
-      setIsSuccess(true);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitError(
-        'Something went wrong. Please try again or call us directly at (904) 458-7561.'
-      );
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -244,32 +183,30 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
         </button>
 
         <div className="p-8 md:p-14 relative">
-          {!isSuccess ? (
-            <>
-              <div className="text-center mb-12">
-                <h2
-                  id="modal-title"
-                  className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
-                >
-                  Let&apos;s Get to Work
-                </h2>
-                <p className="text-[#C5C6C7] text-lg max-w-2xl mx-auto">
-                  Fill out the form and we&apos;ll reach out within 24 hours.
-                </p>
-              </div>
+          <div className="text-center mb-12">
+            <h2
+              id="modal-title"
+              className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            >
+              Let&apos;s Get to Work
+            </h2>
+            <p className="text-[#C5C6C7] text-lg max-w-2xl mx-auto">
+              Fill out the form and we&apos;ll reach out within 24 hours.
+            </p>
+          </div>
 
-              <form
-                onSubmit={handleSubmit}
-                name="intake"
-                method="POST"
-                action="/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                encType="application/x-www-form-urlencoded"
-                className="space-y-6"
-                noValidate
-                aria-label="Dog training intake form"
-              >
+          <form
+            onSubmit={handleSubmit}
+            name="intake"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            encType="application/x-www-form-urlencoded"
+            className="space-y-6"
+            noValidate
+            aria-label="Dog training intake form"
+          >
                 {/* Netlify hidden field - required for Netlify to recognize form */}
                 <input type="hidden" name="form-name" value="intake" />
 
@@ -444,79 +381,16 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                   )}
                 </div>
 
-                {/* Global Submit Error */}
-                {submitError && (
-                  <p role="alert" className="text-red-400 text-sm text-center bg-red-900/20 border border-red-800 p-3">
-                    {submitError}
-                  </p>
-                )}
-
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors disabled:opacity-70"
-                  aria-busy={isSubmitting}
+                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <span>Sending...</span>
-                      <svg
-                        className="animate-spin w-5 h-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        />
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                        />
-                      </svg>
-                    </>
-                  ) : (
-                    <>
-                      Send Information
-                      <Send className="w-5 h-5" aria-hidden="true" />
-                    </>
-                  )}
+                  Send Information
+                  <Send className="w-5 h-5" aria-hidden="true" />
                 </button>
               </form>
-            </>
-          ) : (
-            /* Success State */
-            <div className="flex flex-col items-center justify-center py-10 text-center page-enter">
-              <CheckCircle2
-                className="w-20 h-20 text-[#7A8B66] mb-6"
-                aria-hidden="true"
-              />
-              <h3
-                id="modal-title"
-                className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-white"
-              >
-                We Got It.
-              </h3>
-              <p className="text-[#C5C6C7] text-lg max-w-md">
-                Your information was sent successfully. We&apos;ll be reaching out to you shortly.
-              </p>
-              <button
-                onClick={handleClose}
-                className="mt-10 font-oswald uppercase tracking-widest text-[#C5C6C7] hover:text-white border-b border-transparent hover:border-white transition-all pb-1"
-                aria-label="Close confirmation and return to site"
-              >
-                Close Window
-              </button>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

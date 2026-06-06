@@ -398,6 +398,9 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                     </option>
                     <option value="behavior">Behavior Modification</option>
                     <option value="obedience">Advanced Obedience</option>
+                    <option value="board-train">Board &amp; Train</option>
+                    <option value="in-home">In-Home Training</option>
+                    <option value="group">Group Classes</option>
                     <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
                   </select>
                   {errors.service && touched.service && (

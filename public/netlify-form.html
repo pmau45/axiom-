@@ -8,7 +8,8 @@
     <!--
       Static form declaration required for Netlify Forms build-time detection.
       This file is crawled by Netlify at build time to register the "intake" form.
-      The actual submission is handled by the native HTML form POST to /.
+      The React form submits via fetch to this file's path (/__forms.html) so that
+      Netlify's form handler intercepts the POST instead of Next.js.
     -->
     <form
       name="intake"

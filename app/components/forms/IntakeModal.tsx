@@ -63,6 +63,9 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FormErrors, boolean>>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Focus management: trap focus inside modal
   const modalRef = useRef<HTMLDivElement>(null);
@@ -72,6 +75,9 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setErrors({});
     setTouched({});
     setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
+    setSubmitting(false);
+    setSubmitted(false);
+    setSubmitError(null);
     onClose();
   };
 
@@ -119,10 +125,12 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setErrors((prev) => ({ ...prev, [name]: newErrors[name as keyof FormErrors] }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     // If honeypot is filled, silently succeed (spam bot)
     if (values['bot-field']) {
-      e.preventDefault();
+      setSubmitted(true);
       return;
     }
 
@@ -130,9 +138,38 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setTouched({ name: true, phone: true, service: true, message: true });
     const validationErrors = validate(values);
     if (Object.keys(validationErrors).length > 0) {
-      e.preventDefault();
       setErrors(validationErrors);
       return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const formData = new URLSearchParams();
+      formData.append('form-name', 'intake');
+      formData.append('name', values.name);
+      formData.append('phone', values.phone);
+      formData.append('dog_name', values.dog_name);
+      formData.append('service', values.service);
+      formData.append('message', values.message);
+
+      const response = await fetch('/netlify-form.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setSubmitError('Something went wrong. Please try again or call us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      setSubmitError('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -183,6 +220,27 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
         </button>
 
         <div className="p-8 md:p-14 relative">
+          {submitted ? (
+            <div className="text-center py-12">
+              <CheckCircle2 className="w-16 h-16 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
+              <h2
+                id="modal-title"
+                className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+              >
+                Got It!
+              </h2>
+              <p className="text-[#C5C6C7] text-lg max-w-md mx-auto mb-8">
+                We&apos;ll reach out within 24 hours. Talk soon.
+              </p>
+              <button
+                onClick={handleClose}
+                className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-4 px-10 hover:bg-[#CC4B00] transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          ) : (
+          <>
           <div className="text-center mb-12">
             <h2
               id="modal-title"
@@ -199,10 +257,8 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
             onSubmit={handleSubmit}
             name="intake"
             method="POST"
-            action="/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            encType="application/x-www-form-urlencoded"
             className="space-y-6"
             noValidate
             aria-label="Dog training intake form"
@@ -382,14 +438,22 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                 </div>
 
                 {/* Submit */}
+                {submitError && (
+                  <p role="alert" className="text-red-400 text-sm text-center">
+                    {submitError}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors"
+                  disabled={submitting}
+                  className="w-full btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest py-5 flex items-center justify-center gap-3 mt-8 hover:bg-[#CC4B00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Information
-                  <Send className="w-5 h-5" aria-hidden="true" />
+                  {submitting ? 'Sending...' : 'Send Information'}
+                  {!submitting && <Send className="w-5 h-5" aria-hidden="true" />}
                 </button>
           </form>
+          </>
+          )}
         </div>
       </div>
     </div>

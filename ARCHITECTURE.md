@@ -115,28 +115,29 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 
 ```
 / (Home)
+├── /blog
+│   └── /[slug]
 ├── /services
-│   ├── /group-classes
-│   ├── /board-and-train
-│   ├── /one-on-one
 │   ├── /behavior-modification
 │   ├── /advanced-obedience
+│   ├── /board-and-train
+│   ├── /group-classes
 │   └── /in-home-dog-training
-├── /behavior (Behavior modification overview)
-├── /obedience (Advanced obedience overview)
-├── /community (Axiom Cares community programs)
 ├── /training-issues
 │   ├── /aggression
 │   ├── /reactive-dog
 │   └── /leash-pulling
+├── /philosophy (Training philosophy dashboard)
+├── /community (Axiom Cares community programs)
 ├── /contact (Contact page)
+├── /[city] landing pages (Jacksonville, Nocatee, Ponte Vedra, Palm Coast, Brunswick, St. Augustine)
 └── /not-found (404)
 ```
 
 ## Styling Architecture
 
 ### Tailwind CSS
-- Config: `config/tailwind.config.js`
+- Config: `tailwind.config.js`
 - Global styles: `app/globals.css`
 - Custom colors defined in tailwind config
 - Brand colors: Dark (#0B0C10), Orange (#FF5E00)
@@ -172,12 +173,10 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 ### TypeScript Config
 - Strict mode enabled
 - All components are fully typed
-- Shared types in `app/types/index.ts`
+- Feature-specific types live alongside the relevant component or page
 
 ### Key Type Definitions
-- `ClientIntakeFormData` - Form data
-- `TrainingProgram` - Program info
-- `NavbarProps`, `FooterProps`, etc. - Component props
+- `NavbarProps`, `NavLink`, `FormValues`, and similar props/types are defined near the components that use them
 
 ## Deployment Architecture
 

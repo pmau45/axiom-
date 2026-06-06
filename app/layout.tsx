@@ -212,8 +212,10 @@ export default function RootLayout({
         <form
           name="intake"
           method="POST"
+          action="/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          encType="application/x-www-form-urlencoded"
           style={{ display: 'none' }}
           aria-hidden="true"
         >

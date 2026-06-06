@@ -11,8 +11,8 @@ Be respectful, inclusive, and professional in all interactions.
 1. **Fork the repository** on GitHub
 2. **Clone your fork locally:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/refactored-octo-spoon.git
-   cd refactored-octo-spoon
+   git clone https://github.com/YOUR_USERNAME/axiom-.git
+   cd axiom-
    ```
 
 3. **Create a branch** for your changes:
@@ -25,7 +25,7 @@ Be respectful, inclusive, and professional in all interactions.
 ## Before You Start
 
 - Read [ARCHITECTURE.md](./ARCHITECTURE.md) to understand the codebase
-- Check existing [GitHub Issues](https://github.com/pmau45/refactored-octo-spoon/issues) to avoid duplicates
+- Check existing [GitHub Issues](https://github.com/pmau45/axiom-/issues) to avoid duplicates
 - Discuss major changes in an issue first
 
 ## Making Changes
@@ -59,7 +59,7 @@ Be respectful, inclusive, and professional in all interactions.
 ### TypeScript
 
 - All components must have proper type definitions
-- Use shared types from `app/types/index.ts` when applicable
+- Keep feature-specific types near the code that uses them
 - Add new types for new features
 
 ### Styling

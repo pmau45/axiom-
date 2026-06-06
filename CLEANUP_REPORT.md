@@ -7,11 +7,11 @@
 
 ## 📊 Summary
 
-Successfully reorganized and optimized the entire Axiom Canine codebase with:
+Successfully reorganized and documented the Axiom Canine codebase with:
 - **0 breaking changes** - All functionality preserved
 - **100% backward compatibility** - Imports automatically updated
 - **Improved developer experience** - Better structure and documentation
-- **Enhanced code quality** - Better type safety and linting
+- **Current tree alignment** - Docs match the repo as it exists now
 
 ---
 
@@ -22,22 +22,19 @@ Successfully reorganized and optimized the entire Axiom Canine codebase with:
 - **Benefit:** Smaller bundle size, fewer dependencies to maintain
 - **Status:** Removed from `package.json`
 
-### 2. Organized Config Files ✅
-**Created `/config` folder with:**
-- `config/tailwind.config.js` - Tailwind CSS configuration
-- `config/postcss.config.js` - PostCSS configuration
+### 2. Kept Config Files at the Root ✅
+- `tailwind.config.js` - Tailwind CSS configuration
+- `postcss.config.js` - PostCSS configuration
 - `next.config.js` - Kept in root (required by Next.js)
 
-**Benefit:** Cleaner root directory, configs grouped logically
+**Benefit:** Matches the current project layout and Next.js conventions
 
-### 3. Created `/types` Folder ✅
-**Created `app/types/index.ts` with shared types:**
-- `ClientIntakeFormData` - Form data interface
-- `TrainingProgram` - Program structure
-- Component props interfaces (Navbar, Footer, Modal, etc.)
-- `ModalEvent` - Modal communication types
+### 3. Standardized Feature-Local Types ✅
+**Types are colocated with the feature that uses them:**
+- `NavbarProps`, `NavLink`, `FormValues`, and similar component props live next to their components
+- Feature data such as blog metadata and training philosophy FAQs live beside the feature modules that consume them
 
-**Benefit:** Centralized type definitions, easier maintenance
+**Benefit:** Easier to maintain without a dedicated shared-types folder that the repo doesn't use
 
 ---
 
@@ -151,14 +148,7 @@ axiom-canine/
 ├── 📄 .eslintrc.json         (enhanced)
 ├── 📄 next.config.js         (root - required)
 │
-├── 📁 config/                ← NEW: Config folder
-│   ├── tailwind.config.js
-│   └── postcss.config.js
-│
 ├── 📁 app/
-│   ├── 📁 types/             ← NEW: Shared types
-│   │   └── index.ts
-│   │
 │   ├── 📁 components/
 │   │   ├── 📁 layout/        ← REORGANIZED
 │   │   ├── 📁 forms/         ← REORGANIZED
@@ -168,12 +158,11 @@ axiom-canine/
 │   ├── page.tsx
 │   ├── layout.tsx
 │   ├── globals.css
-│   ├── types/
+│   ├── blog/
 │   ├── services/
 │   ├── training-issues/
-│   ├── behavior/
-│   ├── obedience/
 │   ├── community/
+│   ├── philosophy/
 │   └── contact/
 │
 ├── 📁 public/
@@ -196,14 +185,14 @@ axiom-canine/
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
 | Unused Dependencies | 1 | 0 | -100% ✅ |
-| Root-level Config Files | 3 | 1 | -67% ✅ |
+| Root-level Config Files | 3 | 3 | 0 |
 | Documentation Files | 1 | 4 | +300% ✅ |
 | ESLint Rules | 1 | 11 | +1000% ✅ |
 | TypeScript Files | 25 | 27 | +2 ✅ |
 
 ### Organization
 - ✅ Component clarity: Flat → Semantic folders
-- ✅ Type safety: Scattered → Centralized `app/types/`
+- ✅ Type safety: Scattered → Feature-local
 - ✅ Developer guidance: Minimal → Comprehensive docs
 - ✅ Linting coverage: Minimal → Comprehensive rules
 

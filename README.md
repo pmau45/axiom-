@@ -16,27 +16,36 @@ Professional dog training website for Axiom Canine, Jacksonville, FL. Built with
 ```
 axiom-canine/
 ├── app/
+│   ├── blog/               # Blog listing, article pages, MDX content, helpers
+│   ├── brunswick-ga/       # Brunswick, GA landing page
+│   ├── community/          # Axiom Cares page
+│   ├── components/         # Layout, forms, animations, dashboard, UI
+│   ├── contact/            # Contact page
+│   ├── jacksonville/       # Jacksonville landing page
+│   ├── nocatee/            # Nocatee landing page
+│   ├── palm-coast/         # Palm Coast landing page
+│   ├── philosophy/         # Training philosophy dashboard
+│   ├── ponte-vedra/        # Ponte Vedra landing page
+│   ├── services/           # Service pages and program overview
+│   ├── st-augustine/       # St. Augustine landing page
+│   ├── training-issues/    # Issue-specific training pages
 │   ├── layout.tsx          # Root layout (fonts, metadata, JSON-LD, SiteLayout)
 │   ├── page.tsx            # Home page
 │   ├── not-found.tsx       # 404 page
 │   ├── globals.css         # Global styles (Tailwind + custom CSS)
-│   ├── behavior/
-│   │   └── page.tsx        # Behavior Modification page
-│   ├── obedience/
-│   │   └── page.tsx        # Advanced Obedience page
-│   ├── community/
-│   │   └── page.tsx        # Axiom Cares page
-│   └── components/
-│       ├── SiteLayout.tsx  # Client wrapper (modal state + event bus)
-│       ├── Navbar.tsx      # Navigation (uses next/link + usePathname)
-│       ├── Footer.tsx      # Footer
-│       ├── IntakeModal.tsx # Intake form (Netlify Forms)
-│       ├── OpenModalButton.tsx  # Button that triggers modal via custom event
-│       └── ErrorBoundary.tsx    # React error boundary
+│   ├── robots.ts           # robots.txt route
+│   └── sitemap.ts          # sitemap route
 ├── public/
-│   ├── robots.txt
-│   ├── sitemap.xml
-│   └── manifest.json
+│   ├── apple-touch-icon.png
+│   ├── favicon.png
+│   ├── googlea7c3e38be4a6d070.html
+│   ├── icon-192.png
+│   ├── icon-512.png
+│   ├── manifest.json
+│   ├── netlify-form.html
+│   └── og-image.png
+├── docs/
+│   └── content-drafts/
 ├── netlify.toml            # Netlify build + plugin config
 ├── .env.example            # Environment variable template
 ├── .netlifyignore
@@ -57,8 +66,8 @@ axiom-canine/
 
 ```bash
 # Clone the repository
-git clone https://github.com/pmau45/refactored-octo-spoon.git
-cd refactored-octo-spoon
+git clone https://github.com/pmau45/axiom-.git
+cd axiom-
 
 # Install dependencies
 npm install
@@ -153,9 +162,19 @@ npm run lint     # Run ESLint
 | Route | Page | Description |
 |---|---|---|
 | `/` | Home | Hero, philosophy, services overview |
-| `/behavior` | Behavior Modification | Reactivity, aggression, resource guarding |
-| `/obedience` | Advanced Obedience | Off-leash reliability, recall, place command |
+| `/blog` | Blog index | Training insights and article listings |
+| `/blog/[slug]` | Blog article | Individual MDX article pages |
+| `/services` | Services overview | Program selector and training issues |
+| `/services/behavior-modification` | Behavior Modification | Reactivity, aggression, resource guarding |
+| `/services/advanced-obedience` | Advanced Obedience | Off-leash reliability, recall, place command |
+| `/services/board-and-train` | Board & Train | Immersive training program |
+| `/services/group-classes` | Group Classes | Structured group practice |
+| `/services/in-home-dog-training` | In-Home Training | On-site sessions in the dog's environment |
+| `/training-issues/*` | Issue guides | Aggression, reactive dog, leash pulling |
+| `/philosophy` | Training Philosophy | Dashboard with charts and FAQ content |
 | `/community` | Axiom Cares | Free rescue/adoption support |
+| `/contact` | Contact | Intake steps, service area, FAQs |
+| `/[city]` | Location pages | Jacksonville, Nocatee, Ponte Vedra, St. Augustine, Palm Coast, Brunswick, GA |
 
 ## Accessibility
 

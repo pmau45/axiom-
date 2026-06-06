@@ -10,8 +10,8 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/pmau45/refactored-octo-spoon.git
-   cd refactored-octo-spoon
+   git clone https://github.com/pmau45/axiom-.git
+   cd axiom-
    ```
 
 2. **Install dependencies:**
@@ -51,19 +51,19 @@ app/
 ├── page.tsx                 # Home page
 ├── layout.tsx              # Root layout with metadata
 ├── globals.css             # Global styles
-├── types/
-│   └── index.ts           # Shared TypeScript types
 ├── components/
-│   ├── layout/            # Layout components (Navbar, Footer, etc.)
-│   ├── forms/             # Form components (IntakeModal, etc.)
-│   ├── animations/        # Animation components
-│   └── ui/                # Utility components
-├── services/              # Service page routes
-├── training-issues/       # Training issue guides
-├── behavior/              # Behavior modification page
-├── obedience/             # Obedience training page
-├── community/             # Community programs page
-└── contact/               # Contact page
+│   ├── layout/             # Layout components (Navbar, Footer, SiteLayout)
+│   ├── forms/              # Form components (IntakeModal, OpenModalButton)
+│   ├── animations/         # Animation components
+│   ├── dashboard/          # Training philosophy dashboard
+│   └── ui/                 # Utility components
+├── blog/                   # Blog index, article pages, MDX content, helpers
+├── services/               # Service page routes
+├── training-issues/        # Training issue guides
+├── community/              # Community programs page
+├── contact/                # Contact page
+├── philosophy/             # Training philosophy dashboard route
+└── location pages/         # City landing pages (Jacksonville, Nocatee, Ponte Vedra, Palm Coast, Brunswick, St. Augustine)
 
 public/
 ├── manifest.json          # PWA manifest
@@ -73,10 +73,6 @@ public/
 ├── icon-192.png           # PWA icon
 ├── icon-512.png           # PWA icon (large)
 └── og-image.png           # Social media preview
-
-config/
-├── tailwind.config.js     # Tailwind CSS config
-└── postcss.config.js      # PostCSS config
 ```
 
 ## Key Technologies
@@ -121,7 +117,7 @@ config/
    - `components/animations/` - Animation components
    - `components/ui/` - Utility/UI components
 
-2. Add TypeScript types to `app/types/index.ts`
+2. Add TypeScript types next to the component, or create a shared module if the types are reused broadly
 
 ### Styling
 

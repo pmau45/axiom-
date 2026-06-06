@@ -167,9 +167,8 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     setSubmitError('');
 
     try {
-      // Submit to Netlify Forms endpoint
-      // The @netlify/plugin-nextjs automatically creates a form handler at POST /
-      const response = await fetch('/', {
+      // Submit to the current page path so Netlify can capture the form reliably
+      const response = await fetch(window.location.pathname || '/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
@@ -263,6 +262,10 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                 onSubmit={handleSubmit}
                 name="intake"
                 method="POST"
+                action="/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                encType="application/x-www-form-urlencoded"
                 className="space-y-6"
                 noValidate
                 aria-label="Dog training intake form"

@@ -44,8 +44,6 @@ axiom-canine/
 │   ├── manifest.json
 │   ├── netlify-form.html
 │   └── og-image.png
-├── docs/
-│   └── content-drafts/
 ├── netlify.toml            # Netlify build + plugin config
 ├── .env.example            # Environment variable template
 ├── .netlifyignore

@@ -97,7 +97,9 @@ export default function StAugustineTrainingPage() {
               Training for <span className="text-white">The Nation&apos;s Oldest City.</span>
             </h2>
             <p className="text-[#C5C6C7] text-lg max-w-2xl mx-auto">
-              Horse carriages, crowded streets, outdoor dining, and beach access — St. Augustine requires a dog that can handle it all.
+              From the Historic District and St. George Street to Anastasia Island, St. Augustine
+              Beach, Vilano Beach, and World Golf Village, St. Augustine requires a dog that can
+              handle changing environments with composure.
             </p>
           </div>
           
@@ -108,8 +110,10 @@ export default function StAugustineTrainingPage() {
                   <Landmark className="w-8 h-8 text-[#FF5E00] mb-4" aria-hidden="true" />
                   <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3">Historic District Distractions</h3>
                   <p className="text-[#C5C6C7] leading-relaxed">
-                    St. George Street and the historic district mean crowds, horse-drawn carriages, street performers, 
-                    and constant stimulation. We train calm, controlled behavior amid downtown chaos.
+                    St. George Street, the Historic District, and the narrow downtown blocks mean
+                    crowds, horse-drawn carriages, street performers, and constant stimulation. We
+                    train calm, controlled behavior for dogs that struggle with reactive outbursts
+                    amid downtown chaos.
                   </p>
                 </div>
               </AnimatedSection>
@@ -118,8 +122,9 @@ export default function StAugustineTrainingPage() {
                   <Palmtree className="w-8 h-8 text-[#7A8B66] mb-4" aria-hidden="true" />
                   <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3">Beach &amp; Waterfront Control</h3>
                   <p className="text-[#C5C6C7] leading-relaxed">
-                    St. Augustine Beach, Vilano Beach, and the Intracoastal offer endless distractions. 
-                    We build off-leash reliability and water safety for coastal living.
+                    Anastasia Island, St. Augustine Beach, Vilano Beach, and the Intracoastal offer
+                    endless distractions. We build off-leash reliability and water safety for
+                    coastal living.
                   </p>
                 </div>
               </AnimatedSection>
@@ -128,8 +133,9 @@ export default function StAugustineTrainingPage() {
                   <Camera className="w-8 h-8 text-[#FF5E00] mb-4" aria-hidden="true" />
                   <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3">Outdoor Dining &amp; Tourism</h3>
                   <p className="text-[#C5C6C7] leading-relaxed">
-                    St. Augustine&apos;s restaurant scene and tourism economy mean dogs must behave around 
-                    outdoor diners, tour groups, and constant foot traffic. We train public neutrality.
+                    From the restaurants near the Plaza to the neighborhoods around World Golf
+                    Village, St. Augustine&apos;s tourism economy means dogs must behave around outdoor
+                    diners, tour groups, and constant foot traffic. We train public neutrality.
                   </p>
                 </div>
               </AnimatedSection>
@@ -144,6 +150,23 @@ export default function StAugustineTrainingPage() {
           <h2 id="staug-services-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center">
             Training Services in St. Augustine
           </h2>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed text-center max-w-4xl mx-auto mb-12">
+            If your dog is struggling with crowded sidewalks, visitor-heavy public spaces, or
+            beachside overstimulation, our{' '}
+            <Link href="/services/behavior-modification" className="text-[#FF5E00] hover:text-white transition-colors">
+              behavior modification services
+            </Link>{' '}
+            can address the root cause. We also help owners working through{' '}
+            <Link href="/training-issues/reactive-dog" className="text-[#FF5E00] hover:text-white transition-colors">
+              reactive dog behavior
+            </Link>{' '}
+            and more serious{' '}
+            <Link href="/training-issues/aggression" className="text-[#FF5E00] hover:text-white transition-colors">
+              aggression issues
+            </Link>{' '}
+            that show up around tourists, other dogs, and high-pressure environments in St.
+            Augustine.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             <Link href="/services/behavior-modification" className="bg-[#1A2030] p-8 border border-[#1A2030] hover:border-[#FF5E00] transition-colors group">
               <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-3 group-hover:text-[#FF5E00] transition-colors">Behavior Modification</h3>

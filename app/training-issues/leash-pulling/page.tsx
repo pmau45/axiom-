@@ -157,6 +157,28 @@ export default function LeashPullingPage() {
         </div>
       </section>
 
+      {/* ── Jacksonville Context ──────────────────────── */}
+      <section
+        className="py-16 bg-[#0B0C10] border-b border-[#1A2030]"
+        aria-labelledby="leash-jax-walks-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="leash-jax-walks-heading"
+            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+          >
+            Leash Pulling Solutions for Jacksonville Walks
+          </h2>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed">
+            Jacksonville walks can shift fast from quiet neighborhood sidewalks to busy trails,
+            parks, and storefronts with bikes, joggers, and other dogs passing close by. We build
+            loose-leash skills that hold up outside the driveway so your dog can stay connected to
+            you through real local distractions instead of dragging you from one trigger to the
+            next.
+          </p>
+        </div>
+      </section>
+
       {/* ── Process ───────────────────────────────────── */}
       <section
         className="py-24 bg-[#0B0C10] border-b border-[#1A2030]"
@@ -189,6 +211,27 @@ export default function LeashPullingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── High Arousal Context ──────────────────────── */}
+      <section
+        className="py-16 bg-[#050505] border-b border-[#1A2030]"
+        aria-labelledby="leash-jax-arousal-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="leash-jax-arousal-heading"
+            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+          >
+            Handling High Arousal at Jax Dog Parks & Beaches
+          </h2>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed">
+            For many dogs, leash pulling spikes around the places they find most exciting. Whether
+            that is a crowded dog park, the beach access points, or a trail packed with movement,
+            the real issue is often over-arousal. We teach dogs how to downshift, re-engage with
+            the handler, and maintain control before excitement turns every outing into a tug-of-war.
+          </p>
         </div>
       </section>
 

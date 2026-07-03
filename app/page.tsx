@@ -13,9 +13,10 @@ import OpenModalButton from './components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from './components/animations/StaggerContainer';
 
 export const metadata: Metadata = {
-  title: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
+  title:
+    'Axiom Canine | Professional Dog Training Jacksonville FL | Behavior Modification & Advanced Obedience',
   description:
-    'Structure. Consistency. Results. Professional dog training in Jacksonville, FL specializing in behavior modification and advanced obedience. Call (904) 458-7561.',
+    'Expert dog training in Jacksonville, Ponte Vedra, St. Augustine & surrounding areas. Specializing in reactive dog behavior modification, aggression training, leash pulling solutions, and advanced off-leash obedience. In-home, board & train, and group classes with owner education focus. Book your free consultation today.',
   alternates: {
     canonical: '/',
   },

@@ -4,7 +4,8 @@ import { ArrowRight, Home, Calendar, Users, AlertTriangle, Compass } from 'lucid
 import OpenModalButton from '../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'Dog Training Services — Jacksonville, FL',
+  title:
+    'Dog Training Services Jacksonville FL | In-Home, Board & Train, Group Classes | Axiom Canine',
   description:
     "Axiom Canine offers in-home dog training, board & train, and group classes in Jacksonville, FL. Find the right program for your dog's behavior and your lifestyle.",
   alternates: {

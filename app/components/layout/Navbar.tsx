@@ -29,6 +29,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
       label: 'Training',
       submenu: [
         { href: '/services', label: 'All Services' },
+        { href: '/services/puppy-training', label: 'Puppy Training' },
         { href: '/services/behavior-modification', label: 'Behavior Modification' },
         { href: '/services/advanced-obedience', label: 'Advanced Obedience' },
         { href: '/philosophy', label: 'Our Philosophy' },
@@ -40,15 +41,20 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
         { href: '/training-issues/aggression', label: 'Aggression' },
         { href: '/training-issues/reactive-dog', label: 'Reactive Dogs' },
         { href: '/training-issues/leash-pulling', label: 'Leash Pulling' },
+        { href: '/training-issues/separation-anxiety', label: 'Separation Anxiety' },
+        { href: '/training-issues/resource-guarding', label: 'Resource Guarding' },
       ],
     },
     {
       label: 'Areas',
       submenu: [
         { href: '/jacksonville', label: 'Jacksonville' },
+        { href: '/jacksonville-beach', label: 'Jax Beach' },
         { href: '/ponte-vedra', label: 'Ponte Vedra' },
         { href: '/nocatee', label: 'Nocatee' },
+        { href: '/orange-park', label: 'Orange Park' },
         { href: '/st-augustine', label: 'St. Augustine' },
+        { href: '/fernandina-beach', label: 'Fernandina Beach' },
         { href: '/palm-coast', label: 'Palm Coast' },
         { href: '/brunswick-ga', label: 'Brunswick, GA' },
       ],

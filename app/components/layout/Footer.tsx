@@ -27,14 +27,17 @@ export default function Footer() {
           <Link href="/services" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
             All Services
           </Link>
+          <Link href="/services/puppy-training" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
+            Puppy Training
+          </Link>
           <Link href="/services/in-home-dog-training" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
             In-Home Training
           </Link>
           <Link href="/services/board-and-train" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
             Board &amp; Train
           </Link>
-          <Link href="/services/group-classes" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
-            Group Classes
+          <Link href="/training-issues/separation-anxiety" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
+            Separation Anxiety
           </Link>
         </nav>
 
@@ -44,7 +47,7 @@ export default function Footer() {
             Service Area
           </p>
           <p className="text-[#C5C6C7] text-sm uppercase tracking-widest font-bold mb-3">
-            Jacksonville · Ponte Vedra · Nocatee · St. Augustine · Palm Coast · Brunswick, GA
+            Jacksonville · Jax Beach · Ponte Vedra · Nocatee · Orange Park · Fernandina · St. Augustine · Palm Coast · Brunswick, GA
           </p>
           <a
             href="tel:9044587561"

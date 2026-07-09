@@ -224,56 +224,28 @@ export default function JacksonvillePage() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link
-              href="/ponte-vedra"
-              className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors"
-            >
-              <div>
-                <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">Ponte Vedra Beach</h3>
-                <p className="text-[#C5C6C7] text-sm">Dog training in Ponte Vedra &amp; surrounding areas</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/nocatee"
-              className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors"
-            >
-              <div>
-                <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">Nocatee</h3>
-                <p className="text-[#C5C6C7] text-sm">Dog training in Nocatee &amp; surrounding communities</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/st-augustine"
-              className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors"
-            >
-              <div>
-                <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">St. Augustine</h3>
-                <p className="text-[#C5C6C7] text-sm">Dog training in St. Augustine &amp; historic district</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/palm-coast"
-              className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors"
-            >
-              <div>
-                <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">Palm Coast</h3>
-                <p className="text-[#C5C6C7] text-sm">Dog training in Palm Coast &amp; Flagler County</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/brunswick-ga"
-              className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors md:col-span-2"
-            >
-              <div>
-                <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">Brunswick, GA</h3>
-                <p className="text-[#C5C6C7] text-sm">Dog training across the state line in Coastal Georgia</p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
+            {[
+              { href: '/jacksonville-beach', title: 'Jacksonville Beach', desc: 'Dog training for Jax Beach, Atlantic Beach & Neptune Beach' },
+              { href: '/ponte-vedra', title: 'Ponte Vedra Beach', desc: 'Dog training in Ponte Vedra & surrounding areas' },
+              { href: '/nocatee', title: 'Nocatee', desc: 'Dog training in Nocatee & surrounding communities' },
+              { href: '/orange-park', title: 'Orange Park', desc: 'Dog training in Orange Park & Clay County' },
+              { href: '/st-augustine', title: 'St. Augustine', desc: 'Dog training in St. Augustine & historic district' },
+              { href: '/fernandina-beach', title: 'Fernandina Beach', desc: 'Dog training on Amelia Island & Nassau County' },
+              { href: '/palm-coast', title: 'Palm Coast', desc: 'Dog training in Palm Coast & Flagler County' },
+              { href: '/brunswick-ga', title: 'Brunswick, GA', desc: 'Dog training across the state line in Coastal Georgia' },
+            ].map(({ href, title, desc }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group flex items-center justify-between bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] p-6 transition-colors"
+              >
+                <div>
+                  <h3 className="font-oswald text-lg uppercase tracking-widest text-white group-hover:text-[#FF5E00] transition-colors">{title}</h3>
+                  <p className="text-[#C5C6C7] text-sm">{desc}</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-[#FF5E00] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

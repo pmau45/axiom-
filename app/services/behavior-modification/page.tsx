@@ -21,7 +21,7 @@ const conditions = [
   {
     title: 'Resource Guarding',
     desc: 'Growling or snapping over food, toys, spaces, or people. A dangerous pattern that requires structured protocols — not punishment or workarounds.',
-    href: null,
+    href: '/training-issues/resource-guarding',
   },
   {
     title: 'Aggression',
@@ -31,7 +31,7 @@ const conditions = [
   {
     title: 'Dog-on-Dog Reactivity',
     desc: 'Escalating responses to other dogs that make walks, dog parks, and vet visits dangerous or impossible.',
-    href: null,
+    href: '/training-issues/reactive-dog',
   },
 ];
 

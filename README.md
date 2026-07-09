@@ -170,11 +170,12 @@ npm run lint     # Run ESLint
 | `/services/board-and-train` | Board & Train | Immersive training program |
 | `/services/group-classes` | Group Classes | Structured group practice |
 | `/services/in-home-dog-training` | In-Home Training | On-site sessions in the dog's environment |
-| `/training-issues/*` | Issue guides | Aggression, reactive dog, leash pulling |
+| `/services/puppy-training` | Puppy Training | Early foundations, manners, leash skills |
+| `/training-issues/*` | Issue guides | Aggression, reactive dog, leash pulling, separation anxiety, resource guarding |
 | `/philosophy` | Training Philosophy | Dashboard with charts and FAQ content |
 | `/community` | Axiom Cares | Free rescue/adoption support |
 | `/contact` | Contact | Intake steps, service area, FAQs |
-| `/[city]` | Location pages | Jacksonville, Nocatee, Ponte Vedra, St. Augustine, Palm Coast, Brunswick, GA |
+| `/[city]` | Location pages | Jacksonville, Jax Beach, Ponte Vedra, Nocatee, Orange Park, St. Augustine, Fernandina Beach, Palm Coast, Brunswick, GA |
 
 ## Accessibility
 

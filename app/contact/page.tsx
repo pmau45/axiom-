@@ -13,9 +13,14 @@ export const metadata: Metadata = {
 
 const serviceAreas = [
   'Jacksonville, FL',
+  'Jacksonville Beach, FL',
   'Ponte Vedra Beach, FL',
   'Nocatee, FL',
+  'Orange Park, FL',
   'St. Augustine, FL',
+  'Fernandina Beach, FL',
+  'Palm Coast, FL',
+  'Brunswick, GA',
   'Nassau County, FL',
 ];
 

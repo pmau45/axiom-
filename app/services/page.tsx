@@ -42,6 +42,11 @@ const programs = [
 
 const trainingIssues = [
   {
+    title: 'Puppy Training',
+    href: '/services/puppy-training',
+    desc: 'Foundations, manners, and leash skills before bad habits lock in.',
+  },
+  {
     title: 'Reactive Dog',
     href: '/training-issues/reactive-dog',
     desc: 'Lunging, barking, and fixating on other dogs or people.',
@@ -55,6 +60,16 @@ const trainingIssues = [
     title: 'Aggression',
     href: '/training-issues/aggression',
     desc: 'Growling, snapping, or biting that puts people or animals at risk.',
+  },
+  {
+    title: 'Separation Anxiety',
+    href: '/training-issues/separation-anxiety',
+    desc: 'Panic, destruction, or nonstop barking when left alone.',
+  },
+  {
+    title: 'Resource Guarding',
+    href: '/training-issues/resource-guarding',
+    desc: 'Growling or snapping over food, toys, space, or people.',
   },
   {
     title: 'Behavior Modification',

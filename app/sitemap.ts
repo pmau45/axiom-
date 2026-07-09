@@ -71,6 +71,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/services/puppy-training`,
+      lastModified: new Date('2026-07-09'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
       url: `${BASE_URL}/training-issues/reactive-dog`,
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
@@ -87,6 +93,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/training-issues/separation-anxiety`,
+      lastModified: new Date('2026-07-09'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/training-issues/resource-guarding`,
+      lastModified: new Date('2026-07-09'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/contact`,
@@ -133,6 +151,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${BASE_URL}/brunswick-ga`,
       lastModified: new Date('2025-04-01'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/orange-park`,
+      lastModified: new Date('2026-07-09'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/jacksonville-beach`,
+      lastModified: new Date('2026-07-09'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/fernandina-beach`,
+      lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },

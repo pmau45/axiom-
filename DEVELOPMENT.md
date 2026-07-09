@@ -148,6 +148,7 @@ Required in `.env` or Netlify UI:
 - `NEXT_TELEMETRY_DISABLED=1` - Disable telemetry
 
 Optional:
+- `NEXT_PUBLIC_GOOGLE_ADS_ID` - Google Ads conversion tag
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics
 
 ## Scripts

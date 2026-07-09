@@ -45,9 +45,12 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
     {
       label: 'Areas',
       submenu: [
+        { href: '/jacksonville', label: 'Jacksonville' },
         { href: '/ponte-vedra', label: 'Ponte Vedra' },
         { href: '/nocatee', label: 'Nocatee' },
         { href: '/st-augustine', label: 'St. Augustine' },
+        { href: '/palm-coast', label: 'Palm Coast' },
+        { href: '/brunswick-ga', label: 'Brunswick, GA' },
       ],
     },
     { href: '/community', label: 'Axiom Cares', accent: 'blue' as const },

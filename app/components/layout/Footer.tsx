@@ -44,7 +44,7 @@ export default function Footer() {
             Service Area
           </p>
           <p className="text-[#C5C6C7] text-sm uppercase tracking-widest font-bold mb-3">
-            Jacksonville · Ponte Vedra · Nocatee · St. Augustine · Nassau County
+            Jacksonville · Ponte Vedra · Nocatee · St. Augustine · Palm Coast · Brunswick, GA
           </p>
           <a
             href="tel:9044587561"

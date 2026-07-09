@@ -94,21 +94,25 @@ Content appears to user
 ## State Management
 
 ### Client-Side State
-The app uses **React Context** (via SiteLayout.tsx) for:
-- Modal open/close state
-- Event bus for modal control
+Modal visibility is owned by `SiteLayout.tsx` with local `useState`. Any page or component can open the intake modal by dispatching a browser `CustomEvent`:
 
 ```tsx
-// Example: Opening modal from anywhere
-eventBus.emit('openModal', { prefilledData: {...} });
+// OpenModalButton (and other CTAs) open the modal from anywhere
+window.dispatchEvent(new CustomEvent('open-intake-modal'));
 
-// Example: SiteLayout manages modal visibility
+// SiteLayout listens and toggles modal visibility
 const [isModalOpen, setIsModalOpen] = useState(false);
+
+useEffect(() => {
+  const handleOpenModal = () => setIsModalOpen(true);
+  window.addEventListener('open-intake-modal', handleOpenModal);
+  return () => window.removeEventListener('open-intake-modal', handleOpenModal);
+}, []);
 ```
 
 ### No Global State Library
-- Intentionally kept simple (no Redux/Zustand)
-- Context API is sufficient for current needs
+- Intentionally kept simple (no Redux/Zustand/Context for modal state)
+- `useState` + `CustomEvent` is sufficient for current needs
 - Easy to scale if needed
 
 ## Routing Structure
@@ -187,7 +191,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 - Build logs available in Netlify console
 
 ### Build Process
-1. `npm run build` → Next.js builds static export
+1. `npm run build` → Next.js production build (SSR/hybrid via `@netlify/plugin-nextjs`)
 2. Netlify detects changes
 3. Runs build command (configured in netlify.toml)
 4. Deploys to Netlify CDN
@@ -243,12 +247,11 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 ## Common Extensions
 
 ### Analytics
-Add Google Analytics or similar:
+Google Ads and GA4 are both env-driven in `layout.tsx`:
 ```tsx
-// In layout.tsx
-if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
-  // Initialize GA
-}
+const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+// Scripts render only when the corresponding ID is set
 ```
 
 ### Email Notifications

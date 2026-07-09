@@ -3,7 +3,12 @@ import Link from 'next/link';
 import { Compass } from 'lucide-react';
 import BlogCard from './components/BlogCard';
 import BlogGrid from './components/BlogGrid';
-import { getAllArticles, CATEGORIES } from './utils/mdx-loader';
+import {
+  getAllArticles,
+  getArticlesByCategory,
+  CATEGORIES,
+  type ArticleMetadata,
+} from './utils/mdx-loader';
 
 export const metadata: Metadata = {
   title: 'Blog | Axiom Canine | Training Insights & Tips',
@@ -14,8 +19,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function BlogPage() {
-  const articles = await getAllArticles();
+function isValidCategory(value: string): value is ArticleMetadata['category'] {
+  return (CATEGORIES as string[]).includes(value);
+}
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category: rawCategory } = await searchParams;
+  const activeCategory =
+    rawCategory && isValidCategory(rawCategory) ? rawCategory : null;
+
+  const articles = activeCategory
+    ? await getArticlesByCategory(activeCategory)
+    : await getAllArticles();
 
   return (
     <div className="page-enter">
@@ -50,22 +69,35 @@ export default async function BlogPage() {
       <section className="py-24 bg-[#0B0C10] border-b border-[#1A2030]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter */}
-          <div className="mb-16 flex flex-wrap gap-3 justify-center">
+          <div className="mb-16 flex flex-wrap gap-3 justify-center" role="group" aria-label="Filter articles by category">
             <Link
               href="/blog"
-              className="px-4 py-2 text-sm font-oswald uppercase tracking-widest text-white bg-[#1A2030] border-2 border-[#FF5E00] hover:bg-[#FF5E00] hover:text-[#050505] transition-all duration-300"
+              className={`px-4 py-2 text-sm font-oswald uppercase tracking-widest transition-all duration-300 ${
+                !activeCategory
+                  ? 'text-white bg-[#1A2030] border-2 border-[#FF5E00]'
+                  : 'text-[#C5C6C7] border border-[#1A2030] hover:border-[#FF5E00] hover:text-[#FF5E00]'
+              }`}
+              aria-current={!activeCategory ? 'page' : undefined}
             >
               All Articles
             </Link>
-            {CATEGORIES.map((category) => (
-              <Link
-                key={category}
-                href={`/blog?category=${encodeURIComponent(category)}`}
-                className="px-4 py-2 text-sm font-oswald uppercase tracking-widest text-[#C5C6C7] border border-[#1A2030] hover:border-[#FF5E00] hover:text-[#FF5E00] transition-all duration-300"
-              >
-                {category}
-              </Link>
-            ))}
+            {CATEGORIES.map((category) => {
+              const isActive = activeCategory === category;
+              return (
+                <Link
+                  key={category}
+                  href={`/blog?category=${encodeURIComponent(category)}`}
+                  className={`px-4 py-2 text-sm font-oswald uppercase tracking-widest transition-all duration-300 ${
+                    isActive
+                      ? 'text-white bg-[#1A2030] border-2 border-[#FF5E00]'
+                      : 'text-[#C5C6C7] border border-[#1A2030] hover:border-[#FF5E00] hover:text-[#FF5E00]'
+                  }`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {category}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Articles Grid */}
@@ -78,7 +110,9 @@ export default async function BlogPage() {
           ) : (
             <div className="text-center py-24">
               <p className="text-[#C5C6C7] text-lg">
-                Articles coming soon. Check back for expert training insights.
+                {activeCategory
+                  ? `No articles in “${activeCategory}” yet. Check back soon.`
+                  : 'Articles coming soon. Check back for expert training insights.'}
               </p>
             </div>
           )}

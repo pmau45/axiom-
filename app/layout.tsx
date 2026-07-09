@@ -162,6 +162,7 @@ export default function RootLayout({
   };
 
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
   return (
     <html lang="en">
@@ -171,18 +172,21 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google Ads Tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18020403242"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-18020403242');
-            `,
-          }}
-        />
+        {adsId && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${adsId}');
+                `,
+              }}
+            />
+          </>
+        )}
         {gaId && (
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />

@@ -4,9 +4,11 @@ import { Home, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'In-Home Dog Training Jacksonville, FL',
+  title: {
+    absolute: 'In-Home Dog Training Jacksonville | Private Lessons That Work',
+  },
   description:
-    'Axiom Canine provides in-home dog training in Jacksonville, FL. We train where behavior actually happens — your home, yard, and neighborhood. Behavior modification and obedience available.',
+    'Personalized in-home dog training in Jacksonville, FL. Perfect for reactivity, resource guarding, and obedience. We train both dog and owner in your real environment.',
   alternates: {
     canonical: '/services/in-home-dog-training',
   },
@@ -80,10 +82,10 @@ export default function InHomeTrainingPage() {
           <Home className="w-12 h-12 text-[#FF5E00] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="in-home-hero-heading"
-            className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
+            className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Training Where It{' '}
-            <span className="text-[#FF5E00]">Actually Happens.</span>
+            In-Home Dog Training in Jacksonville –{' '}
+            <span className="text-[#FF5E00]">Training That Fits Your Life</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Most behavior problems happen at home. That&apos;s exactly where we train. We come

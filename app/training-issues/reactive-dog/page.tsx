@@ -4,9 +4,11 @@ import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-rea
 import OpenModalButton from '../../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'Reactive Dog Training Jacksonville, FL',
+  title: {
+    absolute: 'Reactive Dog Training Jacksonville | Behavior Modification That Works',
+  },
   description:
-    'Does your dog lunge, bark, or fixate on other dogs and people? Axiom Canine addresses dog reactivity at the root cause in Jacksonville, FL — not just surface management.',
+    'Specialized reactive dog training in Jacksonville, FL. We help dogs overcome leash reactivity, stranger reactivity, and aggression through proven behavior modification and owner coaching.',
   alternates: {
     canonical: '/training-issues/reactive-dog',
   },
@@ -90,10 +92,10 @@ export default function ReactiveDogPage() {
           <AlertTriangle className="w-12 h-12 text-[#FF5E00] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="reactive-hero-heading"
-            className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
+            className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Stop Managing.{' '}
-            <span className="text-[#FF5E00]">Start Leading.</span>
+            Reactive Dog Training in Jacksonville –{' '}
+            <span className="text-[#FF5E00]">Calm, Confident Dogs &amp; Owners</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Reactivity on leash is one of the most frustrating — and most fixable — dog behavior
@@ -141,7 +143,7 @@ export default function ReactiveDogPage() {
               id="reactive-why-heading"
               className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
             >
-              Why It Happens
+              Understanding Reactivity in High-Drive Breeds
             </h2>
             <p className="text-[#C5C6C7] text-lg leading-relaxed">
               Reactivity is not a character flaw or a sign that the dog is broken. Understanding
@@ -173,7 +175,7 @@ export default function ReactiveDogPage() {
               id="reactive-approach-heading"
               className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66]"
             >
-              How We Address Reactivity
+              Our Reactivity Training Process
             </h2>
           </div>
           <div className="space-y-6 text-[#C5C6C7] text-lg leading-relaxed">
@@ -214,8 +216,12 @@ export default function ReactiveDogPage() {
               id="reactive-programs-heading"
               className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
             >
-              Programs That Address Reactivity
+              Owner Tools for Real-World Success
             </h2>
+            <p className="text-[#C5C6C7] text-lg leading-relaxed">
+              The right program gives you a clear system — not just session-day compliance — so
+              you can handle reactivity in everyday Jacksonville environments.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {programLinks.map(({ title, href, desc }) => (

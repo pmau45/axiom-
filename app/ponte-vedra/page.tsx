@@ -7,11 +7,14 @@ import AnimatedSection from '@/app/components/animations/AnimatedSection';
 import { ArrowRight, MapPin, Waves, TreePine, Home } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Dog Training in Ponte Vedra, FL | Axiom Canine',
+  title: {
+    absolute: 'Board & Train Ponte Vedra & Nocatee | Axiom Canine',
+  },
   description:
-    'Professional dog training serving Ponte Vedra Beach, Ponte Vedra Isles, and Palencia. Behavior modification and obedience training for Northeast Florida&apos;s most discerning dog owners. Call (904) 458-7561.',
+    'Premium board and train programs serving Ponte Vedra, Nocatee, and St. Augustine. Reactivity and obedience training with owner education. Limited spots available.',
   keywords: [
     'dog training Ponte Vedra',
+    'board and train Ponte Vedra',
     'dog trainer Ponte Vedra Beach',
     'behavior modification Ponte Vedra',
     'obedience training Ponte Vedra Isles',
@@ -22,8 +25,9 @@ export const metadata: Metadata = {
     canonical: '/ponte-vedra',
   },
   openGraph: {
-    title: 'Dog Training in Ponte Vedra, FL | Axiom Canine',
-    description: 'Professional dog training serving Ponte Vedra Beach and surrounding communities.',
+    title: 'Board & Train Ponte Vedra & Nocatee | Axiom Canine',
+    description:
+      'Premium board and train programs serving Ponte Vedra, Nocatee, and St. Augustine. Reactivity and obedience training with owner education.',
     type: 'website',
   },
 };
@@ -71,8 +75,9 @@ export default function PonteVedraTrainingPage() {
             <span className="text-[#C5C6C7] font-bold tracking-[0.2em] uppercase text-sm">Ponte Vedra Beach, FL</span>
           </div>
           
-          <h1 id="pv-hero-heading" className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9] mb-6 text-white">
-            Dog Training in <span className="text-[#FF5E00]">Ponte Vedra.</span>
+          <h1 id="pv-hero-heading" className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[0.95] mb-6 text-white">
+            Board &amp; Train in Ponte Vedra &amp; Nocatee –{' '}
+            <span className="text-[#FF5E00]">Professional Results</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed mb-10">
             Professional behavior modification and obedience training for Ponte Vedra Beach, 

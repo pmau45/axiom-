@@ -4,9 +4,11 @@ import { ArrowRight, CheckCircle2, PawPrint } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'Puppy Training Jacksonville, FL | Axiom Canine',
+  title: {
+    absolute: 'Puppy Training Jacksonville FL | Start Your Dog Off Right',
+  },
   description:
-    'Puppy training in Jacksonville, FL that builds manners, leash skills, and calm structure early. In-home and group options for puppies across Ponte Vedra, Nocatee, and St. Johns County.',
+    'Professional puppy training in Jacksonville, FL. Socialization, basic obedience, and owner education for a confident, well-mannered adult dog. Group classes and private options available.',
   keywords: [
     'puppy training Jacksonville FL',
     'puppy classes Jacksonville',
@@ -74,10 +76,10 @@ export default function PuppyTrainingPage() {
           <PawPrint className="w-12 h-12 text-[#FF5E00] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="puppy-hero-heading"
-            className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
+            className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Puppy Training in{' '}
-            <span className="text-[#FF5E00]">Jacksonville, FL</span>
+            Puppy Training in Jacksonville –{' '}
+            <span className="text-[#FF5E00]">Building a Strong Foundation</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed mb-10">
             Build manners, leash skills, and calm structure before bad habits become adult problems.

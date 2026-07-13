@@ -13,10 +13,11 @@ import OpenModalButton from './components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from './components/animations/StaggerContainer';
 
 export const metadata: Metadata = {
-  title:
-    'Axiom Canine | Professional Dog Training Jacksonville FL | Behavior Modification & Advanced Obedience',
+  title: {
+    absolute: 'Professional Dog Training in Jacksonville, FL | Axiom Canine',
+  },
   description:
-    'Expert dog training in Jacksonville, Ponte Vedra, St. Augustine & surrounding areas. Specializing in reactive dog behavior modification, aggression training, leash pulling solutions, and advanced off-leash obedience. In-home, board & train, and group classes with owner education focus. Book your free consultation today.',
+    'Expert dog training in Jacksonville, FL. Specializing in reactivity, aggression, board & train, and owner education. Real-world results with high-drive breeds and off-leash proof. Free consultation available.',
   alternates: {
     canonical: '/',
   },
@@ -39,12 +40,10 @@ export default function HomePage() {
           </div>
           <h1
             id="hero-heading"
-            className="font-oswald text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-[0.9] mb-8 text-[#7A8B66] drop-shadow-2xl"
+            className="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl"
           >
-            Structure.{' '}
-            <br className="md:hidden" />
-            <span className="text-white">Consistency.</span>
-            <br /> Results.
+            Expert Dog Training &amp; Behavior Modification in{' '}
+            <span className="text-[#7A8B66]">Jacksonville, Florida</span>
           </h1>
           <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-12 text-[#C5C6C7] leading-relaxed">
             If you&apos;re frustrated by your dog&apos;s behavior, you aren&apos;t alone. We help

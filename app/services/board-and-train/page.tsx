@@ -4,9 +4,11 @@ import { Calendar, ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck } from '
 import OpenModalButton from '../../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'Board & Train Dog Training Jacksonville, FL',
+  title: {
+    absolute: 'Board & Train Jacksonville FL | Reactive Dog Specialists',
+  },
   description:
-    'Axiom Canine\'s board & train program in Jacksonville, FL immerses your dog in structured training and resets problem behavior fast. Includes owner handoff sessions.',
+    'Proven board and train programs in Jacksonville, FL for reactive, aggressive, and high-drive dogs. Owner education included. Real-world off-leash results with lifetime support. Book your spot today.',
   alternates: {
     canonical: '/services/board-and-train',
   },
@@ -91,14 +93,34 @@ export default function BoardAndTrainPage() {
           <Calendar className="w-12 h-12 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="bat-hero-heading"
-            className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
+            className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Full Immersion.{' '}
-            <span className="text-[#7A8B66]">Lasting Results.</span>
+            Board &amp; Train Programs in Jacksonville, FL –{' '}
+            <span className="text-[#7A8B66]">Real Results That Last</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Your dog stays with us, lives inside a structured system around the clock, and
             comes home a fundamentally different dog — as long as you maintain the work.
+          </p>
+        </div>
+      </section>
+
+      {/* ── What to Expect ────────────────────────────── */}
+      <section
+        className="py-24 bg-[#050505] border-b border-[#1A2030]"
+        aria-labelledby="bat-expect-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            id="bat-expect-heading"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+          >
+            What to Expect from Board &amp; Train
+          </h2>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed">
+            Immersive daily structure, focused behavior work, and a required owner handoff so
+            results transfer home — not just hold while your dog is with us. We specialize in
+            reactive, aggressive, and high-drive dogs that need more than weekly lessons.
           </p>
         </div>
       </section>
@@ -113,7 +135,7 @@ export default function BoardAndTrainPage() {
             id="bat-fit-heading"
             className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
           >
-            Is Board &amp; Train the Right Fit?
+            Is Board &amp; Train Right for Reactive Dogs?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#1A2030] p-10 border-l-4 border-[#7A8B66]">
@@ -163,7 +185,7 @@ export default function BoardAndTrainPage() {
               id="bat-process-heading"
               className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
             >
-              How Board &amp; Train Works
+              Our Proven Process &amp; Owner Handover
             </h2>
             <p className="text-[#C5C6C7] text-lg leading-relaxed">
               Immersion is not a vacation. It is a deliberate, structured process — and owner

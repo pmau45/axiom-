@@ -7,11 +7,14 @@ import AnimatedSection from '@/app/components/animations/AnimatedSection';
 import { ArrowRight, MapPin, Droplets, Bike, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Dog Training in Nocatee, FL | Axiom Canine',
+  title: {
+    absolute: 'Board & Train Nocatee FL | Axiom Canine',
+  },
   description:
-    'Professional dog training serving Nocatee and surrounding communities. Behavior modification, obedience training, and free rescue support for this family-centered master-planned community. Call (904) 458-7561.',
+    'Premium board and train programs serving Nocatee, Ponte Vedra, and St. Augustine. Reactivity and obedience training with owner education. Limited spots available.',
   keywords: [
     'dog training Nocatee',
+    'board and train Nocatee',
     'dog trainer Nocatee FL',
     'behavior modification Nocatee',
     'obedience training Nocatee',
@@ -22,8 +25,9 @@ export const metadata: Metadata = {
     canonical: '/nocatee',
   },
   openGraph: {
-    title: 'Dog Training in Nocatee, FL | Axiom Canine',
-    description: 'Professional dog training serving Nocatee and surrounding communities.',
+    title: 'Board & Train Nocatee FL | Axiom Canine',
+    description:
+      'Premium board and train programs serving Nocatee, Ponte Vedra, and St. Augustine. Reactivity and obedience with owner education.',
     type: 'website',
   },
 };
@@ -71,8 +75,9 @@ export default function NocateeTrainingPage() {
             <span className="text-[#C5C6C7] font-bold tracking-[0.2em] uppercase text-sm">Nocatee, FL</span>
           </div>
           
-          <h1 id="nocatee-hero-heading" className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9] mb-6 text-white">
-            Dog Training in <span className="text-[#7A8B66]">Nocatee.</span>
+          <h1 id="nocatee-hero-heading" className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[0.95] mb-6 text-white">
+            Board &amp; Train in Nocatee –{' '}
+            <span className="text-[#7A8B66]">Professional Results</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed mb-10">
             Professional behavior modification and obedience training for Nocatee&apos;s 

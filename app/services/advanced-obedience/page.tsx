@@ -4,9 +4,11 @@ import { Compass, ArrowRight, CheckCircle2, MapPin, Radio, Anchor } from 'lucide
 import OpenModalButton from '../../components/forms/OpenModalButton';
 
 export const metadata: Metadata = {
-  title: 'Advanced Obedience Dog Training Jacksonville, FL',
+  title: {
+    absolute: 'Off Leash Training Jacksonville | Real-World Reliability',
+  },
   description:
-    'Axiom Canine advanced obedience training in Jacksonville, FL. Build bulletproof recall, off-leash reliability, and public neutrality that holds up in the real world.',
+    'Advanced off-leash training in Jacksonville, FL. We build reliable recall, neutrality, and trust in real environments — including trails and public spaces. Perfect for high-drive breeds.',
   alternates: {
     canonical: '/services/advanced-obedience',
   },
@@ -97,10 +99,10 @@ export default function AdvancedObediencePage() {
           <Compass className="w-12 h-12 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="advob-hero-heading"
-            className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
+            className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Absolute Control.{' '}
-            <span className="text-[#7A8B66]">Anywhere.</span>
+            Off-Leash Training in Jacksonville –{' '}
+            <span className="text-[#7A8B66]">Trust Your Dog Anywhere</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             A dog that only listens in your living room isn&apos;t trained. True obedience means

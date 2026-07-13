@@ -21,7 +21,7 @@ export default function Footer() {
 
         {/* Nav Links */}
         <nav aria-label="Footer navigation" className="flex flex-col gap-3 min-w-[160px]">
-          <p className="font-oswald uppercase text-xs tracking-widest text-[#C5C6C7]/50 mb-1">
+          <p className="font-oswald uppercase text-xs tracking-widest text-[#949596] mb-1">
             Services
           </p>
           <Link href="/services" className="text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold">
@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* Contact & Service Area */}
         <address className="text-left not-italic">
-          <p className="font-oswald uppercase text-xs tracking-widest text-[#C5C6C7]/50 mb-3">
+          <p className="font-oswald uppercase text-xs tracking-widest text-[#949596] mb-3">
             Service Area
           </p>
           <p className="text-[#C5C6C7] text-sm uppercase tracking-widest font-bold mb-3">
@@ -57,7 +57,7 @@ export default function Footer() {
             <Phone className="w-4 h-4" aria-hidden="true" />
             (904) 458-7561
           </a>
-          <p className="text-[#C5C6C7]/50 text-xs tracking-wider mt-2">
+          <p className="text-[#949596] text-xs tracking-wider mt-2">
             Clear communication. Mutual respect.
           </p>
         </address>
@@ -65,7 +65,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center border-t border-[#1A2030] pt-8">
-        <p className="text-[#C5C6C7]/30 text-xs tracking-widest uppercase">
+        <p className="text-[#949596] text-xs tracking-widest uppercase">
           &copy; {currentYear} Axiom Canine. All Rights Reserved.
         </p>
       </div>

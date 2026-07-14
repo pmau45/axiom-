@@ -176,7 +176,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
             aria-label={PHONE_ARIA}
           >
             <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
-            <span className="font-oswald text-xs font-bold uppercase tracking-wider hidden xs:inline sm:inline">
+            <span className="font-oswald text-xs font-bold uppercase tracking-wider">
               Call
             </span>
           </a>

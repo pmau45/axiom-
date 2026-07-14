@@ -131,3 +131,8 @@ select option {
   outline: 2px solid var(--color-orange);
   outline-offset: 2px;
 }
+
+/* ─── Safe area for mobile sticky CTA ───────────── */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

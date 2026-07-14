@@ -1,22 +1,40 @@
+'use client';
+
 import Link from 'next/link';
 import { ShieldCheck, Phone } from 'lucide-react';
+import {
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  PHONE_ARIA,
+  PRIMARY_CTA_LABEL,
+  PRIMARY_CTA_ARIA,
+} from '@/app/lib/contact';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenModal: () => void;
+}
+
+export default function Footer({ onOpenModal }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      className="bg-[#030304] py-16 border-t border-[#1A2030]"
+      className="bg-[#030304] py-16 border-t border-[#1A2030] pb-28 md:pb-16"
       role="contentinfo"
       aria-label="Site footer"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start gap-12">
         {/* Brand */}
-        <div className="flex items-center gap-3">
-          <ShieldCheck className="text-[#7A8B66] w-6 h-6" aria-hidden="true" />
-          <span className="font-oswald text-xl font-bold tracking-widest text-[#C5C6C7] uppercase">
-            Axiom Canine
-          </span>
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="text-[#7A8B66] w-6 h-6" aria-hidden="true" />
+            <span className="font-oswald text-xl font-bold tracking-widest text-[#C5C6C7] uppercase">
+              Axiom Canine
+            </span>
+          </div>
+          <p className="text-[#949596] text-xs tracking-wider max-w-xs">
+            Clear communication. Mutual respect.
+          </p>
         </div>
 
         {/* Nav Links */}
@@ -41,26 +59,33 @@ export default function Footer() {
           </Link>
         </nav>
 
-        {/* Contact & Service Area */}
-        <address className="text-left not-italic">
+        {/* Contact & CTA */}
+        <div className="text-left w-full md:w-auto md:min-w-[240px]">
           <p className="font-oswald uppercase text-xs tracking-widest text-[#949596] mb-3">
-            Service Area
-          </p>
-          <p className="text-[#C5C6C7] text-sm uppercase tracking-widest font-bold mb-3">
-            Jacksonville · Jax Beach · Ponte Vedra · Nocatee · Orange Park · Fernandina · St. Augustine · Palm Coast · Brunswick, GA
+            Get In Touch
           </p>
           <a
-            href="tel:9044587561"
-            className="flex items-center gap-2 text-[#C5C6C7] hover:text-[#FF5E00] transition-colors text-sm uppercase tracking-widest font-bold mt-2"
-            aria-label="Call Axiom Canine at (904) 458-7561"
+            href={PHONE_TEL}
+            className="inline-flex items-center gap-3 text-[#FF5E00] hover:text-white transition-colors font-oswald text-2xl font-bold uppercase tracking-widest mb-4"
+            aria-label={PHONE_ARIA}
           >
-            <Phone className="w-4 h-4" aria-hidden="true" />
-            (904) 458-7561
+            <Phone className="w-6 h-6 shrink-0" aria-hidden="true" />
+            {PHONE_DISPLAY}
           </a>
-          <p className="text-[#949596] text-xs tracking-wider mt-2">
-            Clear communication. Mutual respect.
-          </p>
-        </address>
+          <address className="not-italic mb-6">
+            <p className="text-[#C5C6C7] text-sm uppercase tracking-widest font-bold">
+              Jacksonville · Jax Beach · Ponte Vedra · Nocatee · Orange Park · Fernandina · St. Augustine · Palm Coast · Brunswick, GA
+            </p>
+          </address>
+          <button
+            type="button"
+            onClick={onOpenModal}
+            className="w-full sm:w-auto text-sm font-bold uppercase tracking-widest text-[#050505] bg-[#FF5E00] px-6 py-3 hover:bg-orange-500 transition-colors border border-[#FF5E00] shadow-[0_0_15px_rgba(255,94,0,0.2)]"
+            aria-label={PRIMARY_CTA_ARIA}
+          >
+            {PRIMARY_CTA_LABEL}
+          </button>
+        </div>
       </div>
 
       {/* Copyright */}

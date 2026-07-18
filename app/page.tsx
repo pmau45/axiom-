@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import OpenModalButton from './components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from './components/animations/StaggerContainer';
+import GoogleReviews from './components/ui/GoogleReviews';
 
 export const metadata: Metadata = {
   title: {
@@ -219,6 +220,28 @@ export default function HomePage() {
               View All Services &amp; Programs
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── Google Reviews ────────────────────────────── */}
+      <section
+        className="py-24 bg-[#050505] border-b border-[#1A2030] relative"
+        aria-labelledby="reviews-heading"
+      >
+        <div className="absolute inset-0 bg-texture opacity-10 pointer-events-none" aria-hidden="true" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              id="reviews-heading"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+            >
+              What Owners Are Saying
+            </h2>
+            <p className="text-[#C5C6C7] text-lg leading-relaxed">
+              Real Google reviews from Jacksonville-area dog owners who trained with Axiom Canine.
+            </p>
+          </div>
+          <GoogleReviews />
         </div>
       </section>
     </div>

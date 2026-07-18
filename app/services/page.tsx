@@ -6,6 +6,8 @@ import JsonLd from '../components/seo/JsonLd';
 import {
   SITE_URL,
   BUSINESS_ID,
+  SERVICE_INDEX_CATALOG,
+  serviceId,
   buildBreadcrumbList,
   buildSchemaGraph,
 } from '../lib/schema';
@@ -101,44 +103,12 @@ const pageJsonLd = buildSchemaGraph(
     about: { '@id': BUSINESS_ID },
     mainEntity: {
       '@type': 'ItemList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'In-Home Dog Training',
-          url: `${SITE_URL}/services/in-home-dog-training`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Board & Train',
-          url: `${SITE_URL}/services/board-and-train`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: 'Group Classes',
-          url: `${SITE_URL}/services/group-classes`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 4,
-          name: 'Behavior Modification',
-          url: `${SITE_URL}/services/behavior-modification`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 5,
-          name: 'Advanced Obedience',
-          url: `${SITE_URL}/services/advanced-obedience`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 6,
-          name: 'Puppy Training',
-          url: `${SITE_URL}/services/puppy-training`,
-        },
-      ],
+      itemListElement: SERVICE_INDEX_CATALOG.map((entry, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: entry.name,
+        item: { '@id': serviceId(entry.path) },
+      })),
     },
   },
   buildBreadcrumbList([

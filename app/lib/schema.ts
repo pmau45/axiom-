@@ -30,13 +30,89 @@ export interface BreadcrumbItem {
 }
 
 export interface ServiceSchemaInput {
-  name: string;
-  description: string;
+  name?: string;
+  description?: string;
   path: string;
   serviceType?: string;
   areaServed?: string[];
   price?: string;
   priceCurrency?: string;
+}
+
+export interface ServiceCatalogEntry {
+  name: string;
+  path: string;
+  description: string;
+  serviceType: string;
+  /** When true, included in LocalBusiness catalog but not the /services index. */
+  communityOffer?: boolean;
+}
+
+/** Single source of truth for LocalBusiness offers + Service page JSON-LD. */
+export const SERVICE_CATALOG: ServiceCatalogEntry[] = [
+  {
+    name: 'Behavior Modification',
+    path: '/services/behavior-modification',
+    description:
+      'Rehabilitation for reactivity, aggression, and resource guarding. We address the root cause of dangerous behaviors in Jacksonville, FL dogs.',
+    serviceType: 'Behavior Modification',
+  },
+  {
+    name: 'Advanced Obedience Training',
+    path: '/services/advanced-obedience',
+    description:
+      'Build bulletproof recall, off-leash reliability, and public neutrality for dogs in Jacksonville, FL and surrounding areas.',
+    serviceType: 'Advanced Obedience',
+  },
+  {
+    name: 'Board and Train',
+    path: '/services/board-and-train',
+    description:
+      'Immersive board and train programs for dogs that need structured, daily training with owner transfer sessions in Northeast Florida.',
+    serviceType: 'Board and Train',
+  },
+  {
+    name: 'In-Home Dog Training',
+    path: '/services/in-home-dog-training',
+    description:
+      'In-home dog training in Jacksonville and nearby cities — habits form where your dog actually lives.',
+    serviceType: 'In-Home Dog Training',
+  },
+  {
+    name: 'Group Classes',
+    path: '/services/group-classes',
+    description:
+      'Structured group dog training classes in Jacksonville, FL — practice real obedience around controlled distractions with coached repetition.',
+    serviceType: 'Group Classes',
+  },
+  {
+    name: 'Puppy Training',
+    path: '/services/puppy-training',
+    description:
+      'Puppy training in Jacksonville, FL to build manners, socialization, and structure before problem habits harden.',
+    serviceType: 'Puppy Training',
+  },
+  {
+    name: 'Axiom Cares — Free Rescue & Adoption Support',
+    path: '/community',
+    description:
+      'Free in-home visits for rescue and adoption adjustment in Jacksonville, FL. No judgment, no pressure, no bill.',
+    serviceType: 'Rescue Dog Support',
+    communityOffer: true,
+  },
+];
+
+/** Programs listed on /services (excludes community-only offers). */
+export const SERVICE_INDEX_CATALOG = SERVICE_CATALOG.filter((entry) => !entry.communityOffer);
+
+export function serviceId(path: string): string {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return `${SITE_URL}${normalized}#service`;
+}
+
+export function getServiceCatalogEntry(path: string): ServiceCatalogEntry | undefined {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return SERVICE_CATALOG.find((entry) => entry.path === normalized);
 }
 
 function absoluteUrl(path: string): string {
@@ -95,22 +171,26 @@ export function buildServiceSchema({
   name,
   description,
   path,
-  serviceType = 'Dog Training',
+  serviceType,
   areaServed = ['Jacksonville', 'Ponte Vedra Beach', 'Nocatee', 'St. Augustine'],
   price,
   priceCurrency = 'USD',
 }: ServiceSchemaInput) {
+  const catalog = getServiceCatalogEntry(path);
+  const resolvedName = name ?? catalog?.name ?? 'Dog Training';
+  const resolvedDescription = description ?? catalog?.description ?? '';
+  const resolvedServiceType = serviceType ?? catalog?.serviceType ?? 'Dog Training';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name,
-    description,
-    serviceType,
+    '@id': serviceId(path),
+    name: resolvedName,
+    description: resolvedDescription,
+    serviceType: resolvedServiceType,
     url: absoluteUrl(path),
     provider: {
-      '@type': 'LocalBusiness',
       '@id': BUSINESS_ID,
-      name: BUSINESS_NAME,
     },
     areaServed: areaServed.map((city) => ({
       '@type': 'City',
@@ -252,68 +332,16 @@ export function buildLocalBusinessSchema() {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Dog Training Services',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Behavior Modification',
-            url: absoluteUrl('/services/behavior-modification'),
-            description:
-              'Rehabilitation for reactivity, aggression, and resource guarding. We address the root cause of dangerous behaviors in Jacksonville, FL dogs.',
-          },
+      itemListElement: SERVICE_CATALOG.map((entry) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': serviceId(entry.path),
+          name: entry.name,
+          url: absoluteUrl(entry.path),
+          description: entry.description,
         },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Advanced Obedience Training',
-            url: absoluteUrl('/services/advanced-obedience'),
-            description:
-              'Build bulletproof recall, off-leash reliability, and public neutrality for dogs in Jacksonville, FL and surrounding areas.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Board and Train',
-            url: absoluteUrl('/services/board-and-train'),
-            description:
-              'Immersive board and train programs for dogs that need structured, daily training with owner transfer sessions in Northeast Florida.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'In-Home Dog Training',
-            url: absoluteUrl('/services/in-home-dog-training'),
-            description:
-              'In-home dog training in Jacksonville and nearby cities — habits form where your dog actually lives.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Puppy Training',
-            url: absoluteUrl('/services/puppy-training'),
-            description:
-              'Puppy training in Jacksonville, FL to build manners, socialization, and structure before problem habits harden.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Axiom Cares — Free Rescue & Adoption Support',
-            url: absoluteUrl('/community'),
-            description:
-              'Free in-home visits for rescue and adoption adjustment in Jacksonville, FL. No judgment, no pressure, no bill.',
-          },
-        },
-      ],
+      })),
     },
     sameAs: [
       'https://www.facebook.com/axiomcanine',

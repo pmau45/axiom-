@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Compass, ArrowRight, CheckCircle2, MapPin, Radio, Anchor } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -86,10 +93,28 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Advanced Obedience Dog Training',
+    description: 'Advanced off-leash training in Jacksonville, FL. We build reliable recall, neutrality, and trust in real environments — including trails and public spaces. Perfect for high-drive breeds.',
+    path: '/services/advanced-obedience',
+    serviceType: 'Advanced Obedience',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Advanced Obedience', path: '/services/advanced-obedience' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function AdvancedObediencePage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-bl from-[#7A8B66]/10 via-[#050505] to-[#050505]"
         aria-labelledby="advob-hero-heading"

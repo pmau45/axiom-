@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
-import { FAQSection, FAQSchema } from '@/app/components/ui/FAQSection';
+import { FAQSection } from '@/app/components/ui/FAQSection';
 import Link from 'next/link';
 import OpenModalButton from '@/app/components/forms/OpenModalButton';
 import { StaggerContainer } from '@/app/components/animations/StaggerContainer';
 import AnimatedSection from '@/app/components/animations/AnimatedSection';
 import { ArrowRight, MapPin, Anchor, Shell, Sailboat } from 'lucide-react';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildLocationServiceSchema,
+  buildSchemaGraph,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Dog Training in Brunswick, GA | Axiom Canine',
@@ -57,10 +64,22 @@ const faqItems = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildLocationServiceSchema('Brunswick, GA', '/brunswick-ga', 'Dog training in Brunswick, GA — behavior modification and obedience for Glynn County and Golden Isles owners.'),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Dog Training in Brunswick, GA', path: '/brunswick-ga' },
+  ]),
+  buildFaqPageSchema(faqItems)
+);
+
 export default function BrunswickGaTrainingPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section className="relative min-h-[75vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden" aria-labelledby="brunswick-hero-heading">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0B0C10] via-[#050505] to-[#1A2030]" />
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
@@ -184,8 +203,6 @@ export default function BrunswickGaTrainingPage() {
           </OpenModalButton>
         </div>
       </section>
-
-      <FAQSchema items={faqItems} />
-    </div>
+</div>
   );
 }

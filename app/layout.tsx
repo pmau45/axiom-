@@ -6,13 +6,18 @@ import '@fontsource/chivo/400.css';
 import '@fontsource/chivo/700.css';
 import SiteLayout from './components/layout/SiteLayout';
 import ErrorBoundary from './components/ui/ErrorBoundary';
+import JsonLd from './components/seo/JsonLd';
+import {
+  SITE_URL,
+  OG_IMAGE_ALT,
+  buildLocalBusinessSchema,
+  buildWebSiteSchema,
+  buildSchemaGraph,
+} from './lib/schema';
 import './globals.css';
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://axiom-canine.netlify.app';
-
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
     template: '%s | Axiom Canine',
@@ -40,13 +45,13 @@ export const metadata: Metadata = {
     title: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
     description:
       'Structure. Consistency. Results. Professional dog training for behavior modification, advanced obedience, and rescue adjustment in Jacksonville, FL.',
-    url: BASE_URL,
+    url: SITE_URL,
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Axiom Canine — Professional Dog Training Jacksonville FL',
+        alt: OG_IMAGE_ALT,
       },
     ],
   },
@@ -72,93 +77,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': BASE_URL,
-    name: 'Axiom Canine',
-    description:
-      'Professional dog training in Jacksonville, FL specializing in behavior modification, advanced obedience, and free rescue adjustment support.',
-    telephone: '+19044587561',
-    url: BASE_URL,
-    image: `${BASE_URL}/og-image.png`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Jacksonville',
-      addressRegion: 'FL',
-      postalCode: '32244',
-      addressCountry: 'US',
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '17:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '09:00',
-        closes: '14:00',
-      },
-    ],
-    areaServed: [
-      { '@type': 'City', name: 'Jacksonville', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Jacksonville Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Ponte Vedra Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Nocatee', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Orange Park', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'St. Augustine', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Fernandina Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Palm Coast', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'City', name: 'Brunswick', containedInPlace: { '@type': 'State', name: 'Georgia' } },
-      { '@type': 'City', name: 'St. Simons Island', containedInPlace: { '@type': 'State', name: 'Georgia' } },
-      { '@type': 'City', name: 'Jekyll Island', containedInPlace: { '@type': 'State', name: 'Georgia' } },
-      { '@type': 'County', name: 'Nassau County', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'County', name: 'Clay County', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'County', name: 'Flagler County', containedInPlace: { '@type': 'State', name: 'Florida' } },
-      { '@type': 'County', name: 'Glynn County', containedInPlace: { '@type': 'State', name: 'Georgia' } },
-    ],
-    priceRange: '$$',
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Dog Training Services',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Behavior Modification',
-            description:
-              'Rehabilitation for reactivity, aggression, and resource guarding. We address the root cause of dangerous behaviors in Jacksonville, FL dogs.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Advanced Obedience Training',
-            description:
-              'Build bulletproof recall, off-leash reliability, and public neutrality for dogs in Jacksonville, FL and surrounding areas.',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Axiom Cares — Free Rescue & Adoption Support',
-            description:
-              'Free in-home visits for rescue and adoption adjustment in Jacksonville, FL. No judgment, no pressure, no bill.',
-          },
-        },
-      ],
-    },
-    sameAs: [
-      'https://www.facebook.com/axiomcanine',
-      'https://www.instagram.com/axiomcanine',
-    ],
-  };
+  const siteJsonLd = buildSchemaGraph(buildLocalBusinessSchema(), buildWebSiteSchema());
 
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
@@ -173,10 +92,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Axiom Canine" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="google-site-verification" content="pUSb1v5Pfnz_tUl9PvefqSwy7VpN6g8k-C5FAS_ac9Q" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteJsonLd} />
         {adsId && (
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`} />

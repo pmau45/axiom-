@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Home, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -69,10 +76,28 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'In-Home Dog Training',
+    description: 'Personalized in-home dog training in Jacksonville, FL. Perfect for reactivity, resource guarding, and obedience. We train both dog and owner in your real environment.',
+    path: '/services/in-home-dog-training',
+    serviceType: 'In-Home Dog Training',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'In-Home Dog Training', path: '/services/in-home-dog-training' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function InHomeTrainingPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="in-home-hero-heading"

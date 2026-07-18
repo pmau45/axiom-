@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
+import { buildTrainingImageAlt } from '@/app/lib/schema';
 
 export interface ArticleMetadata {
   title: string;
@@ -12,6 +13,8 @@ export interface ArticleMetadata {
   category: 'Training Tips' | 'Behavior Insights' | 'Philosophy' | 'Technique Breakdowns';
   readTime: number;
   heroImage: string;
+  /** Descriptive alt text with local + training context */
+  heroImageAlt: string;
   slug: string;
 }
 
@@ -26,6 +29,25 @@ async function markdownToHtml(markdown: string): Promise<string> {
   return result.toString();
 }
 
+function toArticleMetadata(
+  file: string,
+  data: Record<string, unknown>,
+  content: string
+): ArticleMetadata {
+  const title = (data.title as string) || 'Untitled';
+  return {
+    slug: file.replace('.mdx', ''),
+    title,
+    excerpt: (data.excerpt as string) || '',
+    date: (data.date as string) || new Date().toISOString().split('T')[0],
+    author: (data.author as string) || 'Axiom Canine',
+    category: (data.category as ArticleMetadata['category']) || 'Training Tips',
+    readTime: (data.readTime as number) || calculateReadTime(content),
+    heroImage: (data.heroImage as string) || '/images/blog-default.jpg',
+    heroImageAlt: buildTrainingImageAlt(title, data.heroImageAlt as string | undefined),
+  };
+}
+
 export async function getAllArticles(): Promise<Article[]> {
   const files = fs.readdirSync(ARTICLES_DIR).filter((file) => file.endsWith('.mdx'));
 
@@ -36,16 +58,10 @@ export async function getAllArticles(): Promise<Article[]> {
       const { data, content } = matter(fileContent);
 
       const htmlContent = await markdownToHtml(content);
+      const meta = toArticleMetadata(file, data as Record<string, unknown>, content);
 
       return {
-        slug: file.replace('.mdx', ''),
-        title: data.title || 'Untitled',
-        excerpt: data.excerpt || '',
-        date: data.date || new Date().toISOString().split('T')[0],
-        author: data.author || 'Axiom Canine',
-        category: data.category || 'Training Tips',
-        readTime: data.readTime || calculateReadTime(content),
-        heroImage: data.heroImage || '/images/blog-default.jpg',
+        ...meta,
         content: htmlContent,
       };
     })

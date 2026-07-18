@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import { Phone, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
+import JsonLd from '../components/seo/JsonLd';
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+} from '../lib/schema';
 
 export const metadata: Metadata = {
   title: 'Contact Axiom Canine | Dog Training Jacksonville, FL',
@@ -70,9 +78,30 @@ const faqs = [
   },
 ];
 
+const pageJsonLd = buildSchemaGraph(
+  {
+    '@type': 'ContactPage',
+    name: 'Contact Axiom Canine',
+    description:
+      'Contact Axiom Canine for dog training in Jacksonville, FL — in-home training, board and train, and group classes across Northeast Florida.',
+    url: `${SITE_URL}/contact`,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      '@id': BUSINESS_ID,
+      name: 'Axiom Canine',
+    },
+  },
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Contact', path: '/contact' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function ContactPage() {
   return (
     <div className="page-enter">
+      <JsonLd data={pageJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[50vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-b from-[#1A2030]/20 to-[#050505]"

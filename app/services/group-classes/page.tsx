@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Users, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Group Dog Training Classes Jacksonville, FL',
@@ -52,10 +59,28 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Group Dog Training Classes',
+    description: 'Axiom Canine group dog training classes in Jacksonville, FL. Practice real obedience around controlled distractions with structured coaching. Great for socialization and owner accountability.',
+    path: '/services/group-classes',
+    serviceType: 'Group Classes',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Group Classes', path: '/services/group-classes' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function GroupClassesPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#5B8FA8]/10 via-[#050505] to-[#050505]"
         aria-labelledby="group-hero-heading"

@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Resource Guarding Dog Training Jacksonville, FL | Axiom Canine',
@@ -60,10 +67,27 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Resource Guarding Dog Training',
+    description: 'Resource guarding training in Jacksonville, FL. Stop growling, snapping, or stiffening over food, toys, couches, and people with structured behavior modification.',
+    path: '/training-issues/resource-guarding',
+    serviceType: 'Resource Guarding Training',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Resource Guarding', path: '/training-issues/resource-guarding' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function ResourceGuardingPage() {
   return (
     <div className="page-enter">
-      <section
+      
+      <JsonLd data={pageJsonLd} />
+<section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="rg-hero-heading"
       >

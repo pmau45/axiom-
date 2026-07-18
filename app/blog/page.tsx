@@ -3,6 +3,13 @@ import Link from 'next/link';
 import { Compass } from 'lucide-react';
 import BlogCard from './components/BlogCard';
 import BlogGrid from './components/BlogGrid';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  buildBreadcrumbList,
+  buildSchemaGraph,
+} from '@/app/lib/schema';
 import {
   getAllArticles,
   getArticlesByCategory,
@@ -36,8 +43,32 @@ export default async function BlogPage({
     ? await getArticlesByCategory(activeCategory)
     : await getAllArticles();
 
+  const blogJsonLd = buildSchemaGraph(
+    {
+      '@type': 'Blog',
+      name: 'Axiom Canine Blog',
+      description:
+        'Dog training insights, behavior tips, and technique guides for Jacksonville, FL and Northeast Florida owners.',
+      url: `${SITE_URL}/blog`,
+      publisher: { '@id': BUSINESS_ID },
+      blogPost: articles.slice(0, 10).map((article) => ({
+        '@type': 'BlogPosting',
+        headline: article.title,
+        url: `${SITE_URL}/blog/${article.slug}`,
+        datePublished: article.date,
+        image: article.heroImage,
+        description: article.excerpt,
+      })),
+    },
+    buildBreadcrumbList([
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+    ])
+  );
+
   return (
     <div className="page-enter">
+      <JsonLd data={blogJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[70vh] flex items-center justify-center pt-24 pb-24 overflow-hidden bg-gradient-to-b from-[#1A2030]/20 to-[#050505]"

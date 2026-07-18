@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { buildFaqPageSchema, type FaqEntry } from '@/app/lib/schema';
 
 export interface FAQItem {
   question: string;
@@ -49,25 +50,12 @@ export function FAQSection({ items, title = 'Frequently Asked Questions' }: FAQS
   );
 }
 
-// JSON-LD FAQPage Schema Generator
-export function FAQSchema({ items }: { items: FAQItem[] }) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
+/** JSON-LD FAQPage schema — accepts {question,answer} or {q,a} entries */
+export function FAQSchema({ items }: { items: FaqEntry[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqPageSchema(items)) }}
     />
   );
 }

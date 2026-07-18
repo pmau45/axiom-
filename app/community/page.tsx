@@ -2,6 +2,12 @@ import type { Metadata } from 'next';
 import { Heart, Shield, ArrowRight } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from '../components/animations/StaggerContainer';
+import JsonLd from '../components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '../lib/schema';
 
 export const metadata: Metadata = {
   title: 'Axiom Cares — Free Rescue & Adoption Support',
@@ -12,39 +18,26 @@ export const metadata: Metadata = {
   },
 };
 
-const communityServiceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Axiom Cares - Free Rescue & Adoption Support',
-  description:
-    'Free in-home visits for rescue and adoption adjustments. No judgment, no pressure, no bill.',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Axiom Canine',
-  },
-  areaServed: [
-    {
-      '@type': 'City',
-      name: 'Jacksonville',
-      state: 'FL',
-    },
-  ],
-  serviceType: 'Community Support',
-  offers: {
-    '@type': 'Offer',
-    priceCurrency: 'USD',
-    price: 'Free',
-    availability: 'https://schema.org/InStock',
-  },
-};
+const communityJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Axiom Cares — Free Rescue & Adoption Support',
+    description:
+      'Free in-home visits for rescue and adoption adjustments in Jacksonville, FL. No judgment, no pressure, no bill.',
+    path: '/community',
+    serviceType: 'Rescue Dog Training Support',
+    areaServed: ['Jacksonville', 'Ponte Vedra Beach', 'Nocatee', 'St. Augustine'],
+    price: '0',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Axiom Cares', path: '/community' },
+  ])
+);
 
 export default function CommunityPage() {
   return (
     <div className="page-enter">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(communityServiceJsonLd) }}
-      />
+      <JsonLd data={communityJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[70vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#5B8FA8]/10 via-[#050505] to-[#050505]"

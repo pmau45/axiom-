@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Home, Calendar, Users, AlertTriangle, Compass } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
+import JsonLd from '../components/seo/JsonLd';
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  buildBreadcrumbList,
+  buildSchemaGraph,
+} from '../lib/schema';
 
 export const metadata: Metadata = {
   title:
@@ -83,9 +90,67 @@ const trainingIssues = [
   },
 ];
 
+const pageJsonLd = buildSchemaGraph(
+  {
+    '@type': 'CollectionPage',
+    name: 'Dog Training Services in Jacksonville, FL',
+    description:
+      'Axiom Canine offers in-home dog training, board & train, and group classes in Jacksonville, FL.',
+    url: `${SITE_URL}/services`,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': BUSINESS_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'In-Home Dog Training',
+          url: `${SITE_URL}/services/in-home-dog-training`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Board & Train',
+          url: `${SITE_URL}/services/board-and-train`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Group Classes',
+          url: `${SITE_URL}/services/group-classes`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'Behavior Modification',
+          url: `${SITE_URL}/services/behavior-modification`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          name: 'Advanced Obedience',
+          url: `${SITE_URL}/services/advanced-obedience`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 6,
+          name: 'Puppy Training',
+          url: `${SITE_URL}/services/puppy-training`,
+        },
+      ],
+    },
+  },
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+  ])
+);
+
 export default function ServicesPage() {
   return (
     <div className="page-enter">
+      <JsonLd data={pageJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[60vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-b from-[#1A2030]/20 to-[#050505]"

@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -79,10 +86,27 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Reactive Dog Training',
+    description: 'Specialized reactive dog training in Jacksonville, FL. We help dogs overcome leash reactivity, stranger reactivity, and aggression through proven behavior modification and owner coaching.',
+    path: '/training-issues/reactive-dog',
+    serviceType: 'Reactive Dog Training',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Reactive Dogs', path: '/training-issues/reactive-dog' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function ReactiveDogPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="reactive-hero-heading"

@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ShieldCheck, ArrowRight, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Dog Aggression Training Jacksonville, FL | Safety-First Approach',
@@ -66,10 +73,27 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Dog Aggression Training',
+    description: 'Axiom Canine addresses dog aggression in Jacksonville, FL with a safety-first, honest approach. We give realistic assessments — not irresponsible promises.',
+    path: '/training-issues/aggression',
+    serviceType: 'Aggression Rehabilitation',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Aggression', path: '/training-issues/aggression' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function AggressionPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="aggression-hero-heading"

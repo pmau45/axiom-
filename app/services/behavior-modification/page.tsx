@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Behavior Modification Dog Training Jacksonville, FL',
@@ -88,10 +95,28 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Behavior Modification Dog Training',
+    description: 'Axiom Canine specializes in dog behavior modification in Jacksonville, FL. Reactivity, resource guarding, and aggression addressed at the root cause — not just managed.',
+    path: '/services/behavior-modification',
+    serviceType: 'Behavior Modification',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Behavior Modification', path: '/services/behavior-modification' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function BehaviorModificationPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="behmod-hero-heading"

@@ -20,7 +20,7 @@ export default function ArticleHero({ article }: ArticleHeroProps) {
       >
         <Image
           src={article.heroImage}
-          alt={article.title}
+          alt={article.heroImageAlt}
           fill
           className="object-cover"
           priority

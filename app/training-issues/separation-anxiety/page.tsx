@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Separation Anxiety Dog Training Jacksonville, FL | Axiom Canine',
@@ -60,10 +67,27 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Separation Anxiety Dog Training',
+    description: 'Separation anxiety dog training in Jacksonville, FL. Stop destructive alone-time panic with structure, gradual independence, and owner coaching across NE Florida.',
+    path: '/training-issues/separation-anxiety',
+    serviceType: 'Separation Anxiety Training',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Separation Anxiety', path: '/training-issues/separation-anxiety' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function SeparationAnxietyPage() {
   return (
     <div className="page-enter">
-      <section
+      
+      <JsonLd data={pageJsonLd} />
+<section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#FF5E00]/10 via-[#050505] to-[#050505]"
         aria-labelledby="sa-hero-heading"
       >

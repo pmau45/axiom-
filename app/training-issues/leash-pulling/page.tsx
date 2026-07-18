@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Dog Leash Pulling Training Jacksonville, FL',
@@ -77,10 +84,27 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Leash Pulling Dog Training',
+    description: 'Your dog pulling on leash is not inevitable. Axiom Canine addresses leash pulling in Jacksonville, FL by teaching real loose-leash walking through structure and handler technique.',
+    path: '/training-issues/leash-pulling',
+    serviceType: 'Leash Manners Training',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Leash Pulling', path: '/training-issues/leash-pulling' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function LeashPullingPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#7A8B66]/10 via-[#050505] to-[#050505]"
         aria-labelledby="leash-hero-heading"

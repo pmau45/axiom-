@@ -4,7 +4,14 @@ import { ArrowRight, MapPin, Heart, Shield, Phone } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from '../components/animations/StaggerContainer';
 import AnimatedSection from '../components/animations/AnimatedSection';
-import { FAQSection, FAQSchema } from '../components/ui/FAQSection';
+import { FAQSection } from '../components/ui/FAQSection';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildLocationServiceSchema,
+  buildSchemaGraph,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Dog Training in Jacksonville, FL | Axiom Canine',
@@ -83,10 +90,22 @@ const faqItems = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildLocationServiceSchema('Jacksonville, FL', '/jacksonville', 'Professional dog training in Jacksonville, FL. Behavior modification, advanced obedience, and free rescue support.'),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Dog Training in Jacksonville, FL', path: '/jacksonville' },
+  ]),
+  buildFaqPageSchema(faqItems)
+);
+
 export default function JacksonvillePage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[85vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden"
         aria-labelledby="jax-hero-heading"
@@ -432,8 +451,6 @@ export default function JacksonvillePage() {
           </div>
         </div>
       </section>
-
-      <FAQSchema items={faqItems} />
-    </div>
+</div>
   );
 }

@@ -3,6 +3,12 @@ import { notFound } from 'next/navigation';
 import ArticleHero from '../components/ArticleHero';
 import RelatedPosts from '../components/RelatedPosts';
 import ArticleNav from '../components/ArticleNav';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBlogPostingSchema,
+  buildBreadcrumbList,
+  buildSchemaGraph,
+} from '@/app/lib/schema';
 import { getArticleBySlug, getAllArticles, getRelatedArticles } from '../utils/mdx-loader';
 
 interface ArticlePageProps {
@@ -31,7 +37,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       title: article.title,
       description: article.excerpt,
       type: 'article',
-      images: [article.heroImage],
+      images: [
+        {
+          url: article.heroImage,
+          alt: article.heroImageAlt,
+        },
+      ],
       publishedTime: article.date,
       authors: [article.author],
     },
@@ -59,11 +70,29 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : undefined;
   const relatedArticles = await getRelatedArticles(slug, 3);
 
+  const articleJsonLd = buildSchemaGraph(
+    buildBlogPostingSchema({
+      title: article.title,
+      excerpt: article.excerpt,
+      date: article.date,
+      author: article.author,
+      slug: article.slug,
+      heroImage: article.heroImage,
+      imageAlt: article.heroImageAlt,
+      category: article.category,
+    }),
+    buildBreadcrumbList([
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: article.title, path: `/blog/${article.slug}` },
+    ])
+  );
+
   return (
     <div className="page-enter">
+      <JsonLd data={articleJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <ArticleHero article={article} />
-
       {/* ── Content ───────────────────────────────────── */}
       <article className="py-16 md:py-24 bg-[#0B0C10]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

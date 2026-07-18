@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FAQSection, FAQSchema } from '@/app/components/ui/FAQSection';
+import { FAQSection } from '@/app/components/ui/FAQSection';
 import OpenModalButton from '@/app/components/forms/OpenModalButton';
 import { StaggerContainer } from '@/app/components/animations/StaggerContainer';
 import AnimatedSection from '@/app/components/animations/AnimatedSection';
 import { ArrowRight, MapPin, Anchor, Trees, Home } from 'lucide-react';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildLocationServiceSchema,
+  buildSchemaGraph,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Dog Training in Fernandina Beach, FL | Axiom Canine',
@@ -50,10 +57,22 @@ const faqItems = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildLocationServiceSchema('Fernandina Beach, FL', '/fernandina-beach', 'Dog training in Fernandina Beach, FL — leash manners, beach etiquette, and behavior help for Amelia Island owners.'),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Dog Training in Fernandina Beach, FL', path: '/fernandina-beach' },
+  ]),
+  buildFaqPageSchema(faqItems)
+);
+
 export default function FernandinaBeachTrainingPage() {
   return (
     <div className="page-enter">
-      <section className="relative min-h-[75vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden" aria-labelledby="fb-hero-heading">
+      
+      <JsonLd data={pageJsonLd} />
+<section className="relative min-h-[75vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden" aria-labelledby="fb-hero-heading">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0B0C10] via-[#050505] to-[#1A2030]" />
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
@@ -165,8 +184,6 @@ export default function FernandinaBeachTrainingPage() {
           </OpenModalButton>
         </div>
       </section>
-
-      <FAQSchema items={faqItems} />
-    </div>
+</div>
   );
 }

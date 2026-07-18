@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
+import JsonLd from '@/app/components/seo/JsonLd';
+import {
+  buildBreadcrumbList,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+  buildServiceSchema,
+} from '@/app/lib/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -80,10 +87,28 @@ const faqs = [
   },
 ];
 
+
+const pageJsonLd = buildSchemaGraph(
+  buildServiceSchema({
+    name: 'Board and Train Dog Training',
+    description: 'Proven board and train programs in Jacksonville, FL for reactive, aggressive, and high-drive dogs. Owner education included. Real-world off-leash results with lifetime support. Book your spot today.',
+    path: '/services/board-and-train',
+    serviceType: 'Board and Train',
+  }),
+  buildBreadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'Board and Train', path: '/services/board-and-train' },
+  ]),
+  buildFaqPageSchema(faqs)
+);
+
 export default function BoardAndTrainPage() {
   return (
     <div className="page-enter">
-      {/* ── Hero ──────────────────────────────────────── */}
+      
+      <JsonLd data={pageJsonLd} />
+{/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#7A8B66]/10 via-[#050505] to-[#050505]"
         aria-labelledby="bat-hero-heading"

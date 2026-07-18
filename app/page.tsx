@@ -10,7 +10,6 @@ import {
   Compass,
 } from 'lucide-react';
 import OpenModalButton from './components/forms/OpenModalButton';
-import { StaggerContainer, StaggerItem } from './components/animations/StaggerContainer';
 import GoogleReviews from './components/ui/GoogleReviews';
 
 export const metadata: Metadata = {
@@ -23,6 +22,27 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 };
+
+const pillars = [
+  {
+    Icon: LayoutTemplate,
+    title: 'Structure',
+    body: 'Structure gives your dog clarity. When they know exactly what to expect, the guesswork disappears, anxiety drops, and learning finally begins.',
+    stagger: 'animate-stagger-1',
+  },
+  {
+    Icon: Repeat,
+    title: 'Consistency',
+    body: 'Consistency builds deep understanding. It proves to your dog that your boundaries are reliable, safe, and not up for negotiation.',
+    stagger: 'animate-stagger-2',
+  },
+  {
+    Icon: Target,
+    title: 'Results',
+    body: 'Results speak for themselves. We work alongside you until clarity is restored and obedience becomes second nature for your dog.',
+    stagger: 'animate-stagger-3',
+  },
+] as const;
 
 export default function HomePage() {
   return (
@@ -115,37 +135,20 @@ export default function HomePage() {
               establishing a foundation built on three essential pillars.
             </p>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                Icon: LayoutTemplate,
-                title: 'Structure',
-                body: 'Structure gives your dog clarity. When they know exactly what to expect, the guesswork disappears, anxiety drops, and learning finally begins.',
-              },
-              {
-                Icon: Repeat,
-                title: 'Consistency',
-                body: 'Consistency builds deep understanding. It proves to your dog that your boundaries are reliable, safe, and not up for negotiation.',
-              },
-              {
-                Icon: Target,
-                title: 'Results',
-                body: 'Results speak for themselves. We work alongside you until clarity is restored and obedience becomes second nature for your dog.',
-              },
-            ].map(({ Icon, title, body }) => (
-              <StaggerItem key={title}>
-                <article
-                  className="bg-[#0B0C10] p-10 border-t-4 border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 shadow-lg h-full"
-                >
-                  <Icon className="text-[#7A8B66] w-10 h-10 mb-6" aria-hidden="true" />
-                  <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-4">
-                    {title}
-                  </h3>
-                  <p className="text-[#C5C6C7] leading-relaxed">{body}</p>
-                </article>
-              </StaggerItem>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillars.map(({ Icon, title, body, stagger }) => (
+              <article
+                key={title}
+                className={`bg-[#0B0C10] p-10 border-t-4 border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 shadow-lg h-full ${stagger}`}
+              >
+                <Icon className="text-[#7A8B66] w-10 h-10 mb-6" aria-hidden="true" />
+                <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-4">
+                  {title}
+                </h3>
+                <p className="text-[#C5C6C7] leading-relaxed">{body}</p>
+              </article>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
@@ -168,50 +171,46 @@ export default function HomePage() {
               behavior, and your lifestyle.
             </p>
           </div>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <StaggerItem>
-              <Link
-                href="/services/behavior-modification"
-                className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full"
-                aria-label="Learn more about Behavior Modification"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <AlertTriangle className="text-[#FF5E00] w-10 h-10 flex-shrink-0" aria-hidden="true" />
-                  <h3 className="font-oswald text-2xl uppercase tracking-widest text-white">
-                    Behavior Modification
-                  </h3>
-                </div>
-                <p className="text-[#C5C6C7] leading-relaxed mb-8 flex-grow">
-                  Reactivity, aggression, and resource guarding don&apos;t fix themselves. We
-                  rehabilitate the dogs other trainers turn away by addressing the root cause.
-                </p>
-                <span className="font-oswald text-sm uppercase tracking-widest text-[#FF5E00] border-b border-[#FF5E00] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
-                  Learn More →
-                </span>
-              </Link>
-            </StaggerItem>
-            <StaggerItem>
-              <Link
-                href="/services/advanced-obedience"
-                className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full"
-                aria-label="Learn more about Advanced Obedience"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <Compass className="text-[#7A8B66] w-10 h-10 flex-shrink-0" aria-hidden="true" />
-                  <h3 className="font-oswald text-2xl uppercase tracking-widest text-white">
-                    Advanced Obedience
-                  </h3>
-                </div>
-                <p className="text-[#C5C6C7] leading-relaxed mb-8 flex-grow">
-                  A dog that only listens at home isn&apos;t trained. We build bulletproof recall,
-                  public neutrality, and off-leash reliability that holds up in the real world.
-                </p>
-                <span className="font-oswald text-sm uppercase tracking-widest text-[#7A8B66] border-b border-[#7A8B66] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
-                  Learn More →
-                </span>
-              </Link>
-            </StaggerItem>
-          </StaggerContainer>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Link
+              href="/services/behavior-modification"
+              className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#FF5E00] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full animate-stagger-1"
+              aria-label="Learn more about Behavior Modification"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <AlertTriangle className="text-[#FF5E00] w-10 h-10 flex-shrink-0" aria-hidden="true" />
+                <h3 className="font-oswald text-2xl uppercase tracking-widest text-white">
+                  Behavior Modification
+                </h3>
+              </div>
+              <p className="text-[#C5C6C7] leading-relaxed mb-8 flex-grow">
+                Reactivity, aggression, and resource guarding don&apos;t fix themselves. We
+                rehabilitate the dogs other trainers turn away by addressing the root cause.
+              </p>
+              <span className="font-oswald text-sm uppercase tracking-widest text-[#FF5E00] border-b border-[#FF5E00] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
+                Learn More →
+              </span>
+            </Link>
+            <Link
+              href="/services/advanced-obedience"
+              className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full animate-stagger-2"
+              aria-label="Learn more about Advanced Obedience"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <Compass className="text-[#7A8B66] w-10 h-10 flex-shrink-0" aria-hidden="true" />
+                <h3 className="font-oswald text-2xl uppercase tracking-widest text-white">
+                  Advanced Obedience
+                </h3>
+              </div>
+              <p className="text-[#C5C6C7] leading-relaxed mb-8 flex-grow">
+                A dog that only listens at home isn&apos;t trained. We build bulletproof recall,
+                public neutrality, and off-leash reliability that holds up in the real world.
+              </p>
+              <span className="font-oswald text-sm uppercase tracking-widest text-[#7A8B66] border-b border-[#7A8B66] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
+                Learn More →
+              </span>
+            </Link>
+          </div>
           <div className="text-center mt-12">
             <Link
               href="/services"

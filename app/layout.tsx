@@ -12,6 +12,7 @@ import {
   OG_IMAGE_ALT,
   buildLocalBusinessSchema,
   buildWebSiteSchema,
+  buildCatalogServiceSchemas,
   buildSchemaGraph,
 } from './lib/schema';
 import './globals.css';
@@ -77,7 +78,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const siteJsonLd = buildSchemaGraph(buildLocalBusinessSchema(), buildWebSiteSchema());
+  const siteJsonLd = buildSchemaGraph(
+    buildLocalBusinessSchema(),
+    buildWebSiteSchema(),
+    buildCatalogServiceSchemas()
+  );
 
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;

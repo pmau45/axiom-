@@ -374,11 +374,62 @@ export function buildLocationServiceSchema(city: string, path: string, descripti
   });
 }
 
+/** Full Service nodes for every catalog entry — used in the sitewide @graph. */
+export function buildCatalogServiceSchemas() {
+  return SERVICE_CATALOG.map((entry) =>
+    buildServiceSchema({
+      name: entry.name,
+      description: entry.description,
+      path: entry.path,
+      serviceType: entry.serviceType,
+    })
+  );
+}
+
+/**
+ * Homepage FAQ answers for FAQPage rich results.
+ * Keep copy factual and aligned with visible FAQ content on `/`.
+ */
+export const HOME_FAQS: FaqEntry[] = [
+  {
+    question: 'What dog training services does Axiom Canine offer in Jacksonville?',
+    answer:
+      'Axiom Canine offers behavior modification, advanced obedience, board and train, in-home dog training, group classes, and puppy training across Jacksonville, FL and surrounding Northeast Florida communities. We also provide free rescue and adoption adjustment support through Axiom Cares.',
+  },
+  {
+    question: 'Do you train reactive or aggressive dogs?',
+    answer:
+      'Yes. Behavior modification is a core specialty. We work with leash reactivity, aggression, resource guarding, and related issues using structured protocols and honest assessments — without overselling outcomes.',
+  },
+  {
+    question: 'Do you offer in-home dog training?',
+    answer:
+      'Yes. We train in your home and neighborhood across Jacksonville, Ponte Vedra, Nocatee, St. Augustine, and nearby areas so skills stick where your dog actually lives.',
+  },
+  {
+    question: 'How do I get started with Axiom Canine?',
+    answer:
+      'Submit the free assessment form or call (904) 458-7561. We respond within 24 hours on business days, learn about your dog, and recommend the right program — with no obligation.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer:
+      'We serve Jacksonville and surrounding areas including Jacksonville Beach, Ponte Vedra Beach, Nocatee, Orange Park, St. Augustine, Fernandina Beach, Palm Coast, Nassau County, and Brunswick, GA.',
+  },
+  {
+    question: 'Is rescue or newly adopted dog support really free?',
+    answer:
+      'Yes. Through Axiom Cares, we offer free in-home visits for rescue and adoption adjustment in the Jacksonville area — no judgment, no pressure, and no bill.',
+  },
+];
+
 /** Combine multiple schema nodes into a single @graph document */
 export function buildSchemaGraph(
-  ...nodes: Array<Record<string, unknown> | null | undefined | false>
+  ...nodes: Array<Record<string, unknown> | null | undefined | false | Array<Record<string, unknown>>>
 ) {
-  const cleaned = nodes.filter(Boolean) as Record<string, unknown>[];
+  const cleaned = nodes
+    .flatMap((node) => (Array.isArray(node) ? node : [node]))
+    .filter(Boolean) as Record<string, unknown>[];
   return {
     '@context': 'https://schema.org',
     '@graph': cleaned.map((node) => {

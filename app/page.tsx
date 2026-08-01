@@ -11,6 +11,15 @@ import {
 } from 'lucide-react';
 import OpenModalButton from './components/forms/OpenModalButton';
 import GoogleReviews from './components/ui/GoogleReviews';
+import JsonLd from './components/seo/JsonLd';
+import {
+  SITE_URL,
+  BUSINESS_ID,
+  WEBSITE_ID,
+  HOME_FAQS,
+  buildFaqPageSchema,
+  buildSchemaGraph,
+} from './lib/schema';
 
 export const metadata: Metadata = {
   title: {
@@ -44,9 +53,25 @@ const pillars = [
   },
 ] as const;
 
+const homeJsonLd = buildSchemaGraph(
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: 'Professional Dog Training in Jacksonville, FL | Axiom Canine',
+    description:
+      'Expert dog training in Jacksonville, FL. Specializing in reactivity, aggression, board & train, and owner education.',
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': BUSINESS_ID },
+    mainEntity: { '@id': BUSINESS_ID },
+  },
+  buildFaqPageSchema(HOME_FAQS)
+);
+
 export default function HomePage() {
   return (
     <div className="page-enter">
+      <JsonLd data={homeJsonLd} />
       {/* ── Hero ──────────────────────────────────────── */}
       <section
         className="relative min-h-[90vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-b from-[#1A2030]/20 to-[#050505]"
@@ -243,6 +268,47 @@ export default function HomePage() {
           <GoogleReviews />
         </div>
       </section>
+
+      {/* ── FAQ ───────────────────────────────────────── */}
+      <section
+        className="py-24 bg-[#0B0C10] border-b border-[#1A2030]"
+        aria-labelledby="home-faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="home-faq-heading"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+          >
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-2">
+            {HOME_FAQS.map((item) => {
+              const question = 'question' in item ? item.question : item.q;
+              const answer = 'question' in item ? item.answer : item.a;
+              return <HomeFaqItem key={question} question={question} answer={answer} />;
+            })}
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+function HomeFaqItem({ question, answer }: { question: string; answer: string }) {
+  return (
+    <details className="group bg-[#050505] border border-[#1A2030] open:border-[#FF5E00] transition-colors">
+      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#FF5E00] transition-colors">
+        <span>{question}</span>
+        <span
+          className="text-[#FF5E00] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
+          aria-hidden="true"
+        >
+          +
+        </span>
+      </summary>
+      <div className="px-6 pb-6 text-[#C5C6C7] leading-relaxed border-t border-[#1A2030] pt-4">
+        {answer}
+      </div>
+    </details>
   );
 }

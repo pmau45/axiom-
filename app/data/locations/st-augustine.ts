@@ -7,20 +7,22 @@ export const stAugustine: LocationPageData = {
   schemaDescription:
     'Dog training in St. Augustine, FL — behavior modification, obedience, and board and train for historic-coast owners.',
   metadata: {
-    title: 'Dog Training in St. Augustine, FL | Axiom Canine',
+    title: { absolute: 'Dog Training St. Augustine FL | Axiom Canine' },
     description:
-      "Professional dog training serving St. Augustine and the historic district. Behavior modification and obedience training for Florida's oldest city — from downtown distractions to beach reliability. Call (904) 458-7561.",
+      "St. Augustine's dog trainer for obedience, behavior issues, and board & train. Serving St. Augustine, Nocatee, and Ponte Vedra.",
     keywords: [
-      'dog training St. Augustine',
+      'dog training St. Augustine FL',
       'dog trainer St. Augustine FL',
+      'dog training St. Augustine',
       'behavior modification St. Augustine',
       'obedience training St. Augustine',
       'historic district dog training',
       'St. Augustine Beach dog trainer',
     ],
     openGraph: {
-      title: 'Dog Training in St. Augustine, FL | Axiom Canine',
-      description: 'Professional dog training serving St. Augustine and the historic district.',
+      title: 'Dog Training St. Augustine FL | Axiom Canine',
+      description:
+        "St. Augustine's dog trainer for obedience, behavior issues, and board & train. Serving St. Augustine, Nocatee, and Ponte Vedra.",
     },
   },
   badge: { label: 'St. Augustine, FL', accent: 'orange' },

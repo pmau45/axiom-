@@ -119,6 +119,26 @@ export interface LocationPageData {
     features: LocationFeature[];
   };
 
+  /** Long-form local content (300–400 words) for thin satellite pages */
+  about?: {
+    headingId: string;
+    headingBefore: string;
+    headingAccent: string;
+    paragraphs: string[];
+  };
+
+  /** Neighborhood / service-area callout with optional map embed */
+  serviceArea?: {
+    headingId: string;
+    headingBefore: string;
+    headingAccent: string;
+    description: string;
+    areas: string[];
+    /** Google Maps / OSM embed URL (no API key required for basic embeds) */
+    mapEmbedUrl?: string;
+    mapTitle?: string;
+  };
+
   services: {
     headingId: string;
     heading: string;

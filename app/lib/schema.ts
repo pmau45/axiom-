@@ -407,6 +407,11 @@ export const HOME_FAQS: FaqEntry[] = [
       'Yes. We train in your home and neighborhood across Jacksonville, Ponte Vedra, Nocatee, St. Augustine, and nearby areas so skills stick where your dog actually lives.',
   },
   {
+    question: 'I searched for dog training near me — do you serve my area?',
+    answer:
+      'If you are in Jacksonville or nearby Northeast Florida — including the Beaches, Ponte Vedra, Nocatee, Orange Park, St. Augustine, Fernandina Beach, Palm Coast, or Brunswick, GA — yes. Axiom Canine is a local Jacksonville dog trainer focused on real-world results where your dog lives and walks.',
+  },
+  {
     question: 'How do I get started with Axiom Canine?',
     answer:
       'Submit the free assessment form or call (904) 458-7561. We respond within 24 hours on business days, learn about your dog, and recommend the right program — with no obligation.',

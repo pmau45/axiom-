@@ -12,10 +12,10 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Off Leash Training Jacksonville | Real-World Reliability',
+    absolute: 'Advanced Obedience Training for Dogs | Axiom Canine Jacksonville',
   },
   description:
-    'Advanced off-leash training in Jacksonville, FL. We build reliable recall, neutrality, and trust in real environments — including trails and public spaces. Perfect for high-drive breeds.',
+    'Take your dog beyond the basics. Advanced obedience, off-leash control, and real-world reliability. Serving Jacksonville and Northeast Florida.',
   alternates: {
     canonical: '/services/advanced-obedience',
   },

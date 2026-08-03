@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     absolute: 'Professional Dog Training in Jacksonville, FL | Axiom Canine',
   },
   description:
-    'Expert dog training in Jacksonville, FL. Specializing in reactivity, aggression, board & train, and owner education. Real-world results with high-drive breeds and off-leash proof. Free consultation available.',
+    'Jacksonville dog trainer for reactivity, aggression, board & train, and real-world obedience. Dog training near me across Northeast Florida — free consultation available.',
   alternates: {
     canonical: '/',
   },
@@ -247,9 +247,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Google Reviews ────────────────────────────── */}
+      {/* ── Near Me / Local trainer ───────────────────── */}
       <section
         className="py-24 bg-[#050505] border-b border-[#1A2030] relative"
+        aria-labelledby="near-me-heading"
+      >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px w-12 bg-[#FF5E00]" aria-hidden="true" />
+            <span className="text-[#FF5E00] font-bold tracking-[0.2em] uppercase text-sm">
+              Jacksonville &amp; Nearby
+            </span>
+          </div>
+          <h2
+            id="near-me-heading"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+          >
+            Looking for a Jacksonville Dog Trainer Near You?
+          </h2>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed mb-6">
+            If you searched for dog training near me, you want a trainer who works where your dog
+            actually lives — not a one-size curriculum practiced only in a quiet facility. Axiom
+            Canine is a Jacksonville dog trainer serving Northeast Florida with in-home sessions,
+            behavior modification, advanced obedience, and board &amp; train when immersion is the
+            right fit.
+          </p>
+          <p className="text-[#C5C6C7] text-lg leading-relaxed mb-10">
+            We train across Jacksonville, the Beaches, Ponte Vedra, Nocatee, Orange Park, St.
+            Augustine, and surrounding communities. Start with a free assessment and get a clear
+            plan matched to your dog, your neighborhood, and your goals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <OpenModalButton
+              className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-lg font-bold uppercase tracking-widest px-8 py-4 inline-flex items-center justify-center gap-3"
+              ariaLabel="Request a free dog training assessment"
+            >
+              Free Assessment <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </OpenModalButton>
+            <Link
+              href="/jacksonville"
+              className="font-oswald text-lg font-bold uppercase tracking-widest px-8 py-4 inline-flex items-center justify-center gap-3 border border-[#1A2030] text-[#C5C6C7] hover:border-[#FF5E00] hover:text-white transition-colors"
+            >
+              Jacksonville Training Areas
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Google Reviews ────────────────────────────── */}
+      <section
+        className="py-24 bg-[#0B0C10] border-b border-[#1A2030] relative"
         aria-labelledby="reviews-heading"
       >
         <div className="absolute inset-0 bg-texture opacity-10 pointer-events-none" aria-hidden="true" />
@@ -263,6 +310,8 @@ export default function HomePage() {
             </h2>
             <p className="text-[#C5C6C7] text-lg leading-relaxed">
               Real Google reviews from Jacksonville-area dog owners who trained with Axiom Canine.
+              Proximity and reviews matter for local search — if we helped your dog, a short Google
+              review helps other owners find structured training nearby.
             </p>
           </div>
           <GoogleReviews />

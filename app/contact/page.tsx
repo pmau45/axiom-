@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Phone, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import JsonLd from '../components/seo/JsonLd';
@@ -11,25 +12,27 @@ import {
 } from '../lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Contact Axiom Canine | Dog Training Jacksonville, FL',
+  title: {
+    absolute: 'Contact Axiom Canine | Jacksonville Dog Training',
+  },
   description:
-    'Get in touch with Axiom Canine. We offer in-home dog training, board & train, and group classes across Jacksonville, Ponte Vedra, Nocatee, and St. Augustine, FL.',
+    'Contact Axiom Canine in Jacksonville, FL. Free assessment for dog training, board & train, and behavior help. Call (904) 458-7561 — we respond within 24 hours.',
   alternates: {
     canonical: '/contact',
   },
 };
 
 const serviceAreas = [
-  'Jacksonville, FL',
-  'Jacksonville Beach, FL',
-  'Ponte Vedra Beach, FL',
-  'Nocatee, FL',
-  'Orange Park, FL',
-  'St. Augustine, FL',
-  'Fernandina Beach, FL',
-  'Palm Coast, FL',
-  'Brunswick, GA',
-  'Nassau County, FL',
+  { label: 'Jacksonville, FL', href: '/jacksonville' },
+  { label: 'Jacksonville Beach, FL', href: '/jacksonville-beach' },
+  { label: 'Ponte Vedra Beach, FL', href: '/ponte-vedra' },
+  { label: 'Nocatee, FL', href: '/nocatee' },
+  { label: 'Orange Park, FL', href: '/orange-park' },
+  { label: 'St. Augustine, FL', href: '/st-augustine' },
+  { label: 'Fernandina Beach, FL', href: '/fernandina-beach' },
+  { label: 'Palm Coast, FL', href: '/palm-coast' },
+  { label: 'Brunswick, GA', href: '/brunswick-ga' },
+  { label: 'Nassau County, FL', href: '/fernandina-beach' },
 ];
 
 const intakeSteps = [
@@ -162,9 +165,14 @@ export default function ContactPage() {
                         Service Area
                       </p>
                       <ul className="space-y-1">
-                        {serviceAreas.map((area) => (
-                          <li key={area} className="text-white font-bold">
-                            {area}
+                        {serviceAreas.map(({ label, href }) => (
+                          <li key={label}>
+                            <Link
+                              href={href}
+                              className="text-white font-bold hover:text-[#FF5E00] transition-colors"
+                            >
+                              {label}
+                            </Link>
                           </li>
                         ))}
                       </ul>

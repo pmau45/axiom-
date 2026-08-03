@@ -7,19 +7,21 @@ export const orangePark: LocationPageData = {
   schemaDescription:
     'Dog training in Orange Park, FL — behavior modification, obedience, and in-home training for Clay County owners.',
   metadata: {
-    title: 'Dog Training in Orange Park, FL | Axiom Canine',
+    title: { absolute: 'Dog Training Orange Park FL | Axiom Canine' },
     description:
-      'Professional dog training in Orange Park and Clay County. Behavior modification, puppy training, board & train, and free rescue support. Call (904) 458-7561.',
+      'Professional dog training in Orange Park. Marker-based methods, real results. Serving Orange Park, Fleming Island, and the Westside.',
     keywords: [
-      'dog training Orange Park',
+      'dog training Orange Park FL',
       'dog trainer Orange Park FL',
+      'dog training Orange Park',
       'behavior modification Clay County',
       'puppy training Orange Park',
       'board and train Orange Park FL',
     ],
     openGraph: {
-      title: 'Dog Training in Orange Park, FL | Axiom Canine',
-      description: 'Professional dog training serving Orange Park and Clay County.',
+      title: 'Dog Training Orange Park FL | Axiom Canine',
+      description:
+        'Professional dog training in Orange Park. Marker-based methods, real results. Serving Orange Park, Fleming Island, and the Westside.',
     },
   },
   badge: { label: 'Orange Park, FL', accent: 'orange' },

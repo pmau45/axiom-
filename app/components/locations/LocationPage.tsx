@@ -335,7 +335,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
       )}
 
       {/* ── Local context (satellite pages) ───────────── */}
-      {data.local && !data.neighborhoods && (
+      {data.local && (
         <section
           className="py-24 bg-[#0B0C10] border-b border-[#1A2030]"
           aria-labelledby={data.local.headingId}
@@ -374,6 +374,85 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
                 })}
               </div>
             </StaggerContainer>
+          </div>
+        </section>
+      )}
+
+      {/* ── About (expanded local content) ────────────── */}
+      {data.about && (
+        <section
+          className="py-24 bg-[#050505] border-b border-[#1A2030]"
+          aria-labelledby={data.about.headingId}
+        >
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2
+              id={data.about.headingId}
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-10 text-center"
+            >
+              {data.about.headingBefore}{' '}
+              <span className="text-white">{data.about.headingAccent}</span>
+            </h2>
+            <div className="space-y-6">
+              {data.about.paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-[#C5C6C7] text-lg leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Service area + map ────────────────────────── */}
+      {data.serviceArea && (
+        <section
+          className="py-24 bg-[#0B0C10] border-b border-[#1A2030]"
+          aria-labelledby={data.serviceArea.headingId}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2
+                id={data.serviceArea.headingId}
+                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              >
+                {data.serviceArea.headingBefore}{' '}
+                <span className="text-white">{data.serviceArea.headingAccent}</span>
+              </h2>
+              <p className="text-[#C5C6C7] text-lg max-w-2xl mx-auto">
+                {data.serviceArea.description}
+              </p>
+            </div>
+
+            <div
+              className={`grid gap-10 items-start ${
+                data.serviceArea.mapEmbedUrl ? 'lg:grid-cols-2' : 'grid-cols-1 max-w-3xl mx-auto'
+              }`}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {data.serviceArea.areas.map((area) => (
+                  <div
+                    key={area}
+                    className="flex items-center gap-2 bg-[#1A2030]/50 border border-[#1A2030] px-4 py-3"
+                  >
+                    <MapPin className="w-3 h-3 text-[#FF5E00] flex-shrink-0" aria-hidden="true" />
+                    <span className="text-[#C5C6C7] text-sm">{area}</span>
+                  </div>
+                ))}
+              </div>
+
+              {data.serviceArea.mapEmbedUrl && (
+                <div className="border border-[#1A2030] bg-[#050505] overflow-hidden aspect-[4/3] min-h-[280px]">
+                  <iframe
+                    title={data.serviceArea.mapTitle ?? `Map of ${data.schemaName}`}
+                    src={data.serviceArea.mapEmbedUrl}
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </section>
       )}

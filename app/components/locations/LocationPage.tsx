@@ -425,7 +425,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
 
             <div
               className={`grid gap-10 items-start ${
-                data.serviceArea.mapEmbedUrl ? 'lg:grid-cols-2' : 'grid-cols-1 max-w-3xl mx-auto'
+                data.serviceArea.mapEmbedUrl ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1 max-w-3xl mx-auto'
               }`}
             >
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

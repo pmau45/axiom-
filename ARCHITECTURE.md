@@ -247,12 +247,10 @@ useEffect(() => {
 ## Common Extensions
 
 ### Analytics
-Google Ads and GA4 are both env-driven in `layout.tsx`:
-```tsx
-const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-// Scripts render only when the corresponding ID is set
-```
+Google Ads and GA4 are env-driven via `app/components/seo/GoogleTag.tsx` (loaded from `layout.tsx`):
+- `NEXT_PUBLIC_GOOGLE_ADS_ID` — Google Ads tag (e.g. `AW-18020403242`); set in `netlify.toml` for production
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 ID
+- gtag.js loads once; both IDs are `gtag('config', …)` when present
 
 ### Email Notifications
 Keep Netlify Forms or add SendGrid:

@@ -6,6 +6,7 @@ import '@fontsource/chivo/400.css';
 import '@fontsource/chivo/700.css';
 import SiteLayout from './components/layout/SiteLayout';
 import ErrorBoundary from './components/ui/ErrorBoundary';
+import GoogleTag from './components/seo/GoogleTag';
 import JsonLd from './components/seo/JsonLd';
 import {
   SITE_URL,
@@ -84,9 +85,6 @@ export default function RootLayout({
     buildCatalogServiceSchemas()
   );
 
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-
   return (
     <html lang="en">
       <head>
@@ -98,38 +96,10 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="google-site-verification" content="pUSb1v5Pfnz_tUl9PvefqSwy7VpN6g8k-C5FAS_ac9Q" />
         <JsonLd data={siteJsonLd} />
-        {adsId && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${adsId}');
-                `,
-              }}
-            />
-          </>
-        )}
-        {gaId && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${gaId}');
-                `,
-              }}
-            />
-          </>
-        )}
       </head>
       <body className="font-chivo antialiased overflow-x-hidden min-h-screen bg-[#0B0C10] text-[#C5C6C7]">
+        <GoogleTag />
+
         {/* Skip to main content for keyboard users */}
         <a
           href="#main-content"

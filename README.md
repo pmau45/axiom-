@@ -90,7 +90,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 5. Netlify auto-detects `netlify.toml` — build settings are pre-configured
 6. Add environment variables:
    - `NEXT_PUBLIC_SITE_URL` → your production URL (e.g., `https://axiom-canine.netlify.app`)
-   - `NEXT_PUBLIC_GOOGLE_ADS_ID` → Google Ads tag ID (optional; e.g., `AW-18020403242`)
+   - `NEXT_PUBLIC_GOOGLE_ADS_ID` → already set in `netlify.toml` (`AW-18020403242`); override in the Netlify UI if needed
+   - `NEXT_PUBLIC_GA_MEASUREMENT_ID` → Google Analytics 4 ID (optional)
 7. Click **Deploy**
 
 ### Option 2: Netlify CLI
@@ -145,7 +146,7 @@ Set up in: **Netlify Dashboard → Forms → intake → Form notifications**
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Production URL for canonical links and OG tags | `https://axiom-canine.netlify.app` |
 | `NEXT_TELEMETRY_DISABLED` | Disables Next.js telemetry | `1` |
-| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Google Ads conversion tag ID (optional) | — |
+| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Google Ads conversion tag ID | `AW-18020403242` (via `netlify.toml`) |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID (optional) | — |
 
 ## Scripts

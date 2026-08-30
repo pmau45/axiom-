@@ -90,7 +90,7 @@ export const palmCoast: LocationPageData = {
       'Marineland',
     ],
     mapEmbedUrl:
-      'https://maps.google.com/maps?q=Palm+Coast,+FL&z=11&output=embed',
+      'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sPalm+Coast,+FL!6i11',
     mapTitle: 'Axiom Canine service area — Palm Coast and Flagler County, FL',
   },
   services: {

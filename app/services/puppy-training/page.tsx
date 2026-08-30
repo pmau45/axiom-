@@ -113,6 +113,7 @@ export default function PuppyTrainingPage() {
           <OpenModalButton
             className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-lg font-bold uppercase tracking-widest px-8 py-4 inline-flex items-center gap-2"
             ariaLabel="Start free puppy training assessment"
+            service="puppy"
           >
             Free Puppy Assessment <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </OpenModalButton>
@@ -205,6 +206,7 @@ export default function PuppyTrainingPage() {
           <OpenModalButton
             className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest px-10 py-5 inline-flex items-center gap-3"
             ariaLabel="Open free puppy assessment form"
+            service="puppy"
           >
             Start Free Intake <ArrowRight className="w-6 h-6" aria-hidden="true" />
           </OpenModalButton>

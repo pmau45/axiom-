@@ -1,11 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { openIntakeModal, type IntakeServiceValue } from '@/app/lib/intake';
 
 interface OpenModalButtonProps {
   className?: string;
   children: React.ReactNode;
   ariaLabel?: string;
+  /** Prefills the intake service. When omitted, the current page path is used. */
+  service?: IntakeServiceValue;
 }
 
 /**
@@ -16,6 +19,7 @@ export default function OpenModalButton({
   className = '',
   children,
   ariaLabel,
+  service,
 }: OpenModalButtonProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -24,8 +28,7 @@ export default function OpenModalButton({
   }, []);
 
   const handleClick = () => {
-    // Dispatch a custom event that SiteLayout listens for
-    window.dispatchEvent(new CustomEvent('open-intake-modal'));
+    openIntakeModal(service);
   };
 
   if (!mounted) {

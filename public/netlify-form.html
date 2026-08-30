@@ -5,11 +5,12 @@
     <title>Netlify Form Declaration</title>
   </head>
   <body>
-    <!--
+      <!--
       Static form declaration required for Netlify Forms build-time detection.
       This file is crawled by Netlify at build time to register the "intake" form.
-      The React form submits via fetch to this file's path (/__forms.html) so that
+      The React form submits via fetch to this file's path so that
       Netlify's form handler intercepts the POST instead of Next.js.
+      Keep <select name="service"> options in sync with app/lib/intake.ts.
     -->
     <form
       name="intake"
@@ -24,10 +25,11 @@
       <input type="tel" name="phone" />
       <input type="text" name="dog_name" />
       <select name="service">
+        <option value="puppy">Puppy Training</option>
         <option value="behavior">Behavior Modification</option>
         <option value="obedience">Advanced Obedience</option>
-        <option value="board-train">Board &amp; Train</option>
         <option value="in-home">In-Home Training</option>
+        <option value="board-train">Board &amp; Train</option>
         <option value="group">Group Classes</option>
         <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
       </select>

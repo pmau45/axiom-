@@ -302,6 +302,7 @@ export default function AdvancedObediencePage() {
             <OpenModalButton
               className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest px-10 py-5 inline-flex items-center justify-center gap-3"
               ariaLabel="Request an advanced obedience assessment"
+              service="obedience"
             >
               Request Assessment{' '}
               <ArrowRight className="w-6 h-6" aria-hidden="true" />

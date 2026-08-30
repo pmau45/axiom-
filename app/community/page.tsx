@@ -121,6 +121,7 @@ export default function CommunityPage() {
           <OpenModalButton
             className="btn-rugged btn-rugged-trust bg-[#5B8FA8] text-white font-oswald text-xl font-bold uppercase tracking-widest px-10 py-5 inline-flex items-center gap-3"
             ariaLabel="Send Axiom Cares a message"
+            service="rescue"
           >
             Send Us a Message{' '}
             <ArrowRight className="w-6 h-6" aria-hidden="true" />

@@ -8,6 +8,7 @@ import SiteLayout from './components/layout/SiteLayout';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import GoogleTag from './components/seo/GoogleTag';
 import JsonLd from './components/seo/JsonLd';
+import { INTAKE_SERVICES } from './lib/intake';
 import {
   SITE_URL,
   OG_IMAGE_ALT,
@@ -125,12 +126,11 @@ export default function RootLayout({
           <input type="tel" name="phone" />
           <input type="text" name="dog_name" />
           <select name="service">
-            <option value="behavior">Behavior Modification</option>
-            <option value="obedience">Advanced Obedience</option>
-            <option value="board-train">Board &amp; Train</option>
-            <option value="in-home">In-Home Training</option>
-            <option value="group">Group Classes</option>
-            <option value="rescue">Rescue / Adoption Adjustment (Free)</option>
+            {INTAKE_SERVICES.map((service) => (
+              <option key={service.value} value={service.value}>
+                {service.label}
+              </option>
+            ))}
           </select>
           <textarea name="message"></textarea>
         </form>

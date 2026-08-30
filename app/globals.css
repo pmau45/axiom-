@@ -136,3 +136,128 @@ select option {
 .safe-area-pb {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* ─── Blog article body (MDX → HTML) ────────────── */
+.blog-prose h2 {
+  font-family: Oswald, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-prose h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.blog-prose h3 {
+  font-family: Oswald, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ff5e00;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-prose p {
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose strong {
+  color: #ff5e00;
+  font-weight: 700;
+}
+
+.blog-prose ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.625;
+}
+
+.blog-prose a {
+  color: #5b8fa8;
+  text-decoration: underline;
+}
+
+.blog-prose a:hover {
+  color: #ff5e00;
+}
+
+.blog-prose blockquote {
+  border-left: 4px solid #ff5e00;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-style: italic;
+  color: #7a8b66;
+}
+
+.blog-prose code {
+  background-color: #050505;
+  color: #e8d5b7;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.blog-prose pre {
+  background-color: #050505;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.blog-prose thead {
+  background-color: #050505;
+}
+
+.blog-prose th {
+  border: 1px solid #1a2030;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ff5e00;
+  white-space: nowrap;
+}
+
+.blog-prose td {
+  border: 1px solid #1a2030;
+  padding: 0.75rem 1rem;
+  color: #c5c6c7;
+  vertical-align: top;
+}
+
+.blog-prose tbody tr:nth-child(even) {
+  background-color: rgb(26 32 48 / 0.4);
+}

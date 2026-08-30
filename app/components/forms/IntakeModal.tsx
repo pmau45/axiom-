@@ -343,7 +343,7 @@ export default function IntakeModal({
                       onChange={handleChange}
                       onBlur={handleBlur}
                       className={inputClasses('name')}
-                      placeholder="First &amp; Last Name"
+                      placeholder="First & Last Name"
                       autoComplete="name"
                       aria-required="true"
                       aria-invalid={!!(errors.name && touched.name)}

@@ -88,7 +88,7 @@ export const fernandinaBeach: LocationPageData = {
       'Nassau Village',
     ],
     mapEmbedUrl:
-      'https://maps.google.com/maps?q=Fernandina+Beach,+FL&z=11&output=embed',
+      'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sFernandina+Beach,+FL!6i11',
     mapTitle: 'Axiom Canine service area — Fernandina Beach and Amelia Island, FL',
   },
   services: {

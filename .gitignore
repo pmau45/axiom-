@@ -5,6 +5,9 @@
 /.next/
 /out/
 
+# Netlify CLI local cache
+.netlify
+
 # Production
 /build
 

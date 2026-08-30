@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import { buildTrainingImageAlt } from '@/app/lib/schema';
 
@@ -25,7 +26,7 @@ export interface Article extends ArticleMetadata {
 const ARTICLES_DIR = path.join(process.cwd(), 'app/blog/content');
 
 async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(remarkHtml).process(markdown);
+  const result = await remark().use(remarkGfm).use(remarkHtml).process(markdown);
   return result.toString();
 }
 

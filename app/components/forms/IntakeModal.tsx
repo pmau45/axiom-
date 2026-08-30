@@ -1,11 +1,18 @@
 'use client';
 
-import { useState, useEffect, useRef, FormEvent, ChangeEvent } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback, FormEvent, ChangeEvent } from 'react';
 import { X, Send, CheckCircle2 } from 'lucide-react';
+import {
+  INTAKE_SERVICES,
+  getIntakeMessagePlaceholder,
+  getIntakeServiceLabel,
+  type IntakeServiceValue,
+} from '@/app/lib/intake';
 
 interface IntakeModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialService?: IntakeServiceValue | '';
 }
 
 interface FormValues {
@@ -52,12 +59,16 @@ function validate(values: Omit<FormValues, 'bot-field'>): FormErrors {
   return errors;
 }
 
-export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
+export default function IntakeModal({
+  isOpen,
+  onClose,
+  initialService = '',
+}: IntakeModalProps) {
   const [values, setValues] = useState<FormValues>({
     name: '',
     phone: '',
     dog_name: '',
-    service: '',
+    service: initialService,
     message: '',
     'bot-field': '',
   });
@@ -70,16 +81,43 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
   // Focus management: trap focus inside modal
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(false);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setErrors({});
     setTouched({});
-    setValues({ name: '', phone: '', dog_name: '', service: '', message: '', 'bot-field': '' });
+    setValues({
+      name: '',
+      phone: '',
+      dog_name: '',
+      service: '',
+      message: '',
+      'bot-field': '',
+    });
     setSubmitting(false);
     setSubmitted(false);
     setSubmitError(null);
     onClose();
-  };
+  }, [onClose]);
+
+  useLayoutEffect(() => {
+    if (isOpen && !wasOpenRef.current) {
+      setValues({
+        name: '',
+        phone: '',
+        dog_name: '',
+        service: initialService,
+        message: '',
+        'bot-field': '',
+      });
+      setErrors({});
+      setTouched({});
+      setSubmitting(false);
+      setSubmitted(false);
+      setSubmitError(null);
+    }
+    wasOpenRef.current = isOpen;
+  }, [isOpen, initialService]);
 
   useEffect(() => {
     if (isOpen) {
@@ -100,9 +138,11 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, handleClose]);
 
   if (!isOpen) return null;
+
+  const selectedServiceLabel = getIntakeServiceLabel(values.service);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -249,7 +289,9 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
               Let&apos;s Get to Work
             </h2>
             <p className="text-[#C5C6C7] text-lg max-w-2xl mx-auto">
-              Fill out the form and we&apos;ll reach out within 24 hours.
+              {selectedServiceLabel
+                ? `You're reaching out about ${selectedServiceLabel}. We'll follow up within 24 hours.`
+                : "Fill out the form and we'll reach out within 24 hours."}
             </p>
           </div>
 
@@ -393,12 +435,11 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                     <option value="" disabled>
                       Select a service...
                     </option>
-                    <option value="behavior">Behavior Modification</option>
-                    <option value="obedience">Advanced Obedience</option>
-                    <option value="board-train">Board &amp; Train</option>
-                    <option value="in-home">In-Home Training</option>
-                    <option value="group">Group Classes</option>
-                    <option value="rescue">Rescue &#47; Adoption Adjustment (Free)</option>
+                    {INTAKE_SERVICES.map((service) => (
+                      <option key={service.value} value={service.value}>
+                        {service.label}
+                      </option>
+                    ))}
                   </select>
                   {errors.service && touched.service && (
                     <p id="service-error" role="alert" className="text-red-400 text-xs mt-1">
@@ -425,7 +466,7 @@ export default function IntakeModal({ isOpen, onClose }: IntakeModalProps) {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`${inputClasses('message')} resize-none`}
-                    placeholder="Tell us about the behaviors..."
+                    placeholder={getIntakeMessagePlaceholder(values.service)}
                     aria-required="true"
                     aria-invalid={!!(errors.message && touched.message)}
                     aria-describedby={errors.message && touched.message ? 'message-error' : undefined}

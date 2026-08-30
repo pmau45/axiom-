@@ -304,6 +304,7 @@ export default function BoardAndTrainPage() {
             <OpenModalButton
               className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest px-10 py-5 inline-flex items-center justify-center gap-3"
               ariaLabel="Start your free board and train intake"
+              service="board-train"
             >
               Start Free Intake{' '}
               <ArrowRight className="w-6 h-6" aria-hidden="true" />

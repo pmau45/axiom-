@@ -51,16 +51,18 @@ export function buildPageMetadata({
 }: PageMetadataInput): Metadata {
   const canonical = path === '/' ? '/' : path;
   const url = pageUrl(path);
+  const brandedTitle = `${title} | ${BUSINESS_NAME}`;
 
   return {
-    title,
+    // Root `app/page.tsx` does not receive the layout title template — only nested routes do.
+    title: path === '/' ? { absolute: brandedTitle } : title,
     description,
     ...(keywords ? { keywords } : {}),
     alternates: {
       canonical,
     },
     openGraph: {
-      title: ogTitle ?? `${title} | ${BUSINESS_NAME}`,
+      title: ogTitle ?? brandedTitle,
       description: ogDescription ?? description,
       url,
       type,

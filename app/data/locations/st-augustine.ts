@@ -7,9 +7,9 @@ export const stAugustine: LocationPageData = {
   schemaDescription:
     'Dog training in St. Augustine, FL — behavior modification, obedience, and board and train for historic-coast owners.',
   metadata: {
-    title: { absolute: 'Dog Training St. Augustine FL | Axiom Canine' },
+    title: 'Dog Training in St. Augustine, FL',
     description:
-      "St. Augustine's dog trainer for obedience, behavior issues, and board & train. Serving St. Augustine, Nocatee, and Ponte Vedra.",
+      'Dog training in St. Augustine, FL for obedience, behavior issues, and board and train. Serving the historic district, Nocatee, and Ponte Vedra.',
     keywords: [
       'dog training St. Augustine FL',
       'dog trainer St. Augustine FL',
@@ -20,16 +20,16 @@ export const stAugustine: LocationPageData = {
       'St. Augustine Beach dog trainer',
     ],
     openGraph: {
-      title: 'Dog Training St. Augustine FL | Axiom Canine',
+      title: 'Dog Training in St. Augustine, FL | Axiom Canine',
       description:
-        "St. Augustine's dog trainer for obedience, behavior issues, and board & train. Serving St. Augustine, Nocatee, and Ponte Vedra.",
+        'Dog training in St. Augustine, FL for obedience, behavior issues, and board and train.',
     },
   },
   badge: { label: 'St. Augustine, FL', accent: 'orange' },
   hero: {
     headingId: 'staug-hero-heading',
     headingBefore: 'Dog Training in ',
-    headingAccent: 'St. Augustine.',
+    headingAccent: 'St. Augustine, FL.',
     subtitle:
       "Professional behavior modification and obedience training for Florida's oldest city — from the historic district to the beach.",
   },

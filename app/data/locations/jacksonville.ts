@@ -7,9 +7,9 @@ export const jacksonville: LocationPageData = {
   schemaDescription:
     'Professional dog training in Jacksonville, FL. Behavior modification, advanced obedience, and free rescue support.',
   metadata: {
-    title: 'Dog Training in Jacksonville, FL | Axiom Canine',
+    title: 'Dog Training in Jacksonville, FL',
     description:
-      'Professional dog training in Jacksonville, FL. Behavior modification, advanced obedience, and free rescue support. Serving Riverside, San Marco, Mandarin, Jax Beach & all of Northeast Florida. Call (904) 458-7561.',
+      'Dog training in Jacksonville, FL for reactivity, aggression, and obedience. Serving Riverside, San Marco, Mandarin, Jax Beach, and nearby neighborhoods.',
     keywords: [
       'dog training Jacksonville FL',
       'dog trainer Jacksonville',
@@ -25,14 +25,14 @@ export const jacksonville: LocationPageData = {
     openGraph: {
       title: 'Dog Training in Jacksonville, FL | Axiom Canine',
       description:
-        'Professional dog training serving all of Jacksonville and Northeast Florida. Structure. Consistency. Results.',
+        'Dog training serving Jacksonville and Northeast Florida. Structure. Consistency. Results.',
     },
   },
   badge: { label: 'Jacksonville, FL & Northeast Florida', accent: 'orange' },
   hero: {
     headingId: 'jax-hero-heading',
-    headingBefore: 'Before You Give Up ',
-    headingAccent: 'On Your Dog.',
+    headingBefore: 'Dog Training in ',
+    headingAccent: 'Jacksonville, FL.',
     subtitle:
       'Most dog owners in Jacksonville reach out when they are at their breaking point. Reactivity. Aggression. Failed obedience classes. Before you rehome, surrender, or give up — there is another option.',
     subtitleHighlights: [

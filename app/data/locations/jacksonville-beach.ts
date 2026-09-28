@@ -7,9 +7,9 @@ export const jacksonvilleBeach: LocationPageData = {
   schemaDescription:
     'Dog training in Jacksonville Beach, FL — leash manners, beach reliability, and behavior modification for beachside households.',
   metadata: {
-    title: 'Dog Training in Jacksonville Beach, FL | Axiom Canine',
+    title: 'Dog Training in Jacksonville Beach, FL',
     description:
-      'Dog training for Jacksonville Beach, Atlantic Beach, and Neptune Beach. Leash manners, beach etiquette, reactivity, and obedience. Call (904) 458-7561.',
+      'Dog training in Jacksonville Beach, FL — leash manners, beach etiquette, and reactivity help for Jax Beach, Atlantic Beach, and Neptune Beach.',
     keywords: [
       'dog training Jacksonville Beach',
       'dog trainer Jax Beach',
@@ -19,14 +19,15 @@ export const jacksonvilleBeach: LocationPageData = {
     ],
     openGraph: {
       title: 'Dog Training in Jacksonville Beach, FL | Axiom Canine',
-      description: 'Professional dog training for the Beaches communities.',
+      description:
+        'Dog training in Jacksonville Beach — leash manners, beach etiquette, and reactivity help for the Beaches.',
     },
   },
   badge: { label: 'Jacksonville Beach, FL', accent: 'orange' },
   hero: {
     headingId: 'jb-hero-heading',
-    headingBefore: 'Dog Training at ',
-    headingAccent: 'Jax Beach.',
+    headingBefore: 'Dog Training in ',
+    headingAccent: 'Jacksonville Beach.',
     subtitle:
       'Beach crowds, seasonal rules, and constant distractions. We train dogs for real coastal life — not just quiet living-room obedience.',
   },

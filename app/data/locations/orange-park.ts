@@ -7,9 +7,9 @@ export const orangePark: LocationPageData = {
   schemaDescription:
     'Dog training in Orange Park, FL — behavior modification, obedience, and in-home training for Clay County owners.',
   metadata: {
-    title: { absolute: 'Dog Training Orange Park FL | Axiom Canine' },
+    title: 'Dog Training in Orange Park, FL',
     description:
-      'Professional dog training in Orange Park. Marker-based methods, real results. Serving Orange Park, Fleming Island, and the Westside.',
+      'Dog training in Orange Park, FL for obedience, puppies, and behavior issues. Serving Clay County, Fleming Island, and Jacksonville’s Westside.',
     keywords: [
       'dog training Orange Park FL',
       'dog trainer Orange Park FL',
@@ -19,16 +19,16 @@ export const orangePark: LocationPageData = {
       'board and train Orange Park FL',
     ],
     openGraph: {
-      title: 'Dog Training Orange Park FL | Axiom Canine',
+      title: 'Dog Training in Orange Park, FL | Axiom Canine',
       description:
-        'Professional dog training in Orange Park. Marker-based methods, real results. Serving Orange Park, Fleming Island, and the Westside.',
+        'Dog training in Orange Park, FL for obedience, puppies, and behavior issues. Serving Clay County and Fleming Island.',
     },
   },
   badge: { label: 'Orange Park, FL', accent: 'orange' },
   hero: {
     headingId: 'op-hero-heading',
     headingBefore: 'Dog Training in ',
-    headingAccent: 'Orange Park.',
+    headingAccent: 'Orange Park, FL.',
     subtitle:
       'Structure-first training for Orange Park, Fleming Island, and Clay County homes — from puppy manners to reactivity and board & train.',
   },

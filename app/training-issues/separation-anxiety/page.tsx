@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,20 +11,18 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Separation Anxiety Dog Training Jacksonville, FL | Axiom Canine',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Separation Anxiety Training Jacksonville',
   description:
-    'Separation anxiety dog training in Jacksonville, FL. Stop destructive alone-time panic with structure, gradual independence, and owner coaching across NE Florida.',
+    'Separation anxiety training in Jacksonville, FL. Stop alone-time panic with structure, gradual independence, and coaching across Northeast Florida.',
+  path: '/training-issues/separation-anxiety',
   keywords: [
     'separation anxiety dog training Jacksonville',
     'dog separation anxiety trainer near me',
     'dog alone time training Jacksonville FL',
     'separation anxiety board and train Florida',
   ],
-  alternates: {
-    canonical: '/training-issues/separation-anxiety',
-  },
-};
+});
 
 const signs = [
   'Destructive chewing, digging, or door-scratching only when left alone',
@@ -99,7 +98,7 @@ export default function SeparationAnxietyPage() {
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
             Separation Anxiety Training in{' '}
-            <span className="text-[#FF5E00]">Jacksonville</span>
+            <span className="text-[#FF5E00]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Alone-time panic is not a manners problem. It is a structure and independence problem —

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Phone, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import JsonLd from '../components/seo/JsonLd';
+import { buildPageMetadata } from '../lib/seo';
 import {
   SITE_URL,
   BUSINESS_ID,
@@ -11,16 +12,12 @@ import {
   buildSchemaGraph,
 } from '../lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Contact Axiom Canine | Jacksonville Dog Training',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Contact a Jacksonville Dog Trainer',
   description:
-    'Contact Axiom Canine in Jacksonville, FL. Free assessment for dog training, board & train, and behavior help. Call (904) 458-7561 — we respond within 24 hours.',
-  alternates: {
-    canonical: '/contact',
-  },
-};
+    'Contact Axiom Canine for dog training in Jacksonville, FL. Free assessment, honest recommendations. Call (904) 458-7561 — we reply within 24 hours.',
+  path: '/contact',
+});
 
 const serviceAreas = [
   { label: 'Jacksonville, FL', href: '/jacksonville' },
@@ -116,8 +113,8 @@ export default function ContactPage() {
             id="contact-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Let&apos;s Talk About{' '}
-            <span className="text-[#FF5E00]">Your Dog.</span>
+            Contact a Jacksonville{' '}
+            <span className="text-[#FF5E00]">Dog Trainer</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             We&apos;ll respond within 24 hours. No automated responses, no sales pressure —

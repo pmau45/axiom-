@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { TrainingPhilosophyDashboard } from '@/app/components/dashboard/TrainingPhilosophyDashboard';
+import { buildPageMetadata } from '@/app/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Training Philosophy & Interactive FAQ | Axiom Canine',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Dog Training Philosophy',
   description:
-    'Explore Axiom Canine\'s canine behavioral rehabilitation philosophy, training methods, and answers to common questions. Behavioral reliability through science-based training.',
+    "Axiom Canine's dog training philosophy in Jacksonville: balanced methods, owner education, and real-world reliability for high-drive and rehab cases.",
+  path: '/philosophy',
   keywords: [
     'dog training philosophy',
     'behavioral rehabilitation',
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
     'operant conditioning',
     'off-leash training',
   ],
-};
+});
 
 export default function TrainingPhilosophyPage() {
   return <TrainingPhilosophyDashboard />;

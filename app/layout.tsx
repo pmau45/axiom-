@@ -22,11 +22,11 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
+    default: 'Dog Training in Northeast Florida | Axiom Canine',
     template: '%s | Axiom Canine',
   },
   description:
-    'Axiom Canine — professional dog training in Jacksonville, FL. Behavior modification, off-leash obedience & free rescue support. Serving Ponte Vedra, Nocatee & St. Augustine.',
+    'Dog training across Northeast Florida for reactivity, obedience, and board & train. Axiom Canine helps owners get lasting real-world results. Free consult.',
   keywords: [
     'dog training Jacksonville FL',
     'behavior modification dog Jacksonville',
@@ -45,10 +45,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Axiom Canine',
-    title: 'Axiom Canine | Professional Dog Training — Jacksonville, FL',
+    title: 'Dog Training in Northeast Florida | Axiom Canine',
     description:
-      'Structure. Consistency. Results. Professional dog training for behavior modification, advanced obedience, and rescue adjustment in Jacksonville, FL.',
-    url: SITE_URL,
+      'Structure. Consistency. Results. Professional dog training for behavior modification, advanced obedience, and rescue adjustment across Northeast Florida.',
     images: [
       {
         url: '/og-image.png',
@@ -60,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Axiom Canine | Professional Dog Training',
-    description: 'Structure. Consistency. Results. Jacksonville, FL dog training specialists.',
+    title: 'Dog Training in Northeast Florida | Axiom Canine',
+    description: 'Structure. Consistency. Results. Northeast Florida dog training specialists.',
     site: '@axiomcanine',
     creator: '@axiomcanine',
   },

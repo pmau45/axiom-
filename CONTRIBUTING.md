@@ -180,8 +180,8 @@ Example: [feat] Add dog breed field to intake form
    import Navbar from '@/app/components/layout/Navbar';
    
    export const metadata: Metadata = {
-     title: 'New Page | Axiom Canine',
-     description: 'Description of new page',
+     title: 'New Page',
+     description: 'Description of new page under 155 characters.',
    };
    
    export default function NewPage() {

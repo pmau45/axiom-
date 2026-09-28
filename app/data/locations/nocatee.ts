@@ -7,9 +7,9 @@ export const nocatee: LocationPageData = {
   schemaDescription:
     'Dog training in Nocatee, FL — trail manners, reactivity help, and in-home obedience for Nocatee families.',
   metadata: {
-    title: { absolute: 'Board & Train Nocatee FL | Axiom Canine' },
+    title: 'Dog Training in Nocatee, FL',
     description:
-      'Premium board and train programs serving Nocatee, Ponte Vedra, and St. Augustine. Reactivity and obedience training with owner education. Limited spots available.',
+      'Dog training in Nocatee, FL for trail manners, reactivity, and obedience. In-home and board and train for Nocatee families.',
     keywords: [
       'dog training Nocatee',
       'board and train Nocatee',
@@ -20,16 +20,16 @@ export const nocatee: LocationPageData = {
       'dog trainer near Nocatee FL',
     ],
     openGraph: {
-      title: 'Board & Train Nocatee FL | Axiom Canine',
+      title: 'Dog Training in Nocatee, FL | Axiom Canine',
       description:
-        'Premium board and train programs serving Nocatee, Ponte Vedra, and St. Augustine. Reactivity and obedience with owner education.',
+        'Dog training in Nocatee, FL for trail manners, reactivity, and obedience. In-home and board and train.',
     },
   },
   badge: { label: 'Nocatee, FL', accent: 'olive' },
   hero: {
     headingId: 'nocatee-hero-heading',
-    headingBefore: 'Board & Train in Nocatee – ',
-    headingAccent: 'Professional Results',
+    headingBefore: 'Dog Training in ',
+    headingAccent: 'Nocatee, FL.',
     subtitle:
       "Professional behavior modification and obedience training for Nocatee's family-centered, active community.",
   },

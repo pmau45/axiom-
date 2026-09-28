@@ -7,9 +7,9 @@ export const fernandinaBeach: LocationPageData = {
   schemaDescription:
     'Dog training in Fernandina Beach, FL — leash manners, beach etiquette, and behavior help for Amelia Island owners.',
   metadata: {
-    title: { absolute: 'Dog Training Fernandina Beach FL | Axiom Canine' },
+    title: 'Dog Training in Fernandina Beach, FL',
     description:
-      'Dog training on Amelia Island and Fernandina Beach. Obedience, leash manners, and behavior help for Nassau County. Results-driven training from Axiom Canine.',
+      'Dog training in Fernandina Beach, FL for leash manners, beach etiquette, and behavior help on Amelia Island and Nassau County.',
     keywords: [
       'dog training Fernandina Beach',
       'dog trainer Amelia Island',
@@ -19,16 +19,16 @@ export const fernandinaBeach: LocationPageData = {
       'dog trainer Fernandina Beach FL',
     ],
     openGraph: {
-      title: 'Dog Training Fernandina Beach FL | Axiom Canine',
+      title: 'Dog Training in Fernandina Beach, FL | Axiom Canine',
       description:
-        'Dog training on Amelia Island and Fernandina Beach. Obedience, leash manners, and behavior help for Nassau County.',
+        'Dog training in Fernandina Beach, FL for leash manners, beach etiquette, and behavior help on Amelia Island.',
     },
   },
   badge: { label: 'Fernandina Beach, FL', accent: 'orange' },
   hero: {
     headingId: 'fb-hero-heading',
-    headingBefore: 'Dog Training on ',
-    headingAccent: 'Amelia Island.',
+    headingBefore: 'Dog Training in ',
+    headingAccent: 'Fernandina Beach.',
     subtitle:
       'Professional training for Fernandina Beach, Amelia Island, and Nassau County — structure that holds on beaches, trails, and historic downtown streets.',
   },

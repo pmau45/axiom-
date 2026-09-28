@@ -10,6 +10,7 @@ import {
   buildBreadcrumbList,
   buildSchemaGraph,
 } from '@/app/lib/schema';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   getAllArticles,
   getArticlesByCategory,
@@ -17,14 +18,12 @@ import {
   type ArticleMetadata,
 } from './utils/mdx-loader';
 
-export const metadata: Metadata = {
-  title: 'Blog | Axiom Canine | Training Insights & Tips',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Dog Training Blog',
   description:
-    'Expert dog training insights, behavioral tips, and training techniques from Axiom Canine. Learn how to build lasting obedience and address common behavior issues.',
-  alternates: {
-    canonical: '/blog',
-  },
-};
+    'Dog training tips for Jacksonville and Northeast Florida — behavior, leash manners, board and train, and rescue advice from Axiom Canine.',
+  path: '/blog',
+});
 
 function isValidCategory(value: string): value is ArticleMetadata['category'] {
   return (CATEGORIES as string[]).includes(value);
@@ -86,8 +85,8 @@ export default async function BlogPage({
             id="blog-hero-heading"
             className="font-oswald text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9] mb-6 text-white drop-shadow-2xl"
           >
-            Master the craft of{' '}
-            <span className="text-[#FF5E00]">dog training.</span>
+            Dog Training Insights for{' '}
+            <span className="text-[#FF5E00]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Explore proven techniques, behavioral insights, and training philosophy built on structure,
@@ -97,8 +96,11 @@ export default async function BlogPage({
       </section>
 
       {/* ── Filter + Articles ──────────────────────────── */}
-      <section className="py-24 bg-[#0B0C10] border-b border-[#1A2030]">
+      <section className="py-24 bg-[#0B0C10] border-b border-[#1A2030]" aria-labelledby="blog-articles-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="blog-articles-heading" className="sr-only">
+            Training articles
+          </h2>
           {/* Category Filter */}
           <div className="mb-16 flex flex-wrap gap-3 justify-center" role="group" aria-label="Filter articles by category">
             <Link

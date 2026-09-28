@@ -7,9 +7,9 @@ export const palmCoast: LocationPageData = {
   schemaDescription:
     'Dog training in Palm Coast, FL — obedience, reactivity help, and structured training for Flagler County dogs.',
   metadata: {
-    title: { absolute: 'Dog Training Palm Coast FL | Axiom Canine' },
+    title: 'Dog Training in Palm Coast, FL',
     description:
-      'Serving Palm Coast and Flagler County. Obedience, leash manners, behavior modification. Results-driven training from Axiom Canine.',
+      'Dog training in Palm Coast, FL for obedience, leash manners, and behavior modification. Serving Flagler County and Flagler Beach.',
     keywords: [
       'dog training Palm Coast FL',
       'dog trainer Palm Coast FL',
@@ -20,16 +20,16 @@ export const palmCoast: LocationPageData = {
       'Palm Coast dog behaviorist',
     ],
     openGraph: {
-      title: 'Dog Training Palm Coast FL | Axiom Canine',
+      title: 'Dog Training in Palm Coast, FL | Axiom Canine',
       description:
-        'Serving Palm Coast and Flagler County. Obedience, leash manners, behavior modification. Results-driven training from Axiom Canine.',
+        'Dog training in Palm Coast, FL for obedience, leash manners, and behavior modification in Flagler County.',
     },
   },
   badge: { label: 'Palm Coast, FL', accent: 'orange' },
   hero: {
     headingId: 'pc-hero-heading',
     headingBefore: 'Dog Training in ',
-    headingAccent: 'Palm Coast.',
+    headingAccent: 'Palm Coast, FL.',
     subtitle:
       'Professional behavior modification and obedience training for Palm Coast and Flagler County — from the beach to the trails.',
   },

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Calendar, ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,16 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Board & Train Jacksonville FL | Reactive Dog Specialists',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Board and Train in Jacksonville, FL',
   description:
-    'Proven board and train programs in Jacksonville, FL for reactive, aggressive, and high-drive dogs. Owner education included. Real-world off-leash results with lifetime support. Book your spot today.',
-  alternates: {
-    canonical: '/services/board-and-train',
-  },
-};
+    'Board and train in Jacksonville, FL for reactive, aggressive, and high-drive dogs. Structured stays plus owner handoff so results last at home.',
+  path: '/services/board-and-train',
+});
 
 const whoItIsFor = [
   'Busy owners who need a faster path to results than weekly sessions allow',
@@ -120,8 +117,8 @@ export default function BoardAndTrainPage() {
             id="bat-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Board &amp; Train Programs in Jacksonville, FL –{' '}
-            <span className="text-[#7A8B66]">Real Results That Last</span>
+            Board and Train in Jacksonville, FL —{' '}
+            <span className="text-[#7A8B66]">Results That Last</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Your dog stays with us, lives inside a structured system around the clock, and

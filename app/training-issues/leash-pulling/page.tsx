@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,14 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Dog Leash Pulling Training Jacksonville, FL',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Leash Pulling Training in Jacksonville',
   description:
-    'Your dog pulling on leash is not inevitable. Axiom Canine addresses leash pulling in Jacksonville, FL by teaching real loose-leash walking through structure and handler technique.',
-  alternates: {
-    canonical: '/training-issues/leash-pulling',
-  },
-};
+    'Leash pulling training in Jacksonville, FL. Learn loose-leash walking through structure and handler technique — not gadgets or endless treats.',
+  path: '/training-issues/leash-pulling',
+});
 
 const symptoms = [
   'Your dog hits the end of the leash within ten feet of your front door',
@@ -115,8 +114,8 @@ export default function LeashPullingPage() {
             id="leash-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Walks Should Not{' '}
-            <span className="text-[#7A8B66]">Be a Battle.</span>
+            Leash Pulling Training in{' '}
+            <span className="text-[#7A8B66]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Leash pulling is one of the most common and most correctable dog behaviors. It

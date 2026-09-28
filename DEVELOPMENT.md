@@ -89,14 +89,17 @@ public/
 
 ### Adding a New Page
 
-1. Create `app/your-page/page.tsx`:
+1. Create `app/your-page/page.tsx`. Use `buildPageMetadata` from `app/lib/seo.ts` so canonical, `og:url`, and `og:image` stay in sync. Do **not** put `| Axiom Canine` in `title` — the root layout template appends it. Keep the full title (including the brand suffix) around 60 characters, and the description around 155 characters.
+
    ```tsx
    import { Metadata } from 'next';
+   import { buildPageMetadata } from '@/app/lib/seo';
    
-   export const metadata: Metadata = {
-     title: 'Your Page | Axiom Canine',
-     description: 'Page description',
-   };
+   export const metadata: Metadata = buildPageMetadata({
+     title: 'Your Page',
+     description: 'Page description under 155 characters, specific to this URL.',
+     path: '/your-page',
+   });
    
    export default function YourPage() {
      return (

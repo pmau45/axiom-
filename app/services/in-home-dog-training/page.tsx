@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Home, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,16 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'In-Home Dog Training Jacksonville | Private Lessons That Work',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'In-Home Dog Training in Jacksonville',
   description:
-    'Personalized in-home dog training in Jacksonville, FL. Perfect for reactivity, resource guarding, and obedience. We train both dog and owner in your real environment.',
-  alternates: {
-    canonical: '/services/in-home-dog-training',
-  },
-};
+    'In-home dog training in Jacksonville, FL for reactivity, resource guarding, and obedience. We train you and your dog where the habits actually live.',
+  path: '/services/in-home-dog-training',
+});
 
 const whoItIsFor = [
   'Dogs with behavior issues tied to the home environment (guarding, reactivity indoors, anxiety)',
@@ -109,8 +106,8 @@ export default function InHomeTrainingPage() {
             id="in-home-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            In-Home Dog Training in Jacksonville –{' '}
-            <span className="text-[#FF5E00]">Training That Fits Your Life</span>
+            In-Home Dog Training in{' '}
+            <span className="text-[#FF5E00]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Most behavior problems happen at home. That&apos;s exactly where we train. We come

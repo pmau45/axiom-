@@ -17,6 +17,10 @@ export interface ArticleMetadata {
   /** Descriptive alt text with local + training context */
   heroImageAlt: string;
   slug: string;
+  /** Optional shorter SERP title (layout still appends `| Axiom Canine`) */
+  metaTitle?: string;
+  /** Optional meta description when the excerpt is too long */
+  metaDescription?: string;
 }
 
 export interface Article extends ArticleMetadata {
@@ -46,6 +50,12 @@ function toArticleMetadata(
     readTime: (data.readTime as number) || calculateReadTime(content),
     heroImage: (data.heroImage as string) || '/images/blog-default.jpg',
     heroImageAlt: buildTrainingImageAlt(title, data.heroImageAlt as string | undefined),
+    ...(typeof data.metaTitle === 'string' ? { metaTitle: data.metaTitle } : {}),
+    ...(typeof data.metaDescription === 'string'
+      ? { metaDescription: data.metaDescription }
+      : typeof data.meta_description === 'string'
+        ? { metaDescription: data.meta_description }
+        : {}),
   };
 }
 

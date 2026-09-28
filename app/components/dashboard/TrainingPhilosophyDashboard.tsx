@@ -22,7 +22,8 @@ export function TrainingPhilosophyDashboard() {
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
           <h1 id="philosophy-heading" className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl">
-            Training <span className="text-[#7A8B66]">Philosophy</span>
+            Dog Training Philosophy in{' '}
+            <span className="text-[#7A8B66]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-3xl mx-auto text-[#C5C6C7] leading-relaxed">
             Our training philosophy is built on real-world results and transparent communication. We specialize in

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/app/lib/seo';
 
 /** Lucide icon keys resolved in LocationPage — keep serializable in data files. */
 export type LocationIconName =
@@ -82,7 +83,8 @@ export interface LocationPageData {
   schemaDescription: string;
 
   metadata: {
-    title: string | { absolute: string };
+    /** Unique title segment; layout appends `| Axiom Canine`. Do not include the brand. */
+    title: string;
     description: string;
     keywords: string[];
     openGraph?: {
@@ -185,20 +187,12 @@ export interface LocationPageData {
 export type LocationSlug = LocationPageData['slug'];
 
 export function buildLocationMetadata(data: LocationPageData): Metadata {
-  const title = data.metadata.title;
-  return {
-    title,
+  return buildPageMetadata({
+    title: data.metadata.title,
     description: data.metadata.description,
+    path: `/${data.slug}`,
     keywords: data.metadata.keywords,
-    alternates: {
-      canonical: `/${data.slug}`,
-    },
-    openGraph: data.metadata.openGraph
-      ? {
-          title: data.metadata.openGraph.title,
-          description: data.metadata.openGraph.description,
-          type: 'website',
-        }
-      : undefined,
-  };
+    ogTitle: data.metadata.openGraph?.title,
+    ogDescription: data.metadata.openGraph?.description,
+  });
 }

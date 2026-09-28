@@ -7,9 +7,9 @@ export const brunswickGa: LocationPageData = {
   schemaDescription:
     'Dog training in Brunswick, GA — behavior modification and obedience for Glynn County and Golden Isles owners.',
   metadata: {
-    title: 'Dog Training in Brunswick, GA | Axiom Canine',
+    title: 'Dog Training in Brunswick, GA',
     description:
-      'Professional dog training serving Brunswick, GA and Coastal Georgia. Behavior modification, obedience training, and free rescue support. Call (904) 458-7561.',
+      'Dog training in Brunswick, GA for behavior modification and obedience. Serving the Golden Isles, St. Simons, and Jekyll Island.',
     keywords: [
       'dog training Brunswick GA',
       'dog trainer Brunswick Georgia',
@@ -21,7 +21,8 @@ export const brunswickGa: LocationPageData = {
     ],
     openGraph: {
       title: 'Dog Training in Brunswick, GA | Axiom Canine',
-      description: 'Professional dog training serving Brunswick, GA and Coastal Georgia.',
+      description:
+        'Dog training in Brunswick, GA for behavior modification and obedience across the Golden Isles.',
     },
   },
   badge: { label: 'Brunswick, GA & Coastal Georgia', accent: 'olive' },

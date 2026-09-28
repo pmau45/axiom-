@@ -3,20 +3,19 @@ import { Heart, Shield, ArrowRight } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import { StaggerContainer, StaggerItem } from '../components/animations/StaggerContainer';
 import JsonLd from '../components/seo/JsonLd';
+import { buildPageMetadata } from '../lib/seo';
 import {
   buildBreadcrumbList,
   buildSchemaGraph,
   buildServiceSchema,
 } from '../lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Axiom Cares — Free Rescue & Adoption Support',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Rescue Dog Support in Jacksonville',
   description:
-    'Free rescue & adoption adjustment visits in Jacksonville, FL. Axiom Cares helps newly adopted dogs settle in safely — no judgment, no pressure, no bill.',
-  alternates: {
-    canonical: '/community',
-  },
-};
+    'Free rescue and adoption support in Jacksonville, FL. Axiom Cares helps newly adopted dogs settle in — no judgment, no pressure, no bill.',
+  path: '/community',
+});
 
 const communityJsonLd = buildSchemaGraph(
   buildServiceSchema({
@@ -49,8 +48,8 @@ export default function CommunityPage() {
             id="community-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            No Dog Should Lose{' '}
-            <span className="text-[#5B8FA8]">Their Home.</span>
+            Free Rescue Dog Support in{' '}
+            <span className="text-[#5B8FA8]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Some problems just need the right guidance. Axiom Cares exists for the owners who need

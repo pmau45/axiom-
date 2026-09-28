@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, PawPrint } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,12 +11,11 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Puppy Training Jacksonville FL | Start Your Dog Off Right',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Puppy Training in Jacksonville, FL',
   description:
-    'Professional puppy training in Jacksonville, FL. Socialization, basic obedience, and owner education for a confident, well-mannered adult dog. Group classes and private options available.',
+    'Puppy training in Jacksonville, FL: manners, socialization, and structure before problem habits harden. Private and group options available.',
+  path: '/services/puppy-training',
   keywords: [
     'puppy training Jacksonville FL',
     'puppy classes Jacksonville',
@@ -24,10 +24,7 @@ export const metadata: Metadata = {
     'puppy training Ponte Vedra',
     'puppy training Nocatee',
   ],
-  alternates: {
-    canonical: '/services/puppy-training',
-  },
-};
+});
 
 const foundations = [
   'Name response, sit, down, place, and calm greetings',
@@ -103,8 +100,8 @@ export default function PuppyTrainingPage() {
             id="puppy-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Puppy Training in Jacksonville –{' '}
-            <span className="text-[#FF5E00]">Building a Strong Foundation</span>
+            Puppy Training in Jacksonville —{' '}
+            <span className="text-[#FF5E00]">Start Them Right</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed mb-10">
             Build manners, leash skills, and calm structure before bad habits become adult problems.

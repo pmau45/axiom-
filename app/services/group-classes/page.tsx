@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Users, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,14 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Group Dog Training Classes Jacksonville, FL',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Group Dog Training Classes Jacksonville',
   description:
-    'Axiom Canine group dog training classes in Jacksonville, FL. Practice real obedience around controlled distractions with structured coaching. Great for socialization and owner accountability.',
-  alternates: {
-    canonical: '/services/group-classes',
-  },
-};
+    'Group dog training classes in Jacksonville, FL. Practice real obedience around controlled distractions with coaching and owner accountability.',
+  path: '/services/group-classes',
+});
 
 const whoItIsFor = [
   'Dogs that have a basic behavioral foundation and need structured distraction work',
@@ -92,8 +91,8 @@ export default function GroupClassesPage() {
             id="group-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Train Around{' '}
-            <span className="text-[#5B8FA8]">Real Distractions.</span>
+            Group Dog Training Classes in{' '}
+            <span className="text-[#5B8FA8]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Obedience under pressure requires practice under pressure. Our group classes give

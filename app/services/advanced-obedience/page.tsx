@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Compass, ArrowRight, CheckCircle2, MapPin, Radio, Anchor } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,16 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Advanced Obedience Training for Dogs | Axiom Canine Jacksonville',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Advanced Obedience in Jacksonville',
   description:
-    'Take your dog beyond the basics. Advanced obedience, off-leash control, and real-world reliability. Serving Jacksonville and Northeast Florida.',
-  alternates: {
-    canonical: '/services/advanced-obedience',
-  },
-};
+    'Advanced obedience training in Jacksonville, FL: off-leash recall, public neutrality, and real-world reliability across Northeast Florida.',
+  path: '/services/advanced-obedience',
+});
 
 const skills = [
   {
@@ -126,8 +123,8 @@ export default function AdvancedObediencePage() {
             id="advob-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Off-Leash Training in Jacksonville –{' '}
-            <span className="text-[#7A8B66]">Trust Your Dog Anywhere</span>
+            Advanced Obedience Training in{' '}
+            <span className="text-[#7A8B66]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             A dog that only listens in your living room isn&apos;t trained. True obedience means

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,14 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Behavior Modification Dog Training Jacksonville, FL',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Behavior Modification in Jacksonville',
   description:
-    'Axiom Canine specializes in dog behavior modification in Jacksonville, FL. Reactivity, resource guarding, and aggression addressed at the root cause — not just managed.',
-  alternates: {
-    canonical: '/services/behavior-modification',
-  },
-};
+    'Behavior modification in Jacksonville, FL for reactivity, resource guarding, and aggression. We address the root cause — not just the symptom.',
+  path: '/services/behavior-modification',
+});
 
 const conditions = [
   {
@@ -128,8 +127,8 @@ export default function BehaviorModificationPage() {
             id="behmod-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Liability Becomes{' '}
-            <span className="text-[#FF5E00]">Reliability.</span>
+            Behavior Modification in{' '}
+            <span className="text-[#FF5E00]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Reactivity, resource guarding, and aggression don&apos;t happen in a vacuum. We

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Home, Calendar, Users, AlertTriangle, Compass } from 'lucide-react';
 import OpenModalButton from '../components/forms/OpenModalButton';
 import JsonLd from '../components/seo/JsonLd';
+import { buildPageMetadata } from '../lib/seo';
 import {
   SITE_URL,
   BUSINESS_ID,
@@ -12,15 +13,12 @@ import {
   buildSchemaGraph,
 } from '../lib/schema';
 
-export const metadata: Metadata = {
-  title:
-    'Dog Training Services Jacksonville FL | In-Home, Board & Train, Group Classes | Axiom Canine',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Dog Training Services in Jacksonville',
   description:
-    "Axiom Canine offers in-home dog training, board & train, and group classes in Jacksonville, FL. Find the right program for your dog's behavior and your lifestyle.",
-  alternates: {
-    canonical: '/services',
-  },
-};
+    'Dog training services in Jacksonville, FL: in-home lessons, board and train, group classes, puppy training, and behavior modification.',
+  path: '/services',
+});
 
 const programs = [
   {
@@ -135,8 +133,8 @@ export default function ServicesPage() {
             id="services-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            The Right Program{' '}
-            <span className="text-[#FF5E00]">For Your Dog.</span>
+            Dog Training Services in{' '}
+            <span className="text-[#FF5E00]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Three training formats. One system. We match the program to the dog, the behavior,

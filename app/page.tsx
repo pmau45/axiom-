@@ -20,17 +20,14 @@ import {
   buildFaqPageSchema,
   buildSchemaGraph,
 } from './lib/schema';
+import { buildPageMetadata } from './lib/seo';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Professional Dog Training in Jacksonville, FL | Axiom Canine',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Dog Training in Northeast Florida',
   description:
-    'Jacksonville dog trainer for reactivity, aggression, board & train, and real-world obedience. Dog training near me across Northeast Florida — free consultation available.',
-  alternates: {
-    canonical: '/',
-  },
-};
+    'Dog training across Northeast Florida for reactivity, obedience, and board & train. Axiom Canine helps owners get lasting real-world results. Free consult.',
+  path: '/',
+});
 
 const pillars = [
   {
@@ -58,9 +55,9 @@ const homeJsonLd = buildSchemaGraph(
     '@type': 'WebPage',
     '@id': `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: 'Professional Dog Training in Jacksonville, FL | Axiom Canine',
+    name: 'Dog Training in Northeast Florida | Axiom Canine',
     description:
-      'Expert dog training in Jacksonville, FL. Specializing in reactivity, aggression, board & train, and owner education.',
+      'Expert dog training across Northeast Florida. Specializing in reactivity, aggression, board & train, and owner education.',
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': BUSINESS_ID },
     mainEntity: { '@id': BUSINESS_ID },
@@ -81,15 +78,15 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex flex-col items-center justify-center mb-8">
             <p className="text-[#C5C6C7] font-bold tracking-[0.2em] uppercase text-sm border border-[#1A2030] px-4 py-1 bg-[#050505]/80 shadow-md">
-              Jacksonville, FL
+              Northeast Florida
             </p>
           </div>
           <h1
             id="hero-heading"
             className="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl"
           >
-            Expert Dog Training &amp; Behavior Modification in{' '}
-            <span className="text-[#7A8B66]">Jacksonville, Florida</span>
+            Professional Dog Training Across{' '}
+            <span className="text-[#7A8B66]">Northeast Florida</span>
           </h1>
           <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-12 text-[#C5C6C7] leading-relaxed">
             If you&apos;re frustrated by your dog&apos;s behavior, you aren&apos;t alone. We help

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,16 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: {
-    absolute: 'Reactive Dog Training Jacksonville | Behavior Modification That Works',
-  },
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Reactive Dog Training in Jacksonville',
   description:
-    'Specialized reactive dog training in Jacksonville, FL. We help dogs overcome leash reactivity, stranger reactivity, and aggression through proven behavior modification and owner coaching.',
-  alternates: {
-    canonical: '/training-issues/reactive-dog',
-  },
-};
+    'Reactive dog training in Jacksonville, FL for leash reactivity and stranger reactivity. Structured behavior modification and owner coaching.',
+  path: '/training-issues/reactive-dog',
+});
 
 const symptoms = [
   'Lunging toward other dogs or people on leash',
@@ -118,8 +115,8 @@ export default function ReactiveDogPage() {
             id="reactive-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Reactive Dog Training in Jacksonville –{' '}
-            <span className="text-[#FF5E00]">Calm, Confident Dogs &amp; Owners</span>
+            Reactive Dog Training in{' '}
+            <span className="text-[#FF5E00]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Reactivity on leash is one of the most frustrating — and most fixable — dog behavior

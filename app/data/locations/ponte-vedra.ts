@@ -7,9 +7,9 @@ export const ponteVedra: LocationPageData = {
   schemaDescription:
     'Premium board and train and behavior modification serving Ponte Vedra, Nocatee, and St. Augustine.',
   metadata: {
-    title: { absolute: 'Board & Train Ponte Vedra & Nocatee | Axiom Canine' },
+    title: 'Dog Training in Ponte Vedra, FL',
     description:
-      'Premium board and train programs serving Ponte Vedra, Nocatee, and St. Augustine. Reactivity and obedience training with owner education. Limited spots available.',
+      'Dog training in Ponte Vedra Beach, FL — board and train, reactivity, and obedience for Ponte Vedra, Nocatee, and nearby coastal communities.',
     keywords: [
       'dog training Ponte Vedra',
       'board and train Ponte Vedra',
@@ -20,16 +20,16 @@ export const ponteVedra: LocationPageData = {
       'Ponte Vedra dog behaviorist',
     ],
     openGraph: {
-      title: 'Board & Train Ponte Vedra & Nocatee | Axiom Canine',
+      title: 'Dog Training in Ponte Vedra, FL | Axiom Canine',
       description:
-        'Premium board and train programs serving Ponte Vedra, Nocatee, and St. Augustine. Reactivity and obedience training with owner education.',
+        'Dog training in Ponte Vedra Beach — board and train, reactivity, and obedience for Ponte Vedra and Nocatee.',
     },
   },
   badge: { label: 'Ponte Vedra Beach, FL', accent: 'orange' },
   hero: {
     headingId: 'pv-hero-heading',
-    headingBefore: 'Board & Train in Ponte Vedra & Nocatee – ',
-    headingAccent: 'Professional Results',
+    headingBefore: 'Dog Training in ',
+    headingAccent: 'Ponte Vedra, FL.',
     subtitle:
       'Professional behavior modification and obedience training for Ponte Vedra Beach, Ponte Vedra Isles, Palencia, and surrounding communities.',
   },

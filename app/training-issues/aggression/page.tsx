@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ShieldCheck, ArrowRight, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,14 +11,12 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Dog Aggression Training Jacksonville, FL | Safety-First Approach',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Dog Aggression Training in Jacksonville',
   description:
-    'Axiom Canine addresses dog aggression in Jacksonville, FL with a safety-first, honest approach. We give realistic assessments — not irresponsible promises.',
-  alternates: {
-    canonical: '/training-issues/aggression',
-  },
-};
+    'Dog aggression training in Jacksonville, FL with a safety-first approach. Honest assessments for dog-directed, human-directed, and fear-based cases.',
+  path: '/training-issues/aggression',
+});
 
 const aggressionTypes = [
   {
@@ -105,8 +104,8 @@ export default function AggressionPage() {
             id="aggression-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
-            Honest Assessments.{' '}
-            <span className="text-[#7A8B66]">No Empty Promises.</span>
+            Dog Aggression Training in{' '}
+            <span className="text-[#7A8B66]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Aggression is one of the most serious behavior issues a dog owner can face. It

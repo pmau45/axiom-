@@ -9,6 +9,7 @@ import {
   buildBreadcrumbList,
   buildSchemaGraph,
 } from '@/app/lib/schema';
+import { buildPageMetadata } from '@/app/lib/seo';
 import { getArticleBySlug, getAllArticles, getRelatedArticles } from '../utils/mdx-loader';
 
 interface ArticlePageProps {
@@ -27,26 +28,22 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     };
   }
 
-  return {
-    title: `${article.title} | Axiom Canine Blog`,
-    description: article.excerpt,
-    alternates: {
-      canonical: `/blog/${article.slug}`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      type: 'article',
-      images: [
-        {
-          url: article.heroImage,
-          alt: article.heroImageAlt,
-        },
-      ],
-      publishedTime: article.date,
-      authors: [article.author],
-    },
-  };
+  return buildPageMetadata({
+    title: article.metaTitle ?? article.title,
+    description: article.metaDescription ?? article.excerpt,
+    path: `/blog/${article.slug}`,
+    type: 'article',
+    publishedTime: article.date,
+    authors: [article.author],
+    images: [
+      {
+        url: article.heroImage,
+        alt: article.heroImageAlt,
+      },
+    ],
+    ogTitle: `${article.metaTitle ?? article.title} | Axiom Canine`,
+    ogDescription: article.metaDescription ?? article.excerpt,
+  });
 }
 
 export async function generateStaticParams() {

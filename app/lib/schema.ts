@@ -3,8 +3,9 @@
  * Keep claims factual — never invent ratings, reviews, or geo coordinates.
  */
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://axiom-canine.netlify.app';
+import { SITE_URL, pageUrl } from './site';
+
+export { SITE_URL, pageUrl };
 
 export const BUSINESS_NAME = 'Axiom Canine';
 export const BUSINESS_PHONE = '+19044587561';
@@ -116,8 +117,7 @@ export function getServiceCatalogEntry(path: string): ServiceCatalogEntry | unde
 }
 
 function absoluteUrl(path: string): string {
-  if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+  return pageUrl(path);
 }
 
 function normalizeFaq(item: FaqEntry): { question: string; answer: string } {

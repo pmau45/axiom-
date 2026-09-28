@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AlertTriangle, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import OpenModalButton from '../../components/forms/OpenModalButton';
 import JsonLd from '@/app/components/seo/JsonLd';
+import { buildPageMetadata } from '@/app/lib/seo';
 import {
   buildBreadcrumbList,
   buildFaqPageSchema,
@@ -10,20 +11,18 @@ import {
   buildServiceSchema,
 } from '@/app/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Resource Guarding Dog Training Jacksonville, FL | Axiom Canine',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Resource Guarding Training Jacksonville',
   description:
-    'Resource guarding training in Jacksonville, FL. Stop growling, snapping, or stiffening over food, toys, couches, and people with structured behavior modification.',
+    'Resource guarding training in Jacksonville, FL. Stop growling or snapping over food, toys, and space with structured behavior modification.',
+  path: '/training-issues/resource-guarding',
   keywords: [
     'resource guarding dog training Jacksonville',
     'dog food aggression trainer Jacksonville FL',
     'resource guarding behavior modification',
     'dog guarding toys training near me',
   ],
-  alternates: {
-    canonical: '/training-issues/resource-guarding',
-  },
-};
+});
 
 const signs = [
   'Growling, freezing, or snapping over food bowls or high-value chews',
@@ -99,7 +98,7 @@ export default function ResourceGuardingPage() {
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
             Resource Guarding Training in{' '}
-            <span className="text-[#FF5E00]">Jacksonville</span>
+            <span className="text-[#FF5E00]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Food, toys, couches, people — guarding is a safety issue. We address it with structure,

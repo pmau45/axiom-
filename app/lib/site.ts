@@ -1,9 +1,8 @@
 /**
- * Canonical site origin. Default stays on the Netlify subdomain until a
- * custom domain is configured — change NEXT_PUBLIC_SITE_URL (or this default)
+ * Canonical site origin. Change NEXT_PUBLIC_SITE_URL (or this default)
  * in one place and canonicals, Open Graph, sitemap, robots, and schema follow.
  */
-export const DEFAULT_SITE_URL = 'https://axiom-canine.netlify.app';
+export const DEFAULT_SITE_URL = 'https://axiomcanine.dev';
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? DEFAULT_SITE_URL;

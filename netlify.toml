@@ -12,6 +12,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Move the old Netlify subdomain to the custom domain for Google's Change of Address.
+[[redirects]]
+  from = "https://axiom-canine.netlify.app/*"
+  to = "https://axiomcanine.dev/:splat"
+  status = 301
+  force = true
+
 # Legacy route redirects (301 — preserve SEO equity)
 [[redirects]]
   from = "/behavior"

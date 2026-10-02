@@ -395,7 +395,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             <div className="space-y-6">
               {data.about.paragraphs.map((paragraph, index) => (
                 <p key={index} className="text-[#C5C6C7] text-lg leading-relaxed">
-                  {paragraph}
+                  {typeof paragraph === 'string' ? paragraph : renderIntro(paragraph)}
                 </p>
               ))}
             </div>

@@ -140,8 +140,25 @@ export const jacksonville: LocationPageData = {
     showAllServicesLink: true,
     intro: [
       {
-        text: 'Every dog is different. Every problem has a root. We offer programs designed to address what is actually going on — matched to the dog, the behavior, and your lifestyle.',
+        text: 'Every dog is different. Every problem has a root. We offer ',
       },
+      { text: 'in-home lessons', href: '/services/in-home-dog-training' },
+      { text: ', ' },
+      { text: 'board and train', href: '/services/board-and-train' },
+      { text: ', ' },
+      { text: 'puppy training', href: '/services/puppy-training' },
+      { text: ', ' },
+      { text: 'group classes', href: '/services/group-classes' },
+      {
+        text: ', and owner coaching — matched to the dog, the behavior, and your Jacksonville lifestyle. For immersion details, see ',
+      },
+      { text: 'board and train cost in Florida', href: '/blog/board-and-train-cost-florida' },
+      { text: '. For coastal leash work, read ' },
+      {
+        text: 'leash manners at the Beaches and Nocatee',
+        href: '/blog/leash-manners-jacksonville-beaches-nocatee',
+      },
+      { text: '.' },
     ],
     links: [
       {

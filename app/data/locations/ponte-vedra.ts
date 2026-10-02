@@ -9,7 +9,7 @@ export const ponteVedra: LocationPageData = {
   metadata: {
     title: 'Dog Training in Ponte Vedra, FL',
     description:
-      'Dog training in Ponte Vedra Beach, FL — board and train, reactivity, and obedience for Ponte Vedra, Nocatee, and nearby coastal communities.',
+      'Dog training in Ponte Vedra Beach, FL for board and train, reactivity, and obedience. Serving Sawgrass, Palencia, and Nocatee. Free consultation.',
     keywords: [
       'dog training Ponte Vedra',
       'board and train Ponte Vedra',
@@ -22,7 +22,7 @@ export const ponteVedra: LocationPageData = {
     openGraph: {
       title: 'Dog Training in Ponte Vedra, FL | Axiom Canine',
       description:
-        'Dog training in Ponte Vedra Beach — board and train, reactivity, and obedience for Ponte Vedra and Nocatee.',
+        'Dog training in Ponte Vedra Beach — board and train, reactivity, and obedience for Ponte Vedra, Sawgrass, and Palencia.',
     },
   },
   badge: { label: 'Ponte Vedra Beach, FL', accent: 'orange' },
@@ -43,7 +43,7 @@ export const ponteVedra: LocationPageData = {
       {
         icon: 'Waves',
         title: 'Beach & Waterfront',
-        body: 'Ponte Vedra Beach access means dogs need off-leash reliability around waves, wildlife, and other beachgoers. We train for real-world beach scenarios.',
+        body: 'Ponte Vedra Beach access means dogs need reliable leash skills around waves, wildlife, and other beachgoers. We train for real-world beach scenarios — including Mickler’s Landing approaches.',
         accent: 'orange',
       },
       {
@@ -60,28 +60,89 @@ export const ponteVedra: LocationPageData = {
       },
     ],
   },
+  about: {
+    headingId: 'pv-about-heading',
+    headingBefore: 'Dog Training Built for',
+    headingAccent: 'Ponte Vedra.',
+    paragraphs: [
+      'Ponte Vedra Beach looks calm until you walk it with a dog. A1A, Mickler’s Landing, and the beach accesses stack wildlife scent, open space, and other dogs. Sawgrass, Marsh Landing, and the Plantation add golf carts, gates, and neighbors who expect quiet. Ponte Vedra Isles and Palencia sit in the same pattern: nice sidewalks, high standards, and zero patience for a dog that rehearses barking at the fence. Searching for dog training in Ponte Vedra, FL usually means you want public manners that match the community — not a trick list.',
+      'The failures are predictable. Pulling on the path to the sand. Reactivity when another dog appears on a golf-cart path. Guest jumping in a house that entertains often. Recall that dies the moment a bird or a water feature enters the picture. Heat and humidity shrink outdoor windows, so everyone walks at the same time. That is when leash skills and neutrality have to work — not after a “quick run on the beach” that is illegal off-leash and unhelpful on-leash.',
+      [
+        { text: 'We train in Ponte Vedra with ' },
+        { text: 'in-home lessons', href: '/services/in-home-dog-training' },
+        { text: ' and owner coaching on your street and your actual beach loop. If the household cannot run daily structure, ' },
+        { text: 'board and train', href: '/services/board-and-train' },
+        { text: ' installs the foundation, then we transfer it so results survive your schedule. ' },
+        { text: 'Group classes', href: '/services/group-classes' },
+        { text: ' are useful after the dog can think around other dogs. They are not a substitute for a reactivity plan on A1A.' },
+      ],
+      [
+        { text: 'Puppies in Ponte Vedra meet guests, gates, and beach accesses early. ' },
+        { text: 'Puppy training', href: '/services/puppy-training' },
+        { text: ' covers crate, leash, and greetings before those become a lifestyle. Dogs already lunging or guarding need ' },
+        { text: 'behavior modification', href: '/services/behavior-modification' },
+        { text: '. Owners who want place, recall, and public manners should look at ' },
+        { text: 'advanced obedience', href: '/services/advanced-obedience' },
+        { text: '. For local rules, read ' },
+        { text: 'beach etiquette in Ponte Vedra and Jacksonville Beach', href: '/blog/beach-etiquette-ponte-vedra-jacksonville-beach-dogs' },
+        { text: '. For pulling at Mickler’s and on Nocatee trails, see ' },
+        { text: 'leash manners for the Beaches and Nocatee', href: '/blog/leash-manners-jacksonville-beaches-nocatee' },
+        { text: '.' },
+      ],
+      'Axiom Canine serves Ponte Vedra Beach, Ponte Vedra Isles, Sawgrass, Marsh Landing, Palencia, and nearby Nocatee. Hours are Monday–Friday 9am–5pm and Saturday 9am–2pm. Call (904) 458-7561 or request a free consultation. Honest assessment first — no miracle beach-day pitch.',
+    ],
+  },
+  serviceArea: {
+    headingId: 'pv-area-heading',
+    headingBefore: 'Serving',
+    headingAccent: 'Ponte Vedra & Nearby',
+    description:
+      'In-home and immersive training across Ponte Vedra Beach and neighboring coastal communities. We train where your dog actually walks.',
+    areas: [
+      'Ponte Vedra Beach',
+      'Ponte Vedra Isles',
+      'Sawgrass',
+      'Marsh Landing',
+      'The Plantation',
+      'Palencia',
+      "Mickler's Landing",
+      'Nocatee',
+    ],
+    mapEmbedUrl:
+      'https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sPonte+Vedra+Beach,+FL!6i11',
+    mapTitle: 'Axiom Canine service area — Ponte Vedra Beach, FL',
+  },
   services: {
     headingId: 'pv-services-heading',
     heading: 'Training Services in Ponte Vedra',
+    intro: [
+      { text: 'Coastal communities need more than a living-room sit. We match ' },
+      { text: 'board and train', href: '/services/board-and-train' },
+      { text: ', ' },
+      { text: 'obedience', href: '/services/advanced-obedience' },
+      { text: ', or ' },
+      { text: 'behavior work', href: '/services/behavior-modification' },
+      { text: ' to the dog and the streets you actually use.' },
+    ],
     links: [
       {
         href: '/services/behavior-modification',
         title: 'Behavior Modification',
         description:
-          'Address reactivity, aggression, anxiety, and resource guarding through science-based training.',
+          'Reactivity, aggression, anxiety, and resource guarding — trained for golf-cart paths, gates, and beach accesses.',
         hover: 'orange',
       },
       {
         href: '/services/advanced-obedience',
         title: 'Advanced Obedience',
-        description: 'Off-leash reliability, bulletproof recall, and calm behavior in public spaces.',
+        description: 'Recall, place, and public manners for Ponte Vedra Blvd, beach walks, and guest-heavy homes.',
         hover: 'olive',
       },
       {
-        href: '/community',
-        title: 'Axiom Cares',
+        href: '/services/board-and-train',
+        title: 'Board and Train',
         description:
-          'Free in-home visits for newly adopted dogs in Ponte Vedra. No judgment, no pressure, no bill.',
+          'Immersive structure with owner coaching at handoff — for dogs that need a reset before Mickler’s is realistic.',
         hover: 'orange',
       },
     ],
@@ -91,27 +152,27 @@ export const ponteVedra: LocationPageData = {
     {
       question: 'Do you offer training services in Ponte Vedra Beach?',
       answer:
-        'Yes! Axiom Canine serves Ponte Vedra Beach, Ponte Vedra Isles, Palencia, and surrounding neighborhoods. We provide in-home training, board-and-train programs, and behavioral consultations throughout the Ponte Vedra area.',
+        'Yes. Axiom Canine serves Ponte Vedra Beach, Ponte Vedra Isles, Palencia, Sawgrass, Marsh Landing, and surrounding neighborhoods. We provide in-home training, board and train, group classes, and behavioral consultations throughout the Ponte Vedra area.',
     },
     {
       question: 'What makes Ponte Vedra dog training unique?',
       answer:
-        'Ponte Vedra homes often have larger properties, beach access, and active outdoor lifestyles. We train dogs to handle off-leash reliability on the beach, proper etiquette around golfers and pedestrians on Ponte Vedra Blvd, and calm behavior in the upscale, high-activity environment.',
+        'Ponte Vedra homes often have larger properties, beach access, and active outdoor lifestyles. We train dogs for leash control on the beach, etiquette around golf carts and pedestrians, and calm behavior in a high-activity coastal environment.',
     },
     {
-      question: 'How long does training typically take?',
+      question: 'Do you work with dogs from Ponte Vedra golf communities?',
       answer:
-        "Behavior modification typically takes 4-12 weeks with consistent weekly sessions. Obedience training can take 6-8 weeks. We create customized plans during your free consultation based on your dog's specific needs and your goals.",
-    },
-    {
-      question: 'Do you work with dogs from Ponte Vedra country clubs and golf communities?',
-      answer:
-        'Absolutely. We understand the unique challenges of training dogs in golf course communities and country club settings — from proper leash etiquette around golfers to managing prey drive near water features. We tailor our approach to your lifestyle.',
+        'Yes. We understand golf course communities and gated neighborhoods — leash etiquette around golfers, prey drive near water features, and guest manners. We tailor the plan to your property and routes.',
     },
     {
       question: 'Do you offer free rescue support in Ponte Vedra?',
       answer:
-        'Yes! Our Axiom Cares program provides free in-home visits for newly adopted or rescued dogs in the Ponte Vedra area. No judgment, no pressure, no bill.',
+        'Yes. Our Axiom Cares program provides free in-home visits for newly adopted or rescued dogs in the Ponte Vedra area. No judgment, no pressure, no bill.',
+    },
+    {
+      question: 'How do I get started?',
+      answer:
+        'Request a free consultation online or call (904) 458-7561. Hours are Monday–Friday 9am–5pm and Saturday 9am–2pm.',
     },
   ],
   cta: {

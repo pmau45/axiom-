@@ -9,7 +9,7 @@ export const palmCoast: LocationPageData = {
   metadata: {
     title: 'Dog Training in Palm Coast, FL',
     description:
-      'Dog training in Palm Coast, FL for obedience, leash manners, and behavior modification. Serving Flagler County and Flagler Beach.',
+      'Dog training in Palm Coast, FL for obedience, leash manners, and behavior modification. Serving Flagler County and Flagler Beach. Free consultation.',
     keywords: [
       'dog training Palm Coast FL',
       'dog trainer Palm Coast FL',
@@ -67,8 +67,23 @@ export const palmCoast: LocationPageData = {
     paragraphs: [
       'Palm Coast dog owners deal with a mix most Jacksonville-area trainers never see in one week: quiet cul-de-sacs in Palm Harbor and Matanzas, busy A1A corridor walks, Flagler Beach weekends packed with people and other dogs, and inland trails where wildlife pulls harder than any leash. Searching for dog training in Palm Coast FL usually means you want someone who trains in those environments — not a generic obedience curriculum practiced only in a quiet yard.',
       'Common issues we see across Flagler County include leash pulling on long straight sidewalks, fence-line barking in planned communities, reactivity at beach accesses and park entrances, and alone-time problems for households that commute north toward Jacksonville or south toward Daytona. Heat and humidity also shrink productive outdoor training windows, so structure and timing matter as much as the cues themselves.',
-      'Axiom Canine serves Palm Coast, Flagler Beach, Bunnell, and surrounding Flagler County neighborhoods with in-home sessions, behavior modification, advanced obedience, and board & train when immersion is the right fit. Whether you live near Town Center, along Colbert Lane, or closer to Washington Oaks, we build plans around your actual routes, schedule, and dog — then proof the work where it has to hold.',
-      'If you need a Palm Coast dog trainer for obedience, leash manners, or serious behavior work, start with a free assessment. We’ll tell you honestly what your dog needs and which program matches — without pressure and without a one-size package.',
+      [
+        { text: 'Axiom Canine serves Palm Coast, Flagler Beach, Bunnell, and surrounding Flagler County neighborhoods with ' },
+        { text: 'in-home lessons', href: '/services/in-home-dog-training' },
+        { text: ', ' },
+        { text: 'behavior modification', href: '/services/behavior-modification' },
+        { text: ', ' },
+        { text: 'advanced obedience', href: '/services/advanced-obedience' },
+        { text: ', ' },
+        { text: 'puppy training', href: '/services/puppy-training' },
+        { text: ', and ' },
+        { text: 'board and train', href: '/services/board-and-train' },
+        { text: ' when immersion is the right fit. Whether you live near Town Center, along Colbert Lane, or closer to Washington Oaks, we build plans around your actual routes, schedule, and dog — then proof the work where it has to hold. For how immersion is structured, read ' },
+        { text: 'board and train cost in Florida', href: '/blog/board-and-train-cost-florida' },
+        { text: '.' },
+      ],
+      'If you need a Palm Coast dog trainer for obedience, leash manners, or serious behavior work, start with a free consultation. Hours are Monday–Friday 9am–5pm and Saturday 9am–2pm. Call (904) 458-7561. We will tell you honestly what your dog needs and which program matches — without pressure and without a one-size package.',
+      'Palm Harbor, Matanzas, and the golf-course streets around Town Center look quiet until a delivery van, another dog, or a golf cart turns a walk into a fight. We use owner coaching in every in-home visit so the person holding the leash can run the same rules between sessions. Group classes help after the dog can think around other dogs; they are not the first step for beach-access reactivity. Puppies in Flagler County need crate, leash, and an off-switch before A1A weekends write the habits. Heat makes midday outdoor work a poor idea most of the year — we plan around cooler hours on your actual routes.',
     ],
   },
   serviceArea: {
@@ -96,6 +111,15 @@ export const palmCoast: LocationPageData = {
   services: {
     headingId: 'pc-services-heading',
     heading: 'Training Services in Palm Coast',
+    intro: [
+      { text: 'Flagler County households mix beach weekends with quiet cul-de-sacs. We match ' },
+      { text: 'puppy foundations', href: '/services/puppy-training' },
+      { text: ', ' },
+      { text: 'board and train', href: '/services/board-and-train' },
+      { text: ', or ' },
+      { text: 'group classes', href: '/services/group-classes' },
+      { text: ' to the dog — not a generic coastal package.' },
+    ],
     links: [
       {
         href: '/services/behavior-modification',
@@ -107,14 +131,14 @@ export const palmCoast: LocationPageData = {
       {
         href: '/services/advanced-obedience',
         title: 'Advanced Obedience',
-        description: 'Off-leash reliability for beach walks, trail adventures, and community living.',
+        description: 'Recall, place, and public manners for beach walks, trail adventures, and community living.',
         hover: 'olive',
       },
       {
-        href: '/community',
-        title: 'Axiom Cares',
+        href: '/services/board-and-train',
+        title: 'Board and Train',
         description:
-          'Free in-home visits for newly adopted dogs in Palm Coast. No judgment, no pressure, no bill.',
+          'Immersive daily structure with owner handoff when weekly Flagler County lessons are not enough.',
         hover: 'orange',
       },
     ],

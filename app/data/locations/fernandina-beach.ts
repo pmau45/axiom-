@@ -9,7 +9,7 @@ export const fernandinaBeach: LocationPageData = {
   metadata: {
     title: 'Dog Training in Fernandina Beach, FL',
     description:
-      'Dog training in Fernandina Beach, FL for leash manners, beach etiquette, and behavior help on Amelia Island and Nassau County.',
+      'Dog training in Fernandina Beach, FL for leash manners, beach etiquette, and behavior help on Amelia Island and Nassau County. Free consultation.',
     keywords: [
       'dog training Fernandina Beach',
       'dog trainer Amelia Island',
@@ -65,8 +65,23 @@ export const fernandinaBeach: LocationPageData = {
     paragraphs: [
       'Fernandina Beach and Amelia Island ask more of a dog than a typical suburban block. Main Beach and Peter\'s Point mean sand, surf, bikes, and strangers. Historic downtown Centre Street brings outdoor dining, golf carts, and tourist foot traffic. Inland trails and marsh edges pull hard on prey drive. If you\'re searching for dog training in Fernandina Beach or a dog trainer on Amelia Island, you need work that holds in those places — not cues that only work in the kitchen.',
       'Owners across Nassau County often call about leash manners on beach accesses, reactivity around other dogs on the island\'s popular paths, barking at fence lines in quieter neighborhoods, and adjustment struggles after adopting a rescue. Yulee and mainland Nassau households face different patterns — longer sidewalks, more delivery traffic, and alone-time issues for commuting schedules — but the solution is the same: clear structure, consistent rules, and training proofed where your dog actually lives.',
-      'Axiom Canine serves Fernandina Beach, Amelia Island, Yulee, and surrounding Nassau County with in-home training, behavior modification, advanced obedience, and board & train when immersion makes sense. We plan around your routes — beach loops, downtown walks, neighborhood streets — and the behaviors that show up there.',
-      'Whether you need help with a new puppy, a reactive adolescent, or a dog that falls apart the moment the collar comes off, start with a free assessment. We\'ll give you a direct recommendation for Fernandina Beach and Amelia Island life — no sales script, no one-size package.',
+      [
+        { text: 'Axiom Canine serves Fernandina Beach, Amelia Island, Yulee, and surrounding Nassau County with ' },
+        { text: 'in-home training', href: '/services/in-home-dog-training' },
+        { text: ', ' },
+        { text: 'behavior modification', href: '/services/behavior-modification' },
+        { text: ', ' },
+        { text: 'advanced obedience', href: '/services/advanced-obedience' },
+        { text: ', ' },
+        { text: 'puppy training', href: '/services/puppy-training' },
+        { text: ', and ' },
+        { text: 'board and train', href: '/services/board-and-train' },
+        { text: ' when immersion makes sense. We plan around your routes — beach loops, downtown walks, neighborhood streets — and the behaviors that show up there. For shoreline rules that also apply on this coast, read ' },
+        { text: 'beach etiquette in Ponte Vedra and Jacksonville Beach', href: '/blog/beach-etiquette-ponte-vedra-jacksonville-beach-dogs' },
+        { text: '.' },
+      ],
+      'Whether you need help with a new puppy, a reactive adolescent, or a dog that falls apart the moment the collar comes off, start with a free consultation. Hours are Monday–Friday 9am–5pm and Saturday 9am–2pm. Call (904) 458-7561. We will give you a direct recommendation for Fernandina Beach and Amelia Island life — no sales script, no one-size package.',
+      'Amelia Island Plantation, Summer Beach, and quieter Nassau Village streets still need guest manners and fence-line neutrality. Owner coaching is part of every plan so the rules survive when we leave. Group classes help once a dog can pass other dogs without a scene; they are the wrong first step for a dog already over threshold on Centre Street. Puppies on the island meet bikes, golf carts, and beach scent early — crate, leash, and greetings have to be installed before those become a lifestyle. Heat and humidity shrink the useful outdoor window, so we work the hours and routes you actually use.',
     ],
   },
   serviceArea: {
@@ -94,6 +109,15 @@ export const fernandinaBeach: LocationPageData = {
   services: {
     headingId: 'fb-services-heading',
     heading: 'Training Services in Fernandina Beach',
+    intro: [
+      { text: 'Island life is not a suburban sidewalk. We match ' },
+      { text: 'board and train', href: '/services/board-and-train' },
+      { text: ', ' },
+      { text: 'puppy foundations', href: '/services/puppy-training' },
+      { text: ', or ' },
+      { text: 'group classes', href: '/services/group-classes' },
+      { text: ' to the dog — and the beaches and downtown streets you actually use.' },
+    ],
     links: [
       {
         href: '/services/advanced-obedience',
@@ -108,10 +132,11 @@ export const fernandinaBeach: LocationPageData = {
         hover: 'orange',
       },
       {
-        href: '/community',
-        title: 'Axiom Cares',
-        description: 'Free rescue support for Nassau County adoptions.',
-        hover: 'orange',
+        href: '/services/board-and-train',
+        title: 'Board and Train',
+        description:
+          'Immersive structure with owner handoff when weekly Amelia Island lessons cannot keep up with the environment.',
+        hover: 'olive',
       },
     ],
   },

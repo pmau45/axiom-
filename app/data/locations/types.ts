@@ -121,12 +121,12 @@ export interface LocationPageData {
     features: LocationFeature[];
   };
 
-  /** Long-form local content (300–400 words) for thin satellite pages */
+  /** Long-form local content (~600–900 words of unique page text) for satellite pages */
   about?: {
     headingId: string;
     headingBefore: string;
     headingAccent: string;
-    paragraphs: string[];
+    paragraphs: Array<string | LocationIntroPart[]>;
   };
 
   /** Neighborhood / service-area callout with optional map embed */

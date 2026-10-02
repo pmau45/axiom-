@@ -8,6 +8,7 @@ import {
   getIntakeServiceLabel,
   type IntakeServiceValue,
 } from '@/app/lib/intake';
+import { trackGenerateLead } from '@/app/lib/analytics';
 
 interface IntakeModalProps {
   isOpen: boolean;
@@ -201,6 +202,7 @@ export default function IntakeModal({
       });
 
       if (response.ok) {
+        trackGenerateLead('intake');
         setSubmitted(true);
       } else {
         setSubmitError('Something went wrong. Please try again or call us directly.');

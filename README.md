@@ -148,6 +148,8 @@ Set up in: **Netlify Dashboard → Forms → intake → Form notifications**
 | `NEXT_TELEMETRY_DISABLED` | Disables Next.js telemetry | `1` |
 | `NEXT_PUBLIC_GOOGLE_ADS_ID` | Google Ads conversion tag ID | `AW-18020403242` (via `netlify.toml`) |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID (optional) | — |
+| `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL` | Optional Ads conversion label for successful intake submits | — |
+| `NEXT_PUBLIC_GOOGLE_ADS_CALL_LABEL` | Optional Ads conversion label for `tel:` clicks | — |
 
 ## Scripts
 

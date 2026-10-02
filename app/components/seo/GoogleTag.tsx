@@ -1,4 +1,5 @@
 import Script from 'next/script';
+import ClickTracker from './ClickTracker';
 
 const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -30,6 +31,7 @@ gtag('js', new Date());
 ${configCalls}
         `.trim()}
       </Script>
+      <ClickTracker />
     </>
   );
 }

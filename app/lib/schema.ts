@@ -17,7 +17,7 @@ export const LOGO_URL = `${SITE_URL}/icon-512.png`;
 
 /** Descriptive alt / caption used for logo & OG images in schema + metadata */
 export const OG_IMAGE_ALT =
-  'Axiom Canine professional dog training in Jacksonville, FL — behavior modification and obedience';
+  'Axiom Canine dog training in Northeast Florida';
 export const LOGO_ALT =
   'Axiom Canine logo — dog training and behavior modification in Jacksonville, Florida';
 

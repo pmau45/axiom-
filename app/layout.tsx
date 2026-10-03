@@ -61,8 +61,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dog Training in Northeast Florida | Axiom Canine',
     description: 'Structure. Consistency. Results. Northeast Florida dog training specialists.',
-    site: '@axiomcanine',
-    creator: '@axiomcanine',
   },
   robots: {
     index: true,

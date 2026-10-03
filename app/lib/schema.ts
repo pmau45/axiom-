@@ -345,7 +345,6 @@ export function buildLocalBusinessSchema() {
     },
     sameAs: [
       'https://www.facebook.com/axiomcanine',
-      'https://www.instagram.com/axiomcanine',
     ],
   };
 }

@@ -13,6 +13,13 @@ const nextConfig = {
   trailingSlash: false,
   // Production source maps off for performance
   productionBrowserSourceMaps: false,
+  // Keep MDX sources in the serverless trace so sitemap/blog can read frontmatter
+  // if Netlify ever invokes these routes as functions instead of static files.
+  outputFileTracingIncludes: {
+    '/sitemap.xml': ['./app/blog/content/**/*'],
+    '/blog': ['./app/blog/content/**/*'],
+    '/blog/[slug]': ['./app/blog/content/**/*'],
+  },
   // Security headers
   async headers() {
     return [

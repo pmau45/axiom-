@@ -1,171 +1,186 @@
 import type { MetadataRoute } from 'next';
-import { getAllArticles } from './blog/utils/mdx-loader';
-import { SITE_URL } from './lib/site';
+import { getArticleSitemapEntries } from './blog/utils/article-meta';
+import { pageUrl } from './lib/site';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const articles = await getAllArticles();
+/** Prerender at build (when MDX files exist). Do not regenerate in a Netlify lambda. */
+export const dynamic = 'force-static';
+export const runtime = 'nodejs';
+
+function loc(path: string): string {
+  return pageUrl(path);
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  let articles: ReturnType<typeof getArticleSitemapEntries> = [];
+  try {
+    articles = getArticleSitemapEntries();
+  } catch {
+    articles = [];
+  }
+
+  const latestArticleDate = articles[0]?.lastModified ?? new Date('2026-07-09T00:00:00.000Z');
 
   const articleEntries = articles.map((article) => ({
-    url: `${SITE_URL}/blog/${article.slug}`,
-    lastModified: new Date(article.date),
+    url: loc(`/blog/${article.slug}`),
+    lastModified: article.lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
   return [
     {
-      url: `${SITE_URL}/`,
+      url: loc('/'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/jacksonville`,
+      url: loc('/jacksonville'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${SITE_URL}/blog`,
-      lastModified: new Date(),
+      url: loc('/blog'),
+      lastModified: latestArticleDate,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     ...articleEntries,
     {
-      url: `${SITE_URL}/services`,
+      url: loc('/services'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/services/in-home-dog-training`,
+      url: loc('/services/in-home-dog-training'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/services/board-and-train`,
+      url: loc('/services/board-and-train'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/services/group-classes`,
+      url: loc('/services/group-classes'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/services/behavior-modification`,
+      url: loc('/services/behavior-modification'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/services/advanced-obedience`,
+      url: loc('/services/advanced-obedience'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/services/puppy-training`,
+      url: loc('/services/puppy-training'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/training-issues/reactive-dog`,
+      url: loc('/training-issues/reactive-dog'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/training-issues/leash-pulling`,
+      url: loc('/training-issues/leash-pulling'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/training-issues/aggression`,
+      url: loc('/training-issues/aggression'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/training-issues/separation-anxiety`,
+      url: loc('/training-issues/separation-anxiety'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/training-issues/resource-guarding`,
+      url: loc('/training-issues/resource-guarding'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/contact`,
+      url: loc('/contact'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/community`,
+      url: loc('/community'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/philosophy`,
+      url: loc('/philosophy'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/ponte-vedra`,
+      url: loc('/ponte-vedra'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/nocatee`,
+      url: loc('/nocatee'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/st-augustine`,
+      url: loc('/st-augustine'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/palm-coast`,
+      url: loc('/palm-coast'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/brunswick-ga`,
+      url: loc('/brunswick-ga'),
       lastModified: new Date('2025-04-01'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/orange-park`,
+      url: loc('/orange-park'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/jacksonville-beach`,
+      url: loc('/jacksonville-beach'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.75,
     },
     {
-      url: `${SITE_URL}/fernandina-beach`,
+      url: loc('/fernandina-beach'),
       lastModified: new Date('2026-07-09'),
       changeFrequency: 'monthly',
       priority: 0.75,

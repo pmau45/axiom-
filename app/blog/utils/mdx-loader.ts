@@ -5,6 +5,17 @@ import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import { buildTrainingImageAlt } from '@/app/lib/schema';
+import {
+  ARTICLES_DIR,
+  formatArticleDate,
+  listArticleFiles,
+} from './article-meta';
+
+export {
+  getArticleSitemapEntries,
+  parseArticleDate,
+  formatArticleDate,
+} from './article-meta';
 
 export interface ArticleMetadata {
   title: string;
@@ -27,8 +38,6 @@ export interface Article extends ArticleMetadata {
   content: string;
 }
 
-const ARTICLES_DIR = path.join(process.cwd(), 'app/blog/content');
-
 async function markdownToHtml(markdown: string): Promise<string> {
   const result = await remark().use(remarkGfm).use(remarkHtml).process(markdown);
   return result.toString();
@@ -44,7 +53,7 @@ function toArticleMetadata(
     slug: file.replace('.mdx', ''),
     title,
     excerpt: (data.excerpt as string) || '',
-    date: (data.date as string) || new Date().toISOString().split('T')[0],
+    date: formatArticleDate(data.date),
     author: (data.author as string) || 'Axiom Canine',
     category: (data.category as ArticleMetadata['category']) || 'Training Tips',
     readTime: (data.readTime as number) || calculateReadTime(content),
@@ -60,7 +69,7 @@ function toArticleMetadata(
 }
 
 export async function getAllArticles(): Promise<Article[]> {
-  const files = fs.readdirSync(ARTICLES_DIR).filter((file) => file.endsWith('.mdx'));
+  const files = listArticleFiles();
 
   const articles = await Promise.all(
     files.map(async (file) => {

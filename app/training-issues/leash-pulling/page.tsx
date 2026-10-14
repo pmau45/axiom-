@@ -105,7 +105,7 @@ export default function LeashPullingPage() {
       <JsonLd data={pageJsonLd} />
 {/* ── Hero ──────────────────────────────────────── */}
       <section
-        className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#7A8B66]/10 via-[#050505] to-[#050505]"
+        className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-br from-[#7C8D68]/10 via-[#050505] to-[#050505]"
         aria-labelledby="leash-hero-heading"
       >
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
@@ -115,7 +115,7 @@ export default function LeashPullingPage() {
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
             Leash Pulling Training in{' '}
-            <span className="text-[#7A8B66]">Jacksonville, FL</span>
+            <span className="text-[#7C8D68]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Leash pulling is one of the most common and most correctable dog behaviors. It
@@ -133,14 +133,14 @@ export default function LeashPullingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="leash-symptoms-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
           >
             Does This Sound Like Your Walk?
           </h2>
           <ul className="space-y-4 mt-8">
             {symptoms.map((symptom) => (
               <li key={symptom} className="flex items-start gap-4 text-[#C5C6C7] text-lg">
-                <CheckCircle2 className="w-5 h-5 text-[#7A8B66] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <CheckCircle2 className="w-5 h-5 text-[#7C8D68] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 {symptom}
               </li>
             ))}
@@ -157,7 +157,7 @@ export default function LeashPullingPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="leash-why-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Why It Keeps Happening
             </h2>
@@ -169,7 +169,7 @@ export default function LeashPullingPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyItHappens.map(({ title, desc }) => (
-              <div key={title} className="bg-[#0B0C10] border-t-4 border-[#7A8B66] p-8">
+              <div key={title} className="bg-[#0B0C10] border-t-4 border-[#7C8D68] p-8">
                 <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-4">
                   {title}
                 </h3>
@@ -188,7 +188,7 @@ export default function LeashPullingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="leash-jax-walks-heading"
-            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-6"
           >
             Leash Pulling Solutions for Jacksonville Walks
           </h2>
@@ -211,7 +211,7 @@ export default function LeashPullingPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="leash-process-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               How We Fix It
             </h2>
@@ -220,7 +220,7 @@ export default function LeashPullingPage() {
             {process.map(({ step, title, desc }) => (
               <div key={step} className="bg-[#050505] border border-[#1A2030] p-8 flex gap-6">
                 <span
-                  className="font-oswald text-4xl font-bold text-[#7A8B66]/30 flex-shrink-0 leading-none"
+                  className="font-oswald text-4xl font-bold text-[#7C8D68]/30 flex-shrink-0 leading-none"
                   aria-hidden="true"
                 >
                   {step}
@@ -245,7 +245,7 @@ export default function LeashPullingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="leash-jax-arousal-heading"
-            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-6"
           >
             Handling High Arousal at Jax Dog Parks & Beaches
           </h2>
@@ -266,7 +266,7 @@ export default function LeashPullingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="leash-programs-heading"
-            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             Best Programs for Leash Pulling
           </h2>
@@ -279,9 +279,9 @@ export default function LeashPullingPage() {
               <Link
                 key={href}
                 href={href}
-                className="group bg-[#0B0C10] border border-[#1A2030] hover:border-[#7A8B66] p-8 transition-colors duration-300"
+                className="group bg-[#0B0C10] border border-[#1A2030] hover:border-[#7C8D68] p-8 transition-colors duration-300"
               >
-                <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-2 group-hover:text-[#7A8B66] transition-colors">
+                <h3 className="font-oswald text-xl uppercase tracking-widest text-white mb-2 group-hover:text-[#7C8D68] transition-colors">
                   {title}
                 </h3>
                 <p className="text-[#C5C6C7] text-sm leading-relaxed">{desc}</p>
@@ -296,7 +296,7 @@ export default function LeashPullingPage() {
               <Link
                 key={href}
                 href={href}
-                className="font-oswald uppercase tracking-widest text-sm px-5 py-3 border border-[#1A2030] text-[#C5C6C7] hover:border-[#7A8B66] hover:text-[#7A8B66] transition-colors"
+                className="font-oswald uppercase tracking-widest text-sm px-5 py-3 border border-[#1A2030] text-[#C5C6C7] hover:border-[#7C8D68] hover:text-[#7C8D68] transition-colors"
               >
                 {label}
               </Link>
@@ -313,7 +313,7 @@ export default function LeashPullingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="leash-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -333,7 +333,7 @@ export default function LeashPullingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="leash-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Ready for Enjoyable Walks?
           </h2>
@@ -365,11 +365,11 @@ export default function LeashPullingPage() {
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-[#050505] border border-[#1A2030] open:border-[#7A8B66] transition-colors">
-      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7A8B66] transition-colors">
+    <details className="group bg-[#050505] border border-[#1A2030] open:border-[#7C8D68] transition-colors">
+      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7C8D68] transition-colors">
         <span>{question}</span>
         <span
-          className="text-[#7A8B66] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
+          className="text-[#7C8D68] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
           aria-hidden="true"
         >
           +

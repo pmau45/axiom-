@@ -60,7 +60,7 @@ export const jacksonville: LocationPageData = {
       {
         text: 'Through our Axiom Cares program, we even provide free in-home support for newly adopted and rescued dogs. No judgment. No pressure. No bill. Just help.',
         highlights: [
-          { match: 'Axiom Cares', className: 'text-[#7A8B66] font-medium' },
+          { match: 'Axiom Cares', className: 'text-[#7C8D68] font-medium' },
           { match: 'free in-home support', className: 'text-white' },
         ],
       },

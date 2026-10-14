@@ -88,7 +88,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
           className="flex items-center gap-2 sm:gap-3 focus-visible:outline-[#FF5E00] shrink-0 min-w-0"
           aria-label="Axiom Canine — Home"
         >
-          <ShieldCheck className="text-[#7A8B66] w-7 h-7 sm:w-8 sm:h-8 shrink-0" aria-hidden="true" />
+          <ShieldCheck className="text-[#7C8D68] w-7 h-7 sm:w-8 sm:h-8 shrink-0" aria-hidden="true" />
           <span className="font-oswald text-xl sm:text-2xl font-bold tracking-widest text-white uppercase mt-1 truncate">
             Axiom <span className="text-[#FF5E00]">Canine</span>
           </span>

@@ -119,7 +119,7 @@ export default function PuppyTrainingPage() {
 
       <section className="py-24 bg-[#0B0C10] border-b border-[#1A2030]" aria-labelledby="puppy-foundations-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="puppy-foundations-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4">
+          <h2 id="puppy-foundations-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4">
             What We Build First
           </h2>
           <p className="text-[#C5C6C7] text-lg mb-8 leading-relaxed">
@@ -138,7 +138,7 @@ export default function PuppyTrainingPage() {
 
       <section className="py-24 bg-[#050505] border-b border-[#1A2030]" aria-labelledby="puppy-windows-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="puppy-windows-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center">
+          <h2 id="puppy-windows-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center">
             Train to the Age Window
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -154,7 +154,7 @@ export default function PuppyTrainingPage() {
 
       <section className="py-16 bg-[#0B0C10] border-b border-[#1A2030]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8">
+          <h2 className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8">
             Related Programs
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -174,15 +174,15 @@ export default function PuppyTrainingPage() {
 
       <section className="py-24 bg-[#050505] border-b border-[#1A2030]" aria-labelledby="puppy-faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="puppy-faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center">
+          <h2 id="puppy-faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center">
             Puppy Training FAQs
           </h2>
           <div className="space-y-2">
             {faqs.map(({ q, a }) => (
-              <details key={q} className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7A8B66] transition-colors">
-                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7A8B66] transition-colors">
+              <details key={q} className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7C8D68] transition-colors">
+                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7C8D68] transition-colors">
                   <span>{q}</span>
-                  <span className="text-[#7A8B66] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
+                  <span className="text-[#7C8D68] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-[#C5C6C7] leading-relaxed border-t border-[#1A2030] pt-4">{a}</div>
               </details>
@@ -193,7 +193,7 @@ export default function PuppyTrainingPage() {
 
       <section className="py-24 bg-[#0B0C10] border-t border-[#1A2030]" aria-labelledby="puppy-cta-heading">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 id="puppy-cta-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]">
+          <h2 id="puppy-cta-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]">
             Start Before Habits Harden.
           </h2>
           <p className="text-[#C5C6C7] text-lg mb-10">

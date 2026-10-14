@@ -53,9 +53,9 @@ export default function ArticleHero({ article }: ArticleHeroProps) {
         {/* Meta */}
         <div className="flex flex-wrap items-center justify-center gap-6 text-[#C5C6C7]">
           <span className="text-sm">{article.author}</span>
-          <span className="w-1 h-1 bg-[#7A8B66] rounded-full" />
+          <span className="w-1 h-1 bg-[#7C8D68] rounded-full" />
           <span className="text-sm">{new Date(article.date).toLocaleDateString()}</span>
-          <span className="w-1 h-1 bg-[#7A8B66] rounded-full" />
+          <span className="w-1 h-1 bg-[#7C8D68] rounded-full" />
           <span className="text-sm">{article.readTime} min read</span>
         </div>
       </motion.div>

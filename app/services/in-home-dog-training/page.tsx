@@ -124,19 +124,19 @@ export default function InHomeTrainingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="fit-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Is This the Right Fit?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-[#1A2030] p-10 border-l-4 border-[#7A8B66]">
+            <div className="bg-[#1A2030] p-10 border-l-4 border-[#7C8D68]">
               <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-6">
                 In-Home Is a Good Fit If…
               </h3>
               <ul className="space-y-4">
                 {whoItIsFor.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[#C5C6C7]">
-                    <CheckCircle2 className="w-5 h-5 text-[#7A8B66] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <CheckCircle2 className="w-5 h-5 text-[#7C8D68] flex-shrink-0 mt-0.5" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
@@ -174,7 +174,7 @@ export default function InHomeTrainingPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="process-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               How In-Home Training Works
             </h2>
@@ -212,7 +212,7 @@ export default function InHomeTrainingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="ih-issues-heading"
-            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             Issues Commonly Addressed In-Home
           </h2>
@@ -244,7 +244,7 @@ export default function InHomeTrainingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="ih-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -264,7 +264,7 @@ export default function InHomeTrainingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="ih-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Ready to Start?
           </h2>

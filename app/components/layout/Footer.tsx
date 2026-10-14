@@ -27,7 +27,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
         {/* Brand */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <ShieldCheck className="text-[#7A8B66] w-6 h-6" aria-hidden="true" />
+            <ShieldCheck className="text-[#7C8D68] w-6 h-6" aria-hidden="true" />
             <span className="font-oswald text-xl font-bold tracking-widest text-[#C5C6C7] uppercase">
               Axiom Canine
             </span>

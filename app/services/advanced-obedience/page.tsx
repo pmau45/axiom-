@@ -113,18 +113,18 @@ export default function AdvancedObediencePage() {
       <JsonLd data={pageJsonLd} />
 {/* ── Hero ──────────────────────────────────────── */}
       <section
-        className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-bl from-[#7A8B66]/10 via-[#050505] to-[#050505]"
+        className="relative min-h-[65vh] flex items-center justify-center pt-20 clip-slant pb-24 overflow-hidden bg-gradient-to-bl from-[#7C8D68]/10 via-[#050505] to-[#050505]"
         aria-labelledby="advob-hero-heading"
       >
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
-          <Compass className="w-12 h-12 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
+          <Compass className="w-12 h-12 text-[#7C8D68] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="advob-hero-heading"
             className="font-oswald text-4xl md:text-6xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
             Advanced Obedience Training in{' '}
-            <span className="text-[#7A8B66]">Jacksonville, FL</span>
+            <span className="text-[#7C8D68]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             A dog that only listens in your living room isn&apos;t trained. True obedience means
@@ -143,7 +143,7 @@ export default function AdvancedObediencePage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="skills-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               What Advanced Obedience Builds
             </h2>
@@ -156,9 +156,9 @@ export default function AdvancedObediencePage() {
             {skills.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-[#1A2030] p-10 border-l-4 border-[#7A8B66] shadow-lg"
+                className="bg-[#1A2030] p-10 border-l-4 border-[#7C8D68] shadow-lg"
               >
-                <Icon className="w-10 h-10 text-[#7A8B66] mb-6" aria-hidden="true" />
+                <Icon className="w-10 h-10 text-[#7C8D68] mb-6" aria-hidden="true" />
                 <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-4">
                   {title}
                 </h3>
@@ -177,14 +177,14 @@ export default function AdvancedObediencePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="advob-fit-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-10 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-10 text-center"
           >
             Who This Is For
           </h2>
           <ul className="space-y-4">
             {whoItIsFor.map((item) => (
               <li key={item} className="flex items-start gap-4 text-[#C5C6C7] text-lg">
-                <CheckCircle2 className="w-6 h-6 text-[#7A8B66] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <CheckCircle2 className="w-6 h-6 text-[#7C8D68] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 {item}
               </li>
             ))}
@@ -201,7 +201,7 @@ export default function AdvancedObediencePage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="advob-process-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               The Advanced Obedience Process
             </h2>
@@ -210,7 +210,7 @@ export default function AdvancedObediencePage() {
             {process.map(({ step, title, desc }) => (
               <div key={step} className="bg-[#050505] border border-[#1A2030] p-8 flex gap-6">
                 <span
-                  className="font-oswald text-4xl font-bold text-[#7A8B66]/30 flex-shrink-0 leading-none"
+                  className="font-oswald text-4xl font-bold text-[#7C8D68]/30 flex-shrink-0 leading-none"
                   aria-hidden="true"
                 >
                   {step}
@@ -235,7 +235,7 @@ export default function AdvancedObediencePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="advob-related-heading"
-            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             Related Programs &amp; Issues
           </h2>
@@ -250,7 +250,7 @@ export default function AdvancedObediencePage() {
               <Link
                 key={href}
                 href={href}
-                className="font-oswald uppercase tracking-widest text-sm px-5 py-3 border border-[#1A2030] text-[#C5C6C7] hover:border-[#7A8B66] hover:text-[#7A8B66] transition-colors"
+                className="font-oswald uppercase tracking-widest text-sm px-5 py-3 border border-[#1A2030] text-[#C5C6C7] hover:border-[#7C8D68] hover:text-[#7C8D68] transition-colors"
               >
                 {label}
               </Link>
@@ -267,7 +267,7 @@ export default function AdvancedObediencePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="advob-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -287,7 +287,7 @@ export default function AdvancedObediencePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="advob-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Ready for Freedom?
           </h2>
@@ -319,11 +319,11 @@ export default function AdvancedObediencePage() {
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-[#050505] border border-[#1A2030] open:border-[#7A8B66] transition-colors">
-      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7A8B66] transition-colors">
+    <details className="group bg-[#050505] border border-[#1A2030] open:border-[#7C8D68] transition-colors">
+      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7C8D68] transition-colors">
         <span>{question}</span>
         <span
-          className="text-[#7A8B66] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
+          className="text-[#7C8D68] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
           aria-hidden="true"
         >
           +

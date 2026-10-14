@@ -23,7 +23,7 @@ export function FAQSection({ items, title = 'Frequently Asked Questions' }: FAQS
 
   return (
     <section className="space-y-6" aria-labelledby="faq-heading">
-      {title && <h2 id="faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8 text-center">{title}</h2>}
+      {title && <h2 id="faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8 text-center">{title}</h2>}
 
       <div className="space-y-4">
         {items.map((item, index) => (

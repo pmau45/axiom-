@@ -14,7 +14,7 @@ module.exports = {
         'brand-border': '#1A2030',
         'brand-text': '#C5C6C7',
         'brand-orange': '#FF5E00',
-        'brand-olive': '#7A8B66',
+        'brand-olive': '#7C8D68',
         'brand-blue': '#5B8FA8',
         'brand-cream': '#E8D5B7',
       },

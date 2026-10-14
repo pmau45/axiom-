@@ -86,7 +86,7 @@ export default function HomePage() {
             className="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl"
           >
             Professional Dog Training Across{' '}
-            <span className="text-[#7A8B66]">Northeast Florida</span>
+            <span className="text-[#7C8D68]">Northeast Florida</span>
           </h1>
           <p className="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-12 text-[#C5C6C7] leading-relaxed">
             If you&apos;re frustrated by your dog&apos;s behavior, you aren&apos;t alone. We help
@@ -113,7 +113,7 @@ export default function HomePage() {
               <div className="absolute -left-4 top-0 bottom-0 w-1 bg-[#FF5E00] shadow-[0_0_15px_rgba(255,94,0,0.3)]" aria-hidden="true" />
               <h2
                 id="philosophy-heading"
-                className="font-oswald text-5xl md:text-6xl font-bold uppercase tracking-tight leading-none text-[#7A8B66] pl-6"
+                className="font-oswald text-5xl md:text-6xl font-bold uppercase tracking-tight leading-none text-[#7C8D68] pl-6"
               >
                 We don&apos;t just train the dog.
                 <br />
@@ -147,7 +147,7 @@ export default function HomePage() {
               <div className="h-px w-12 bg-[#FF5E00]" aria-hidden="true" />
               <h2
                 id="pillars-heading"
-                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66]"
+                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68]"
               >
                 An <span className="text-white">Axiom</span> is a foundational truth.
               </h2>
@@ -161,9 +161,9 @@ export default function HomePage() {
             {pillars.map(({ Icon, title, body, stagger }) => (
               <article
                 key={title}
-                className={`bg-[#0B0C10] p-10 border-t-4 border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 shadow-lg h-full ${stagger}`}
+                className={`bg-[#0B0C10] p-10 border-t-4 border-[#1A2030] hover:border-[#7C8D68] transition-colors duration-300 shadow-lg h-full ${stagger}`}
               >
-                <Icon className="text-[#7A8B66] w-10 h-10 mb-6" aria-hidden="true" />
+                <Icon className="text-[#7C8D68] w-10 h-10 mb-6" aria-hidden="true" />
                 <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-4">
                   {title}
                 </h3>
@@ -183,7 +183,7 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="services-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-6"
             >
               Our Services
             </h2>
@@ -215,11 +215,11 @@ export default function HomePage() {
             </Link>
             <Link
               href="/services/advanced-obedience"
-              className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#7A8B66] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full animate-stagger-2"
+              className="group bg-[#1A2030] border border-[#1A2030] hover:border-[#7C8D68] transition-colors duration-300 p-10 flex flex-col shadow-lg h-full animate-stagger-2"
               aria-label="Learn more about Advanced Obedience"
             >
               <div className="flex items-center gap-4 mb-6">
-                <Compass className="text-[#7A8B66] w-10 h-10 flex-shrink-0" aria-hidden="true" />
+                <Compass className="text-[#7C8D68] w-10 h-10 flex-shrink-0" aria-hidden="true" />
                 <h3 className="font-oswald text-2xl uppercase tracking-widest text-white">
                   Advanced Obedience
                 </h3>
@@ -228,7 +228,7 @@ export default function HomePage() {
                 A dog that only listens at home isn&apos;t trained. We build bulletproof recall,
                 public neutrality, and off-leash reliability that holds up in the real world.
               </p>
-              <span className="font-oswald text-sm uppercase tracking-widest text-[#7A8B66] border-b border-[#7A8B66] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
+              <span className="font-oswald text-sm uppercase tracking-widest text-[#7C8D68] border-b border-[#7C8D68] pb-1 self-start group-hover:text-white group-hover:border-white transition-colors">
                 Learn More →
               </span>
             </Link>
@@ -258,7 +258,7 @@ export default function HomePage() {
           </div>
           <h2
             id="near-me-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-6"
           >
             Looking for a Jacksonville Dog Trainer Near You?
           </h2>
@@ -301,7 +301,7 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2
               id="reviews-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-6"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-6"
             >
               What Owners Are Saying
             </h2>
@@ -323,7 +323,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="home-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>

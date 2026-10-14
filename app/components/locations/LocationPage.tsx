@@ -67,7 +67,7 @@ const ICON_MAP: Record<LocationIconName, LucideIcon> = {
 
 const ACCENT_HEX: Record<LocationAccent, string> = {
   orange: '#FF5E00',
-  olive: '#7A8B66',
+  olive: '#7C8D68',
 };
 
 function renderIntro(parts: LocationIntroPart[]) {
@@ -138,11 +138,11 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
   );
 
   const badgeBorder =
-    data.badge.accent === 'olive' ? 'border-[#7A8B66]/30' : 'border-[#FF5E00]/30';
+    data.badge.accent === 'olive' ? 'border-[#7C8D68]/30' : 'border-[#FF5E00]/30';
   const badgeIconColor =
-    data.badge.accent === 'olive' ? 'text-[#7A8B66]' : 'text-[#FF5E00]';
+    data.badge.accent === 'olive' ? 'text-[#7C8D68]' : 'text-[#FF5E00]';
   const headingAccentColor =
-    data.badge.accent === 'olive' ? 'text-[#7A8B66]' : 'text-[#FF5E00]';
+    data.badge.accent === 'olive' ? 'text-[#7C8D68]' : 'text-[#FF5E00]';
   const heroMinH = data.hero.size === 'large' ? 'min-h-[85vh]' : 'min-h-[75vh]';
   const heroHeadingSize =
     data.hero.size === 'large'
@@ -195,7 +195,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
           </p>
 
           {data.hero.subtext && (
-            <p className="text-base md:text-lg font-light max-w-2xl mx-auto mb-12 text-[#7A8B66] leading-relaxed italic">
+            <p className="text-base md:text-lg font-light max-w-2xl mx-auto mb-12 text-[#7C8D68] leading-relaxed italic">
               {data.hero.subtext}
             </p>
           )}
@@ -242,7 +242,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
                   className="font-oswald text-5xl md:text-6xl font-bold uppercase tracking-tight leading-none text-white"
                 >
                   {data.mission.headingBefore}{' '}
-                  <span className="text-[#7A8B66]">{data.mission.headingAccent}</span>
+                  <span className="text-[#7C8D68]">{data.mission.headingAccent}</span>
                 </h2>
               </div>
               <div className="lg:col-span-7">
@@ -278,11 +278,11 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="h-px w-12 bg-[#7A8B66]" aria-hidden="true" />
-                <span className="text-[#7A8B66] font-bold tracking-[0.2em] uppercase text-sm">
+                <div className="h-px w-12 bg-[#7C8D68]" aria-hidden="true" />
+                <span className="text-[#7C8D68] font-bold tracking-[0.2em] uppercase text-sm">
                   {data.neighborhoods.eyebrow}
                 </span>
-                <div className="h-px w-12 bg-[#7A8B66]" aria-hidden="true" />
+                <div className="h-px w-12 bg-[#7C8D68]" aria-hidden="true" />
               </div>
               <h2
                 id="areas-heading"
@@ -300,9 +300,9 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
               {data.neighborhoods.areas.map((area) => (
                 <div
                   key={area}
-                  className="flex items-center gap-2 bg-[#1A2030]/50 border border-[#1A2030] px-4 py-3 hover:border-[#7A8B66]/50 transition-colors"
+                  className="flex items-center gap-2 bg-[#1A2030]/50 border border-[#1A2030] px-4 py-3 hover:border-[#7C8D68]/50 transition-colors"
                 >
-                  <MapPin className="w-3 h-3 text-[#7A8B66] flex-shrink-0" aria-hidden="true" />
+                  <MapPin className="w-3 h-3 text-[#7C8D68] flex-shrink-0" aria-hidden="true" />
                   <span className="text-[#C5C6C7] text-sm">{area}</span>
                 </div>
               ))}
@@ -344,7 +344,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             <div className="text-center mb-16">
               <h2
                 id={data.local.headingId}
-                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
               >
                 {data.local.headingBefore}{' '}
                 <span className="text-white">{data.local.headingAccent}</span>
@@ -387,7 +387,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2
               id={data.about.headingId}
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-10 text-center"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-10 text-center"
             >
               {data.about.headingBefore}{' '}
               <span className="text-white">{data.about.headingAccent}</span>
@@ -413,7 +413,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             <div className="text-center mb-12">
               <h2
                 id={data.serviceArea.headingId}
-                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
               >
                 {data.serviceArea.headingBefore}{' '}
                 <span className="text-white">{data.serviceArea.headingAccent}</span>
@@ -466,7 +466,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
       >
         {data.services.style === 'featured' && (
           <div
-            className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-[#7A8B66]/5 to-transparent pointer-events-none"
+            className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-[#7C8D68]/5 to-transparent pointer-events-none"
             aria-hidden="true"
           />
         )}
@@ -487,7 +487,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
               >
                 {data.services.heading}
                 {data.services.headingAccent && (
-                  <span className="text-[#7A8B66]"> {data.services.headingAccent}</span>
+                  <span className="text-[#7C8D68]"> {data.services.headingAccent}</span>
                 )}
               </h2>
               {data.services.intro && (
@@ -500,7 +500,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             <>
               <h2
                 id={data.services.headingId}
-                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+                className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
               >
                 {data.services.heading}
               </h2>
@@ -547,11 +547,11 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
               {data.services.links.map((link) => {
                 const hoverText =
                   link.hover === 'olive'
-                    ? 'group-hover:text-[#7A8B66]'
+                    ? 'group-hover:text-[#7C8D68]'
                     : 'group-hover:text-[#FF5E00]';
                 const hoverBorder =
-                  link.hover === 'olive' ? 'hover:border-[#7A8B66]' : 'hover:border-[#FF5E00]';
-                const ctaColor = link.hover === 'olive' ? 'text-[#7A8B66]' : 'text-[#FF5E00]';
+                  link.hover === 'olive' ? 'hover:border-[#7C8D68]' : 'hover:border-[#FF5E00]';
+                const ctaColor = link.hover === 'olive' ? 'text-[#7C8D68]' : 'text-[#FF5E00]';
                 return (
                   <Link
                     key={link.href + link.title}
@@ -596,7 +596,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
                 className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mb-4"
               >
                 {data.whyChoose.headingBefore}{' '}
-                <span className="text-[#7A8B66]">{data.whyChoose.headingAccent}</span>
+                <span className="text-[#7C8D68]">{data.whyChoose.headingAccent}</span>
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -629,7 +629,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
       >
         {data.hero.size === 'large' && (
           <div
-            className="absolute inset-0 bg-gradient-to-br from-[#FF5E00]/5 via-transparent to-[#7A8B66]/5 pointer-events-none"
+            className="absolute inset-0 bg-gradient-to-br from-[#FF5E00]/5 via-transparent to-[#7C8D68]/5 pointer-events-none"
             aria-hidden="true"
           />
         )}
@@ -639,7 +639,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             className={`font-oswald font-bold uppercase tracking-widest mb-4 ${
               data.cta.headingAccent
                 ? 'text-4xl md:text-5xl tracking-tight text-white'
-                : 'text-4xl text-[#7A8B66]'
+                : 'text-4xl text-[#7C8D68]'
             }`}
           >
             {data.cta.headingBefore}
@@ -653,7 +653,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             {data.cta.description}
           </p>
           {data.cta.note && (
-            <p className="text-[#7A8B66] text-sm mb-10 tracking-wide uppercase">{data.cta.note}</p>
+            <p className="text-[#7C8D68] text-sm mb-10 tracking-wide uppercase">{data.cta.note}</p>
           )}
           <OpenModalButton
             className="btn-rugged bg-[#FF5E00] text-[#050505] font-oswald text-xl font-bold uppercase tracking-widest px-10 py-5 inline-flex items-center gap-3"

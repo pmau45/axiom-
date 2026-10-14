@@ -110,7 +110,7 @@ export default function GroupClassesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="group-fit-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Is Group Class the Right Fit?
           </h2>
@@ -164,7 +164,7 @@ export default function GroupClassesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="group-expect-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             What to Expect in Class
           </h2>
@@ -187,7 +187,7 @@ export default function GroupClassesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="group-related-heading"
-            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             Related Training Issues
           </h2>
@@ -218,7 +218,7 @@ export default function GroupClassesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="group-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -238,7 +238,7 @@ export default function GroupClassesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="group-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Ready to Practice?
           </h2>

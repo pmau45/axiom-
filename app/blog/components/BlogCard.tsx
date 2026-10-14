@@ -50,7 +50,7 @@ export default function BlogCard({ article }: BlogCardProps) {
           </p>
 
           {/* Meta */}
-          <div className="flex items-center justify-between text-xs text-[#7A8B66] border-t border-[#1A2030] pt-4">
+          <div className="flex items-center justify-between text-xs text-[#7C8D68] border-t border-[#1A2030] pt-4">
             <span>{article.readTime} min read</span>
             <span>{new Date(article.date).toLocaleDateString()}</span>
           </div>

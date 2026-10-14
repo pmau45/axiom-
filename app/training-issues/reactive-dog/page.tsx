@@ -134,7 +134,7 @@ export default function ReactiveDogPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="reactive-symptoms-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
           >
             Sound Familiar?
           </h2>
@@ -162,7 +162,7 @@ export default function ReactiveDogPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="reactive-why-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Understanding Reactivity in High-Drive Breeds
             </h2>
@@ -191,10 +191,10 @@ export default function ReactiveDogPage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 mb-10">
-            <ShieldCheck className="w-10 h-10 text-[#7A8B66] flex-shrink-0 mt-1" aria-hidden="true" />
+            <ShieldCheck className="w-10 h-10 text-[#7C8D68] flex-shrink-0 mt-1" aria-hidden="true" />
             <h2
               id="reactive-approach-heading"
-              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66]"
+              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68]"
             >
               Our Reactivity Training Process
             </h2>
@@ -235,7 +235,7 @@ export default function ReactiveDogPage() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2
               id="reactive-programs-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Owner Tools for Real-World Success
             </h2>
@@ -272,7 +272,7 @@ export default function ReactiveDogPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="reactive-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -292,7 +292,7 @@ export default function ReactiveDogPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="reactive-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Let&apos;s Assess Your Dog.
           </h2>

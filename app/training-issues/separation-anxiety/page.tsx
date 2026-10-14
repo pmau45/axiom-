@@ -109,7 +109,7 @@ export default function SeparationAnxietyPage() {
 
       <section className="py-24 bg-[#0B0C10] border-b border-[#1A2030]" aria-labelledby="sa-signs-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="sa-signs-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4">
+          <h2 id="sa-signs-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4">
             Common Signs
           </h2>
           <ul className="space-y-4 mt-8">
@@ -125,7 +125,7 @@ export default function SeparationAnxietyPage() {
 
       <section className="py-24 bg-[#050505] border-b border-[#1A2030]" aria-labelledby="sa-approach-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="sa-approach-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center">
+          <h2 id="sa-approach-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center">
             How We Approach It
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -141,7 +141,7 @@ export default function SeparationAnxietyPage() {
 
       <section className="py-16 bg-[#0B0C10] border-b border-[#1A2030]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8">
+          <h2 className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8">
             Programs That Help
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -161,15 +161,15 @@ export default function SeparationAnxietyPage() {
 
       <section className="py-24 bg-[#050505] border-b border-[#1A2030]" aria-labelledby="sa-faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="sa-faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center">
+          <h2 id="sa-faq-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-2">
             {faqs.map(({ q, a }) => (
-              <details key={q} className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7A8B66] transition-colors">
-                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7A8B66] transition-colors">
+              <details key={q} className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7C8D68] transition-colors">
+                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7C8D68] transition-colors">
                   <span>{q}</span>
-                  <span className="text-[#7A8B66] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
+                  <span className="text-[#7C8D68] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-6 pb-6 text-[#C5C6C7] leading-relaxed border-t border-[#1A2030] pt-4">{a}</div>
               </details>
@@ -180,7 +180,7 @@ export default function SeparationAnxietyPage() {
 
       <section className="py-24 bg-[#0B0C10] border-t border-[#1A2030]" aria-labelledby="sa-cta-heading">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 id="sa-cta-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]">
+          <h2 id="sa-cta-heading" className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]">
             Get a Real Plan for Alone Time.
           </h2>
           <p className="text-[#C5C6C7] text-lg mb-10">

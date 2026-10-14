@@ -33,7 +33,7 @@ const programs = [
     Icon: Calendar,
     title: 'Board & Train',
     href: '/services/board-and-train',
-    color: '#7A8B66',
+    color: '#7C8D68',
     best: ['Busy owners who need fast results', 'Severe behavior issues requiring full immersion', 'Dogs that need constant structure to reset'],
     body: 'Your dog stays with us for a structured training block. We build the foundation; you learn the handoff.',
   },
@@ -152,7 +152,7 @@ export default function ServicesPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="programs-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Choose Your Path
             </h2>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
             <AlertTriangle className="w-12 h-12 text-[#FF5E00] mx-auto mb-4" aria-hidden="true" />
             <h2
               id="issues-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Common Training Issues
             </h2>
@@ -246,10 +246,10 @@ export default function ServicesPage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-8">
-            <Compass className="w-10 h-10 text-[#7A8B66] flex-shrink-0" aria-hidden="true" />
+            <Compass className="w-10 h-10 text-[#7C8D68] flex-shrink-0" aria-hidden="true" />
             <h2
               id="cost-heading"
-              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66]"
+              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68]"
             >
               What Affects the Investment
             </h2>
@@ -287,7 +287,7 @@ export default function ServicesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="services-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Not Sure Where to Start?
           </h2>

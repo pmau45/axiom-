@@ -264,10 +264,10 @@ export default function IntakeModal({
         <div className="p-8 md:p-14 relative">
           {submitted ? (
             <div className="text-center py-12">
-              <CheckCircle2 className="w-16 h-16 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
+              <CheckCircle2 className="w-16 h-16 text-[#7C8D68] mx-auto mb-6" aria-hidden="true" />
               <h2
                 id="modal-title"
-                className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+                className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
               >
                 Got It!
               </h2>
@@ -286,7 +286,7 @@ export default function IntakeModal({
           <div className="text-center mb-12">
             <h2
               id="modal-title"
-              className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+              className="font-oswald text-4xl md:text-5xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
             >
               Let&apos;s Get to Work
             </h2>

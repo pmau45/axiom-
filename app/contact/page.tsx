@@ -134,7 +134,7 @@ export default function ContactPage() {
             <div>
               <h2
                 id="contact-info-heading"
-                className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-10"
+                className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-10"
               >
                 Get in Touch
               </h2>
@@ -220,10 +220,10 @@ export default function ContactPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <CheckCircle2 className="w-12 h-12 text-[#7A8B66] mx-auto mb-4" aria-hidden="true" />
+            <CheckCircle2 className="w-12 h-12 text-[#7C8D68] mx-auto mb-4" aria-hidden="true" />
             <h2
               id="next-steps-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               What Happens After You Submit
             </h2>
@@ -260,7 +260,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="contact-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>

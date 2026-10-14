@@ -23,6 +23,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://main--axiom-canine.netlify.app/*"
+  to = "https://axiomcanine.dev/:splat"
+  status = 301
+  force = true
+
 # Legacy route redirects (301 — preserve SEO equity)
 [[redirects]]
   from = "/behavior"

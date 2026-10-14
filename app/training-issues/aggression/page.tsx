@@ -99,13 +99,13 @@ export default function AggressionPage() {
       >
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
-          <ShieldCheck className="w-12 h-12 text-[#7A8B66] mx-auto mb-6" aria-hidden="true" />
+          <ShieldCheck className="w-12 h-12 text-[#7C8D68] mx-auto mb-6" aria-hidden="true" />
           <h1
             id="aggression-hero-heading"
             className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl"
           >
             Dog Aggression Training in{' '}
-            <span className="text-[#7A8B66]">Jacksonville, FL</span>
+            <span className="text-[#7C8D68]">Jacksonville, FL</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Aggression is one of the most serious behavior issues a dog owner can face. It
@@ -151,7 +151,7 @@ export default function AggressionPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2
               id="aggression-types-heading"
-              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-4"
+              className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-4"
             >
               Types of Aggression We Address
             </h2>
@@ -163,7 +163,7 @@ export default function AggressionPage() {
             {aggressionTypes.map(({ title, desc }) => (
               <div
                 key={title}
-                className="bg-[#0B0C10] p-10 border-l-4 border-[#7A8B66] shadow-lg"
+                className="bg-[#0B0C10] p-10 border-l-4 border-[#7C8D68] shadow-lg"
               >
                 <h3 className="font-oswald text-2xl uppercase tracking-widest text-white mb-4">
                   {title}
@@ -183,7 +183,7 @@ export default function AggressionPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="aggression-approach-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             How We Approach Aggression Cases
           </h2>
@@ -221,10 +221,10 @@ export default function AggressionPage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 mb-10">
-            <ShieldCheck className="w-10 h-10 text-[#7A8B66] flex-shrink-0 mt-1" aria-hidden="true" />
+            <ShieldCheck className="w-10 h-10 text-[#7C8D68] flex-shrink-0 mt-1" aria-hidden="true" />
             <h2
               id="aggression-safety-heading"
-              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66]"
+              className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68]"
             >
               Our Safety Commitments
             </h2>
@@ -232,7 +232,7 @@ export default function AggressionPage() {
           <ul className="space-y-4">
             {safetyCommitments.map((point) => (
               <li key={point} className="flex items-start gap-3 text-[#C5C6C7]">
-                <CheckCircle2 className="w-5 h-5 text-[#7A8B66] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <CheckCircle2 className="w-5 h-5 text-[#7C8D68] flex-shrink-0 mt-0.5" aria-hidden="true" />
                 {point}
               </li>
             ))}
@@ -248,7 +248,7 @@ export default function AggressionPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="aggression-programs-heading"
-            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7A8B66] mb-8"
+            className="font-oswald text-3xl font-bold uppercase tracking-widest text-[#7C8D68] mb-8"
           >
             Programs for Aggression Cases
           </h2>
@@ -283,7 +283,7 @@ export default function AggressionPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             id="aggression-faq-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7A8B66] mb-12 text-center"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-12 text-center"
           >
             Frequently Asked Questions
           </h2>
@@ -303,7 +303,7 @@ export default function AggressionPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             id="aggression-cta-heading"
-            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7A8B66]"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest mb-4 text-[#7C8D68]"
           >
             Let&apos;s Have an Honest Conversation.
           </h2>
@@ -342,11 +342,11 @@ export default function AggressionPage() {
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7A8B66] transition-colors">
-      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7A8B66] transition-colors">
+    <details className="group bg-[#0B0C10] border border-[#1A2030] open:border-[#7C8D68] transition-colors">
+      <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none font-oswald text-lg uppercase tracking-widest text-white hover:text-[#7C8D68] transition-colors">
         <span>{question}</span>
         <span
-          className="text-[#7A8B66] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
+          className="text-[#7C8D68] font-bold text-2xl leading-none group-open:rotate-45 transition-transform flex-shrink-0"
           aria-hidden="true"
         >
           +

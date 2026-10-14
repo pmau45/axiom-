@@ -18,12 +18,12 @@ export function TrainingPhilosophyDashboard() {
   return (
     <div className="page-enter">
       {/* Header */}
-      <section className="relative min-h-[50vh] flex items-center justify-center pt-20 clip-slant pb-16 overflow-hidden bg-gradient-to-br from-[#7A8B66]/10 via-[#050505] to-[#050505]" aria-labelledby="philosophy-heading">
+      <section className="relative min-h-[50vh] flex items-center justify-center pt-20 clip-slant pb-16 overflow-hidden bg-gradient-to-br from-[#7C8D68]/10 via-[#050505] to-[#050505]" aria-labelledby="philosophy-heading">
         <div className="absolute inset-0 bg-texture opacity-30 pointer-events-none z-0" aria-hidden="true" />
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
           <h1 id="philosophy-heading" className="font-oswald text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1] mb-6 text-white drop-shadow-2xl">
             Dog Training Philosophy in{' '}
-            <span className="text-[#7A8B66]">Jacksonville</span>
+            <span className="text-[#7C8D68]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-3xl mx-auto text-[#C5C6C7] leading-relaxed">
             Our training philosophy is built on real-world results and transparent communication. We specialize in
@@ -38,7 +38,7 @@ export function TrainingPhilosophyDashboard() {
         {/* Sidebar Navigation */}
         <aside className="md:w-1/3 lg:w-1/4">
           <div className="sticky top-24 bg-[#1A2030] p-6 rounded-lg border border-[#1A2030]">
-            <h2 className="text-sm uppercase tracking-widest text-[#7A8B66] font-bold mb-6">Explore Topics</h2>
+            <h2 className="text-sm uppercase tracking-widest text-[#7C8D68] font-bold mb-6">Explore Topics</h2>
             <nav className="flex flex-col gap-2">
               {trainingPhilosophyFAQs.map((faq, index) => (
                 <button
@@ -95,7 +95,7 @@ export function TrainingPhilosophyDashboard() {
           {/* FAQ Section */}
           <div>
             <div className="mb-6">
-              <h2 className="font-oswald text-3xl uppercase tracking-widest text-[#7A8B66] mb-2">{currentCategory.category}</h2>
+              <h2 className="font-oswald text-3xl uppercase tracking-widest text-[#7C8D68] mb-2">{currentCategory.category}</h2>
               <p className="text-[#C5C6C7] leading-relaxed">{currentCategory.desc}</p>
             </div>
 

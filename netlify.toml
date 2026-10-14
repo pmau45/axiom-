@@ -9,6 +9,10 @@
   # Google Ads conversion tag (gtag.js) — public client ID, safe to bake into builds
   NEXT_PUBLIC_GOOGLE_ADS_ID = "AW-18020403242"
 
+# Include blog MDX in function bundles if /sitemap.xml or /blog run server-side.
+[functions]
+  included_files = ["app/blog/content/**"]
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 

@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Suspense } from 'react';
 import { Compass } from 'lucide-react';
-import BlogCard from './components/BlogCard';
-import BlogGrid from './components/BlogGrid';
+import BlogListing, { BlogListingFallback } from './components/BlogListing';
 import JsonLd from '@/app/components/seo/JsonLd';
 import {
   SITE_URL,
@@ -11,12 +10,11 @@ import {
   buildSchemaGraph,
 } from '@/app/lib/schema';
 import { buildPageMetadata } from '@/app/lib/seo';
-import {
-  getAllArticles,
-  getArticlesByCategory,
-  CATEGORIES,
-  type ArticleMetadata,
-} from './utils/mdx-loader';
+import { getArticleIndex } from './utils/mdx-loader';
+
+/** Prerender at build. Do not regenerate in a Netlify lambda on each /blog request. */
+export const dynamic = 'force-static';
+export const runtime = 'nodejs';
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Dog Training Blog',
@@ -25,22 +23,8 @@ export const metadata: Metadata = buildPageMetadata({
   path: '/blog',
 });
 
-function isValidCategory(value: string): value is ArticleMetadata['category'] {
-  return (CATEGORIES as string[]).includes(value);
-}
-
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
-  const { category: rawCategory } = await searchParams;
-  const activeCategory =
-    rawCategory && isValidCategory(rawCategory) ? rawCategory : null;
-
-  const articles = activeCategory
-    ? await getArticlesByCategory(activeCategory)
-    : await getAllArticles();
+export default function BlogPage() {
+  const articles = getArticleIndex();
 
   const blogJsonLd = buildSchemaGraph(
     {
@@ -101,54 +85,9 @@ export default async function BlogPage({
           <h2 id="blog-articles-heading" className="sr-only">
             Training articles
           </h2>
-          {/* Category Filter */}
-          <div className="mb-16 flex flex-wrap gap-3 justify-center" role="group" aria-label="Filter articles by category">
-            <Link
-              href="/blog"
-              className={`px-4 py-2 text-sm font-oswald uppercase tracking-widest transition-all duration-300 ${
-                !activeCategory
-                  ? 'text-white bg-[#1A2030] border-2 border-[#FF5E00]'
-                  : 'text-[#C5C6C7] border border-[#1A2030] hover:border-[#FF5E00] hover:text-[#FF5E00]'
-              }`}
-              aria-current={!activeCategory ? 'page' : undefined}
-            >
-              All Articles
-            </Link>
-            {CATEGORIES.map((category) => {
-              const isActive = activeCategory === category;
-              return (
-                <Link
-                  key={category}
-                  href={`/blog?category=${encodeURIComponent(category)}`}
-                  className={`px-4 py-2 text-sm font-oswald uppercase tracking-widest transition-all duration-300 ${
-                    isActive
-                      ? 'text-white bg-[#1A2030] border-2 border-[#FF5E00]'
-                      : 'text-[#C5C6C7] border border-[#1A2030] hover:border-[#FF5E00] hover:text-[#FF5E00]'
-                  }`}
-                  aria-current={isActive ? 'page' : undefined}
-                >
-                  {category}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Articles Grid */}
-          {articles.length > 0 ? (
-            <BlogGrid>
-              {articles.map((article) => (
-                <BlogCard key={article.slug} article={article} />
-              ))}
-            </BlogGrid>
-          ) : (
-            <div className="text-center py-24">
-              <p className="text-[#C5C6C7] text-lg">
-                {activeCategory
-                  ? `No articles in “${activeCategory}” yet. Check back soon.`
-                  : 'Articles coming soon. Check back for expert training insights.'}
-              </p>
-            </div>
-          )}
+          <Suspense fallback={<BlogListingFallback articles={articles} />}>
+            <BlogListing articles={articles} />
+          </Suspense>
         </div>
       </section>
     </div>

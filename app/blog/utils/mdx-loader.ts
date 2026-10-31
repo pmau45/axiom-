@@ -10,29 +10,16 @@ import {
   formatArticleDate,
   listArticleFiles,
 } from './article-meta';
+import type { ArticleMetadata } from './article-types';
+
+export type { ArticleCategory, ArticleMetadata } from './article-types';
+export { CATEGORIES } from './article-types';
 
 export {
   getArticleSitemapEntries,
   parseArticleDate,
   formatArticleDate,
 } from './article-meta';
-
-export interface ArticleMetadata {
-  title: string;
-  excerpt: string;
-  date: string;
-  author: string;
-  category: 'Training Tips' | 'Behavior Insights' | 'Philosophy' | 'Technique Breakdowns';
-  readTime: number;
-  heroImage: string;
-  /** Descriptive alt text with local + training context */
-  heroImageAlt: string;
-  slug: string;
-  /** Optional shorter SERP title (layout still appends `| Axiom Canine`) */
-  metaTitle?: string;
-  /** Optional meta description when the excerpt is too long */
-  metaDescription?: string;
-}
 
 export interface Article extends ArticleMetadata {
   content: string;
@@ -66,6 +53,28 @@ function toArticleMetadata(
         ? { metaDescription: data.meta_description }
         : {}),
   };
+}
+
+/**
+ * Frontmatter-only index for /blog. Skips remark/HTML so the listing can
+ * prerender at build instead of running as a slow Netlify function.
+ */
+export function getArticleIndex(): ArticleMetadata[] {
+  const files = listArticleFiles();
+  const articles: ArticleMetadata[] = [];
+
+  for (const file of files) {
+    try {
+      const filePath = path.join(ARTICLES_DIR, file);
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const { data, content } = matter(fileContent);
+      articles.push(toArticleMetadata(file, data as Record<string, unknown>, content));
+    } catch {
+      // Skip unreadable files rather than failing the whole index.
+    }
+  }
+
+  return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getAllArticles(): Promise<Article[]> {
@@ -115,10 +124,3 @@ function calculateReadTime(content: string): number {
   const wordCount = content.split(/\s+/).length;
   return Math.ceil(wordCount / wordsPerMinute);
 }
-
-export const CATEGORIES: ArticleMetadata['category'][] = [
-  'Training Tips',
-  'Behavior Insights',
-  'Philosophy',
-  'Technique Breakdowns',
-];

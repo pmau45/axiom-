@@ -53,8 +53,67 @@ export default function CommunityPage() {
           </h1>
           <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-[#C5C6C7] leading-relaxed">
             Some problems just need the right guidance. Axiom Cares exists for the owners who need
-            help the most — no judgment, no pressure, no bill.
+            help the most. No judgment, no pressure, no bill.
           </p>
+        </div>
+      </section>
+
+      {/* ── First-person ──────────────────────────────── */}
+      <section
+        className="py-24 bg-[#050505] border-b border-[#1A2030]"
+        aria-labelledby="cares-about-heading"
+      >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="cares-about-heading"
+            className="font-oswald text-4xl font-bold uppercase tracking-widest text-[#5B8FA8] mb-10 text-center"
+          >
+            Why I Built Axiom Cares
+          </h2>
+          <div className="space-y-6 text-[#C5C6C7] text-lg leading-relaxed">
+            <p>
+              I started Axiom Cares because I kept meeting people at the worst moment. You just
+              brought a rescue home and nothing looks like the adoption photos. Or you have lived
+              with this dog for years and you are one bad week away from giving them up. I have
+              heard both. I still want that call.
+            </p>
+            <p>
+              Axiom Cares is the part of this work that does not come with a bill. Rescue Ready is
+              a free in-home visit for newly adopted and rescue dogs. I come to your house in
+              Jacksonville and across Northeast Florida. We look at the dog where the habits
+              actually happen, not in a quiet lobby. I will tell you what I see, what I would do
+              first, and what is going to take more time. There is no invoice for that visit. If
+              you want a training program after, we can talk. If you do not, you still leave with a
+              plan.
+            </p>
+            <p>
+              If you are thinking about rehoming or surrender, ask for a Surrender Prevention
+              assessment. Same terms. Free. Honest. I would rather work the problem than watch
+              another dog lose its home over something we could have trained. Too many dogs get
+              surrendered because nobody sat down and gave the owner a real next step. Before You
+              Let Go is that conversation. I will look at the whole picture and tell you what is
+              actually on the table.
+            </p>
+            <p>
+              I work reactivity, aggression, and resource guarding. I work puppies. Off-leash
+              reliability is something we build when the dog is ready, not a promise on day one. I
+              take cases other trainers turn away. I will not tell you it will be easy. I will show
+              up, look at the dog, and tell you the truth.
+            </p>
+            <p>
+              A lot of the calls are the same feeling in different houses. The new rescue will not
+              settle. Walks turned into a fight. The dog you have had for years started guarding
+              food or space. Someone already told you no. That is still the work I take. I am not
+              here to scold you for how you got here. I am here to look at the dog in your home and
+              give you a plan you can use.
+            </p>
+            <p>
+              If you are in Jacksonville, the Beaches, Ponte Vedra, Nocatee, St. Augustine, or the
+              rest of our Northeast Florida service area, fill out the form or call. We will figure
+              out whether Rescue Ready or a Surrender Prevention assessment is the right first
+              visit. No judgment. No pressure. No bill on Axiom Cares visits.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -75,8 +134,8 @@ export default function CommunityPage() {
                   Rescue Ready
                 </h3>
                 <p className="text-[#C5C6C7] leading-relaxed mb-6">
-                  If you&apos;re adopting or have recently rescued a dog, we&apos;ll come to you.
-                  Free. No strings attached.
+                  If you are adopting or you just brought a rescue home, I will come to you. Free
+                  in-home visit. No strings attached.
                 </p>
                 <p className="text-[#E8D5B7] text-sm font-bold uppercase tracking-widest">
                   Free In-Home Visit · Jacksonville Area
@@ -90,8 +149,8 @@ export default function CommunityPage() {
                   Before You Let Go
                 </h3>
                 <p className="text-[#C5C6C7] leading-relaxed mb-6">
-                  If you&apos;re considering rehoming or surrendering, reach out. We&apos;ll give you
-                  a real, honest plan — at our expense.
+                  If you are considering rehoming or surrendering, reach out. I will give you a
+                  real, honest plan at my expense.
                 </p>
                 <p className="text-[#E8D5B7] text-sm font-bold uppercase tracking-widest">
                   Free Assessment · All Options On The Table

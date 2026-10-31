@@ -26,10 +26,70 @@ export function TrainingPhilosophyDashboard() {
             <span className="text-[#7C8D68]">Jacksonville</span>
           </h1>
           <p className="text-lg md:text-xl font-light max-w-3xl mx-auto text-[#C5C6C7] leading-relaxed">
-            Our training philosophy is built on real-world results and transparent communication. We specialize in
-            high-drive breeds and behavioral rehabilitation, focusing on shifting a dog&apos;s state of mind rather than
-            just managing symptoms.
+            I train for real life, not the living room. Clear communication, owner coaching, and work on the root of
+            the behavior instead of a stack of management tricks.
           </p>
+        </div>
+      </section>
+
+      <section
+        className="py-16 bg-[#050505] border-b border-[#1A2030]"
+        aria-labelledby="philosophy-about-heading"
+      >
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="philosophy-about-heading"
+            className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-widest text-[#7C8D68] mb-10 text-center"
+          >
+            How I Actually Train
+          </h2>
+          <div className="space-y-6 text-[#C5C6C7] text-lg leading-relaxed">
+            <p>
+              If your dog only listens at home, we are not done. I work reactivity, aggression, and
+              resource guarding. I work puppies. I work toward off-leash reliability in real places:
+              sidewalks, beaches, other dogs, the moments when you are tired and the leash is in
+              your hand instead of mine.
+            </p>
+            <p>
+              I use a balanced approach because the dog in front of me matters more than a slogan.
+              All four quadrants of operant conditioning. A clear yes. A clear no. The dog should
+              not have to guess. I also coach you. If I train the dog and send you home without the
+              handling, it falls apart. You are part of the work.
+            </p>
+            <p>
+              A lot of the dogs I see already got turned away. High drive. Failed group class.
+              Someone said they were too much. I take those cases. I will not promise a cure. I
+              work toward reliability: you can read the dog, you can advocate for them, and they
+              can get through the day without a blowup. Rehabilitation is not a straight line. Some
+              weeks look worse before they look better. I would rather you hear that now.
+            </p>
+            <p>
+              Management has a place. A crate, a leash, a better setup can keep people safe while
+              we work. That is not the training. If we only block the behavior and never change how
+              the dog thinks about it, you are stuck running a system forever. I would rather spend
+              the time on communication so you are not living behind a wall of workarounds.
+            </p>
+            <p>
+              Puppies need the same honesty. Structure early is easier than cleaning up a mess
+              later. That does not mean I treat a young dog like a finished project. It means I
+              show you how to communicate so the puppy is not guessing either. Off-leash comes
+              later, after the dog actually understands the boundary, not as a photo on week one.
+            </p>
+            <p>
+              Owner coaching is not an extra at the end. You hold the leash on Tuesday when I am
+              not there. If you cannot run the same picture I ran, the dog learns two sets of
+              rules. I will show you the handling. I will tell you when it is sloppy. That is part
+              of taking cases other trainers turn away. The dog is not the only one who has to
+              change.
+            </p>
+            <p>
+              I train across Northeast Florida. Jacksonville, the Beaches, Ponte Vedra, Nocatee,
+              St. Augustine, and the towns around them. If that is where you live, we can talk
+              about a plan that matches your dog and your life, not a script I reuse on every
+              case. Real life here is not a quiet living room. It is other dogs, weather, guests,
+              and the walk you still have to take on a bad day. That is the work I train for.
+            </p>
+          </div>
         </div>
       </section>
 
